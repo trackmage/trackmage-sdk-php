@@ -9,8 +9,8 @@
 [![Build Status](https://travis-ci.org/trackmage/trackmage-sdk-php.svg?branch=master)](https://travis-ci.org/trackmage/trackmage-sdk-php)
 [![Total Downloads](https://poser.pugx.org/trackmage/trackmage-sdk-php/downloads)](https://packagist.org/packages/trackmage/trackmage-sdk-php)
 
-TrackMage is your best shipment tracking page ever. Discover the simple way
-to show your customers where their parcels are, provide support and get more great reviews.
+TrackMage is your most automated shipment tracking tool ever.
+Discover the simple way to show your customers where their parcels are, provide support and get more great reviews
 
 
 ## Getting Started
