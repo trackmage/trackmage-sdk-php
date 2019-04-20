@@ -1,0 +1,10 @@
+{
+    "modelPackage" : "Model",
+    "apiPackage" : "Api",
+    "invokerPackage" : "TrackMage\\Client\\Swagger",
+    "packagePath" : ".",
+    "gitUserId" : "trackmage",
+    "gitRepoId" : "trackmage-sdk-php",
+    "variableNamingConvention": "camelCase",
+    "srcBasePath": "lib"
+}
