@@ -84,6 +84,17 @@ class TrackMageTest extends TestCase
     /**
      * @throws Swagger\ApiException
      */
+    public function testWorkspaces()
+    {
+        $workspaces = self::$client->getWorkspaceApi()->getWorkspaceCollection();
+        self::assertCount(1, $workspaces);
+        $ws = current($workspaces);
+        $ws->getTitle('my company', $ws->getTitle());
+    }
+
+    /**
+     * @throws Swagger\ApiException
+     */
     public function testClientAuth()
     {
         $request = new OauthClientSetOAuthClient();

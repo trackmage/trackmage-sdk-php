@@ -50,11 +50,16 @@ $workspaceId = 100;
 $tn = new TrackingNumberPostTrackingNumberSetTrackingNumberMeta();
 $tn->setTrackingNumber('TN-1');
 $tn->setWorkspace('/workspaces/'.$workspaceId);
-$tn = self::$client->getTrackingNumberApi()->postTrackingNumberCollection($tn);
+$tn = $client->getTrackingNumberApi()->postTrackingNumberCollection($tn);
 
-$items = self::$client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource($workspaceId);
+$items = $client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource($workspaceId);
 ```
 
+### Get workspaces list
+
+```
+$workspaces = $client->getWorkspaceApi()->getWorkspaceCollection();
+```
 
 ## Tests
 
