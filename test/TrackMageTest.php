@@ -128,4 +128,14 @@ class TrackMageTest extends TestCase
         $res = self::$client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource(self::$workspaceId);
         self::assertCount(1, $res);
     }
+
+    /**
+     * @throws Swagger\ApiException
+     */
+    public function testCarriers()
+    {
+        $carriers = self::$client->getCarrierApi()->getCarrierCollection();
+        self::assertTrue(is_array($carriers));
+        self::assertNotEmpty($carriers);
+    }
 }

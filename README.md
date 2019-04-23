@@ -61,6 +61,12 @@ $items = $client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubreso
 $workspaces = $client->getWorkspaceApi()->getWorkspaceCollection();
 ```
 
+### Get carriers list
+
+```
+$carriers = self::$client->getCarrierApi()->getCarrierCollection();
+```
+
 ## Tests
 
 To run the unit tests:
