@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | [optional] 
 **reviewsEnabled** | **bool** |  | [optional] 
 **title** | **string** |  | 
-**workspace** | **string** |  | 
 **subdomain** | **string** |  | 
+**domain** | **string** |  | [optional] 
 **sidebarField** | **string** |  | [optional] 
 **trackingNumberField** | **string** |  | [optional] 
 **builder** | **string** |  | [optional] 

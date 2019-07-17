@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **title** | **string** |  | 
 **workspace** | **string** |  | 
 **subdomain** | **string** |  | 
+**domain** | **string** |  | [optional] 
+**domainEnabled** | **bool** |  | [optional] 
 **sidebarField** | **string** |  | [optional] 
 **trackingNumberField** | **string** |  | [optional] 
 **builder** | **string** |  | [optional] 

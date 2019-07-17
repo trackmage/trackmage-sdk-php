@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCarrierCollection**](CarrierApi.md#getCarrierCollection) | **GET** /carriers | Retrieves the collection of Carrier resources.
-[**getCarrierItem**](CarrierApi.md#getCarrierItem) | **GET** /carriers/{id} | Retrieves a Carrier resource.
+[**getCarrierCollection**](CarrierApi.md#getCarrierCollection) | **GET** /public/carriers | Retrieves the collection of Carrier resources.
+[**getCarrierItem**](CarrierApi.md#getCarrierItem) | **GET** /public/carriers/{id} | Retrieves a Carrier resource.
 
 
 
 ## getCarrierCollection
 
-> \TrackMage\Client\Swagger\Model\Carrier[] getCarrierCollection()
+> \TrackMage\Client\Swagger\Model\CarrierGetCarrier[] getCarrierCollection()
 
 Retrieves the collection of Carrier resources.
 
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\Carrier[]**](../Model/Carrier.md)
+[**\TrackMage\Client\Swagger\Model\CarrierGetCarrier[]**](../Model/CarrierGetCarrier.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 
 ## getCarrierItem
 
-> \TrackMage\Client\Swagger\Model\Carrier getCarrierItem($id)
+> \TrackMage\Client\Swagger\Model\CarrierGetCarrier getCarrierItem($id)
 
 Retrieves a Carrier resource.
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\Carrier**](../Model/Carrier.md)
+[**\TrackMage\Client\Swagger\Model\CarrierGetCarrier**](../Model/CarrierGetCarrier.md)
 
 ### Authorization
 

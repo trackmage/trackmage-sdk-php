@@ -347,7 +347,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingPageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder(); // \TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder | The new TrackingPage resource
+$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder(); // \TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder | The new TrackingPage resource
 
 try {
     $result = $apiInstance->postTrackingPageCollection($trackingPage);
@@ -363,7 +363,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder**](../Model/TrackingPageSetTrackingPageSetBuilder.md)| The new TrackingPage resource | [optional]
+ **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder**](../Model/TrackingPagePostTrackingPageSetTrackingPageSetBuilder.md)| The new TrackingPage resource | [optional]
 
 ### Return type
 

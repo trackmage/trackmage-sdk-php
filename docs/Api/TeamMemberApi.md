@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ## resendInviteTeamMemberItem
 
-> \TrackMage\Client\Swagger\Model\TeamMemberGetTeamMemberGetTeams resendInviteTeamMemberItem($teamMember)
+> \TrackMage\Client\Swagger\Model\TeamMemberGetTeamMemberGetTeams resendInviteTeamMemberItem($id, $teamMember)
 
 Creates a TeamMember resource.
 
@@ -432,10 +432,11 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TeamMemberApi(
     new GuzzleHttp\Client(),
     $config
 );
+$id = 'id_example'; // string | 
 $teamMember = new \TrackMage\Client\Swagger\Model\TeamMemberSetTeamMember(); // \TrackMage\Client\Swagger\Model\TeamMemberSetTeamMember | The new TeamMember resource
 
 try {
-    $result = $apiInstance->resendInviteTeamMemberItem($teamMember);
+    $result = $apiInstance->resendInviteTeamMemberItem($id, $teamMember);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TeamMemberApi->resendInviteTeamMemberItem: ', $e->getMessage(), PHP_EOL;
@@ -448,6 +449,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
  **teamMember** | [**\TrackMage\Client\Swagger\Model\TeamMemberSetTeamMember**](../Model/TeamMemberSetTeamMember.md)| The new TeamMember resource | [optional]
 
 ### Return type

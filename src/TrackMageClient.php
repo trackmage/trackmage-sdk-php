@@ -18,6 +18,8 @@ use TrackMage\Client\Swagger\Api;
  * @method Api\CarrierApi getCarrierApi
  * @method Api\OauthClientApi getOauthClientApi
  * @method Api\TrackingNumberApi getTrackingNumberApi
+ * @method Api\WorkflowApi getWorkflowApi
+ * @method Api\IntegrationApi getIntegrationApi
  * @method Api\UserSignupRequestApi getUserSignupRequestApi
  * @method Api\UserVerifyEmailRequestApi getUserVerifyEmailRequestApi
  * @method Api\UserApi getUserApi

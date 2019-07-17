@@ -8,6 +8,7 @@ use TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient;
 use TrackMage\Client\Swagger\Model\TrackingNumberPostTrackingNumberSetTrackingNumberMeta;
 use TrackMage\Client\Swagger\Model\UserSignupRequest;
 use TrackMage\Client\Swagger\Model\UserVerifyEmailRequest;
+use TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration;
 
 /**
  * Basic functional test
@@ -127,6 +128,51 @@ class TrackMageTest extends TestCase
 
         $res = self::$client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource(self::$workspaceId);
         self::assertCount(1, $res);
+    }
+
+    /**
+     * @throws Swagger\ApiException
+     */
+    public function testCreateWebhook()
+    {
+        // create workspace
+        $integration = [
+            'type' => 'webhook',
+            'credentials' => [
+                'url' => 'http://acme.example',
+                'authType' => 'basic',
+                'username' => 'webhook_user',
+                'password' => 'password',
+            ],
+        ];
+        $workflow = [
+            'direction' => 'out',
+            'period' => 'immediately',
+            'title' => 'Webhook for testing',
+            'workspace' => '/workspaces/'.self::$workspaceId,
+            'settings' => [],
+            'enabled' => true,
+            'concurrency' => 1,
+            'notificationEmails' => [
+                'test@email.com', 'test-2@email.com',
+            ],
+        ];
+        $response = self::$client->getGuzzleClient()->post(
+            '/workflows',
+            [
+                'json' => array_merge($workflow, ['integration' => $integration]),
+            ]
+        );
+        //THEN
+        $contents = $response->getBody()->getContents();
+        self::assertEquals(201, $response->getStatusCode(), $contents);
+        $data = json_decode($contents, true);
+        self::assertArraySubset($workflow, $data);
+
+        $integrationId = explode('/', $data['integration']);
+        $integrationId = end($integrationId);
+        $actualIntegration = self::$client->getIntegrationApi()->getIntegrationItem($integrationId);
+        self::assertSame('webhook', $actualIntegration->getType());
     }
 
     /**

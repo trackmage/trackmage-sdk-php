@@ -575,7 +575,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflow(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflow | The new Workflow resource
+$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration | The new Workflow resource
 
 try {
     $result = $apiInstance->postWorkflowCollection($workflow);
@@ -591,7 +591,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflow**](../Model/WorkflowSetWorkflow.md)| The new Workflow resource | [optional]
+ **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration**](../Model/WorkflowSetWorkflowSetIntegration.md)| The new Workflow resource | [optional]
 
 ### Return type
 
@@ -637,7 +637,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     $config
 );
 $id = 'id_example'; // string | 
-$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflow(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflow | The updated Workflow resource
+$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration | The updated Workflow resource
 
 try {
     $result = $apiInstance->putWorkflowItem($id, $workflow);
@@ -654,7 +654,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflow**](../Model/WorkflowSetWorkflow.md)| The updated Workflow resource | [optional]
+ **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration**](../Model/WorkflowSetWorkflowSetIntegration.md)| The updated Workflow resource | [optional]
 
 ### Return type
 

@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **trackingNumbers** | **string[]** |  | [optional] 
 **workflows** | **string[]** |  | [optional] 
 **trackingPageLinkSettings** | **string[]** |  | [optional] 
-**fields** | **string[]** |  | [optional] 
 **trackingPages** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | 
 **user** | **string** |  | 
-**id** | **int** |  | [optional] 
 **secret** | **string** |  | [optional] 
+**id** | **int** |  | [optional] 
 **redirectUris** | **string[]** |  | 
 **publicId** | [**object**](.md) | {@inheritdoc} | [optional] 
 
