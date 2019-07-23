@@ -83,6 +83,16 @@ class TrackMageTest extends TestCase
     }
 
     /**
+     * @expectedException \TrackMage\Client\Swagger\ApiException
+     * @expectedExceptionMessage Authorization error
+     */
+    public function testInvalidCredentials()
+    {
+        $client = new TrackMageClient('fake', 'fake');
+        $client->getWorkspaceApi()->getWorkspaceCollection();
+    }
+
+    /**
      * @throws Swagger\ApiException
      */
     public function testWorkspaces()
