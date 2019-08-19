@@ -2,6 +2,7 @@
 namespace TrackMage\Client;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
@@ -30,7 +31,7 @@ class TrackMageClient
     /** @var LoggerInterface */
     private $logger;
 
-    /** @var Client */
+    /** @var ClientInterface */
     private $guzzleClient;
 
     /** @var Configuration */
@@ -94,7 +95,7 @@ class TrackMageClient
     }
 
     /**
-     * @return Client
+     * @return ClientInterface
      */
     public function getGuzzleClient()
     {
@@ -112,6 +113,11 @@ class TrackMageClient
         return $this->guzzleClient;
     }
 
+    public function setGuzzleClient(ClientInterface $guzzleClient)
+    {
+        $this->guzzleClient = $guzzleClient;
+    }
+    
     /**
      * @return Configuration
      */
