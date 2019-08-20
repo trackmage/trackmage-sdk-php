@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **workspace** | **string** |  | [optional] 
-**trackingNumber** | **string** |  | [optional] 
+**shipment** | **string** |  | [optional] 
 **carrierScore** | **int** |  | [optional] 
 **productScore** | **int** |  | [optional] 
 **packagingScore** | **int** |  | [optional] 

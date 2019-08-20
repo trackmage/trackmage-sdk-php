@@ -18,7 +18,7 @@ use TrackMage\Client\Swagger\Api;
  * TrackMage client wrapper
  * @method Api\CarrierApi getCarrierApi
  * @method Api\OauthClientApi getOauthClientApi
- * @method Api\TrackingNumberApi getTrackingNumberApi
+ * @method Api\ShipmentApi getShipmentApi
  * @method Api\WorkflowApi getWorkflowApi
  * @method Api\IntegrationApi getIntegrationApi
  * @method Api\UserSignupRequestApi getUserSignupRequestApi
@@ -113,11 +113,14 @@ class TrackMageClient
         return $this->guzzleClient;
     }
 
+    /**
+     * @param ClientInterface $guzzleClient
+     */
     public function setGuzzleClient(ClientInterface $guzzleClient)
     {
         $this->guzzleClient = $guzzleClient;
     }
-    
+
     /**
      * @return Configuration
      */

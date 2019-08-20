@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hash** | **string** |  | 
-**trackingNumberId** | **int** |  | 
+**shipmentId** | **int** |  | 
 **carrierScore** | **int** |  | 
 **productScore** | **int** |  | 
 **packagingScore** | **int** |  | 

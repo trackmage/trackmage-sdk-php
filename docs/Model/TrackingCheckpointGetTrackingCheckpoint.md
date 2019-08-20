@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**trackingNumber** | **string** |  | [optional] 
+**shipment** | **string** |  | [optional] 
 **checkpointDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **info** | **string** |  | [optional] 
 **location** | **string** |  | [optional] 

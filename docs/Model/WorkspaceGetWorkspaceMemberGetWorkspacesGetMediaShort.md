@@ -8,10 +8,12 @@ Name | Type | Description | Notes
 **team** | **string** |  | 
 **title** | **string** |  | 
 **defaultTrackingPage** | **string** |  | 
-**trackingNumbersCount** | **int** |  | [optional] 
+**shipmentsCount** | **int** |  | [optional] 
 **workflowsCount** | **int** |  | [optional] 
 **logo** | [**\TrackMage\Client\Swagger\Model\MediaGetWorkspaceMemberGetWorkspacesGetMediaShort**](MediaGetWorkspaceMemberGetWorkspacesGetMediaShort.md) |  | [optional] 
-**trackingNumbers** | **string[]** |  | [optional] 
+**shipments** | **string[]** |  | [optional] 
+**orders** | **string[]** |  | [optional] 
+**orderStatuses** | **string[]** |  | [optional] 
 **workflows** | **string[]** |  | [optional] 
 **trackingPageLinkSettings** | **string[]** |  | [optional] 
 **trackingPages** | **string[]** |  | [optional] 

@@ -5,10 +5,9 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient;
-use TrackMage\Client\Swagger\Model\TrackingNumberPostTrackingNumberSetTrackingNumberMeta;
+use TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta;
 use TrackMage\Client\Swagger\Model\UserSignupRequest;
 use TrackMage\Client\Swagger\Model\UserVerifyEmailRequest;
-use TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration;
 
 /**
  * Basic functional test
@@ -124,19 +123,19 @@ class TrackMageTest extends TestCase
     /**
      * @throws Swagger\ApiException
      */
-    public function testTrackingNumbers()
+    public function testShipments()
     {
-        $res = self::$client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource(self::$workspaceId);
+        $res = self::$client->getShipmentApi()->apiWorkspacesShipmentsGetSubresource(self::$workspaceId);
         self::assertEmpty($res);
 
-        $tn = new TrackingNumberPostTrackingNumberSetTrackingNumberMeta();
+        $tn = new ShipmentPostShipmentSetShipmentMeta();
         $tn->setTrackingNumber('TN-1');
         $tn->setWorkspace('/workspaces/'.self::$workspaceId);
-        $response = self::$client->getTrackingNumberApi()->postTrackingNumberCollection($tn);
+        $response = self::$client->getShipmentApi()->postShipmentCollection($tn);
         self::assertNotNull($response);
         self::assertEquals('TN-1', $response->getTrackingNumber());
 
-        $res = self::$client->getTrackingNumberApi()->apiWorkspacesTrackingNumbersGetSubresource(self::$workspaceId);
+        $res = self::$client->getShipmentApi()->apiWorkspacesShipmentsGetSubresource(self::$workspaceId);
         self::assertCount(1, $res);
     }
 

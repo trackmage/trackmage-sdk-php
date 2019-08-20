@@ -9,7 +9,9 @@ Name | Type | Description | Notes
 **defaultTrackingPage** | **string** |  | 
 **workflowsOrder** | **string[]** |  | [optional] 
 **logo** | [**object**](.md) |  | [optional] 
-**trackingNumbers** | **string[]** |  | [optional] 
+**shipments** | **string[]** |  | [optional] 
+**orders** | **string[]** |  | [optional] 
+**orderStatuses** | **string[]** |  | [optional] 
 **workflows** | **string[]** |  | [optional] 
 **trackingPageLinkSettings** | **string[]** |  | [optional] 
 **trackingPages** | **string[]** |  | [optional] 

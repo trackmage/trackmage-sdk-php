@@ -6,7 +6,7 @@
          convertWarningsToExceptions="true"
          stopOnFailure="false">
     <php>
-        <env name="API_HOST" value="https://api.stage.trackmage.com" />
+        <env name="API_HOST" value="https://api.test.trackmage.com" />
     </php>
 
     <testsuites>

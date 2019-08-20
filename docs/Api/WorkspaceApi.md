@@ -5,11 +5,15 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiTeamsWorkspacesGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesGetSubresource) | **GET** /teams/{id}/workspaces | Retrieves the collection of Workspace resources.
-[**apiTeamsWorkspacesTrackingNumbersGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesTrackingNumbersGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/tracking_numbers | Retrieves the collection of TrackingNumber resources.
+[**apiTeamsWorkspacesOrderStatusesGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesOrderStatusesGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/order_statuses | Retrieves the collection of OrderStatus resources.
+[**apiTeamsWorkspacesOrdersGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesOrdersGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/orders | Retrieves the collection of Order resources.
+[**apiTeamsWorkspacesShipmentsGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesShipmentsGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/shipments | Retrieves the collection of Shipment resources.
 [**apiTeamsWorkspacesTrackingPageLinkSettingsGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesTrackingPageLinkSettingsGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/tracking_page_link_settings | Retrieves the collection of TrackingPageLinkSettings resources.
 [**apiTeamsWorkspacesTrackingPagesGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesTrackingPagesGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/tracking_pages | Retrieves the collection of TrackingPage resources.
 [**apiTeamsWorkspacesWorkflowsGetSubresource**](WorkspaceApi.md#apiTeamsWorkspacesWorkflowsGetSubresource) | **GET** /teams/{id}/workspaces/{workspaces}/workflows | Retrieves the collection of Workflow resources.
-[**apiWorkspacesTrackingNumbersGetSubresource**](WorkspaceApi.md#apiWorkspacesTrackingNumbersGetSubresource) | **GET** /workspaces/{id}/tracking_numbers | Retrieves the collection of TrackingNumber resources.
+[**apiWorkspacesOrderStatusesGetSubresource**](WorkspaceApi.md#apiWorkspacesOrderStatusesGetSubresource) | **GET** /workspaces/{id}/order_statuses | Retrieves the collection of OrderStatus resources.
+[**apiWorkspacesOrdersGetSubresource**](WorkspaceApi.md#apiWorkspacesOrdersGetSubresource) | **GET** /workspaces/{id}/orders | Retrieves the collection of Order resources.
+[**apiWorkspacesShipmentsGetSubresource**](WorkspaceApi.md#apiWorkspacesShipmentsGetSubresource) | **GET** /workspaces/{id}/shipments | Retrieves the collection of Shipment resources.
 [**apiWorkspacesTrackingPageLinkSettingsGetSubresource**](WorkspaceApi.md#apiWorkspacesTrackingPageLinkSettingsGetSubresource) | **GET** /workspaces/{id}/tracking_page_link_settings | Retrieves the collection of TrackingPageLinkSettings resources.
 [**apiWorkspacesTrackingPagesGetSubresource**](WorkspaceApi.md#apiWorkspacesTrackingPagesGetSubresource) | **GET** /workspaces/{id}/tracking_pages | Retrieves the collection of TrackingPage resources.
 [**apiWorkspacesWorkflowsGetSubresource**](WorkspaceApi.md#apiWorkspacesWorkflowsGetSubresource) | **GET** /workspaces/{id}/workflows | Retrieves the collection of Workflow resources.
@@ -84,11 +88,221 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## apiTeamsWorkspacesTrackingNumbersGetSubresource
+## apiTeamsWorkspacesOrderStatusesGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingNumberGetTrackingNumberGetTrackingNumberMeta[] apiTeamsWorkspacesTrackingNumbersGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderOrderId, $orderDaysInTransit, $orderReviewTotalScore, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $orderId2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+> \TrackMage\Client\Swagger\Model\OrderStatusGetOrderStatus[] apiTeamsWorkspacesOrderStatusesGetSubresource($id, $workspaces, $name, $orderId, $orderName)
 
-Retrieves the collection of TrackingNumber resources.
+Retrieves the collection of OrderStatus resources.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new TrackMage\Client\Swagger\Api\WorkspaceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | 
+$workspaces = 'workspaces_example'; // string | 
+$name = 'name_example'; // string | 
+$orderId = 'orderId_example'; // string | 
+$orderName = 'orderName_example'; // string | 
+
+try {
+    $result = $apiInstance->apiTeamsWorkspacesOrderStatusesGetSubresource($id, $workspaces, $name, $orderId, $orderName);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WorkspaceApi->apiTeamsWorkspacesOrderStatusesGetSubresource: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **workspaces** | **string**|  |
+ **name** | **string**|  | [optional]
+ **orderId** | **string**|  | [optional]
+ **orderName** | **string**|  | [optional]
+
+### Return type
+
+[**\TrackMage\Client\Swagger\Model\OrderStatusGetOrderStatus[]**](../Model/OrderStatusGetOrderStatus.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/ld+json, application/json, text/csv, text/html
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## apiTeamsWorkspacesOrdersGetSubresource
+
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+
+Retrieves the collection of Order resources.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new TrackMage\Client\Swagger\Api\WorkspaceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | 
+$workspaces = 'workspaces_example'; // string | 
+$orderId = 'orderId_example'; // string | 
+$orderOrderNumber = 'orderOrderNumber_example'; // string | 
+$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
+$orderSubtotal = 'orderSubtotal_example'; // string | 
+$orderTotal = 'orderTotal_example'; // string | 
+$orderCreatedAt = 'orderCreatedAt_example'; // string | 
+$orderUpdatedAt = 'orderUpdatedAt_example'; // string | 
+$createdAtBefore = 'createdAtBefore_example'; // string | 
+$createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
+$createdAtAfter = 'createdAtAfter_example'; // string | 
+$createdAtStrictlyAfter = 'createdAtStrictlyAfter_example'; // string | 
+$updatedAtBefore = 'updatedAtBefore_example'; // string | 
+$updatedAtStrictlyBefore = 'updatedAtStrictlyBefore_example'; // string | 
+$updatedAtAfter = 'updatedAtAfter_example'; // string | 
+$updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
+$id2 = array('id_example'); // string[] | 
+$orderNumber = 'orderNumber_example'; // string | 
+$orderNumber2 = array('orderNumber_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$status = 'status_example'; // string | 
+$status2 = array('status_example'); // string[] | 
+$orderType = 'orderType_example'; // string | 
+$orderType2 = array('orderType_example'); // string[] | 
+$address = 'address_example'; // string | 
+$subtotal = 'subtotal_example'; // string | 
+$subtotal2 = array('subtotal_example'); // string[] | 
+$total = 'total_example'; // string | 
+$total2 = array('total_example'); // string[] | 
+$subtotalBetween = 'subtotalBetween_example'; // string | 
+$subtotalGt = 'subtotalGt_example'; // string | 
+$subtotalGte = 'subtotalGte_example'; // string | 
+$subtotalLt = 'subtotalLt_example'; // string | 
+$subtotalLte = 'subtotalLte_example'; // string | 
+$totalBetween = 'totalBetween_example'; // string | 
+$totalGt = 'totalGt_example'; // string | 
+$totalGte = 'totalGte_example'; // string | 
+$totalLt = 'totalLt_example'; // string | 
+$totalLte = 'totalLte_example'; // string | 
+
+try {
+    $result = $apiInstance->apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WorkspaceApi->apiTeamsWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **workspaces** | **string**|  |
+ **orderId** | **string**|  | [optional]
+ **orderOrderNumber** | **string**|  | [optional]
+ **orderExternalSyncId** | **string**|  | [optional]
+ **orderSubtotal** | **string**|  | [optional]
+ **orderTotal** | **string**|  | [optional]
+ **orderCreatedAt** | **string**|  | [optional]
+ **orderUpdatedAt** | **string**|  | [optional]
+ **createdAtBefore** | **string**|  | [optional]
+ **createdAtStrictlyBefore** | **string**|  | [optional]
+ **createdAtAfter** | **string**|  | [optional]
+ **createdAtStrictlyAfter** | **string**|  | [optional]
+ **updatedAtBefore** | **string**|  | [optional]
+ **updatedAtStrictlyBefore** | **string**|  | [optional]
+ **updatedAtAfter** | **string**|  | [optional]
+ **updatedAtStrictlyAfter** | **string**|  | [optional]
+ **id2** | [**string[]**](../Model/string.md)|  | [optional]
+ **orderNumber** | **string**|  | [optional]
+ **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **status** | **string**|  | [optional]
+ **status2** | [**string[]**](../Model/string.md)|  | [optional]
+ **orderType** | **string**|  | [optional]
+ **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
+ **address** | **string**|  | [optional]
+ **subtotal** | **string**|  | [optional]
+ **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
+ **total** | **string**|  | [optional]
+ **total2** | [**string[]**](../Model/string.md)|  | [optional]
+ **subtotalBetween** | **string**|  | [optional]
+ **subtotalGt** | **string**|  | [optional]
+ **subtotalGte** | **string**|  | [optional]
+ **subtotalLt** | **string**|  | [optional]
+ **subtotalLte** | **string**|  | [optional]
+ **totalBetween** | **string**|  | [optional]
+ **totalGt** | **string**|  | [optional]
+ **totalGte** | **string**|  | [optional]
+ **totalLt** | **string**|  | [optional]
+ **totalLte** | **string**|  | [optional]
+
+### Return type
+
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/ld+json, application/json, text/csv, text/html
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## apiTeamsWorkspacesShipmentsGetSubresource
+
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[] apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+
+Retrieves the collection of Shipment resources.
 
 ### Example
 
@@ -126,9 +340,10 @@ $orderDestinationCountry = 'orderDestinationCountry_example'; // string |
 $orderOriginCountryIso2 = 'orderOriginCountryIso2_example'; // string | 
 $orderDestinationCountryIso2 = 'orderDestinationCountryIso2_example'; // string | 
 $orderEmail = 'orderEmail_example'; // string | 
-$orderOrderId = 'orderOrderId_example'; // string | 
 $orderDaysInTransit = 'orderDaysInTransit_example'; // string | 
 $orderReviewTotalScore = 'orderReviewTotalScore_example'; // string | 
+$orderNumbers = 'orderNumbers_example'; // string | 
+$orderNumbers2 = array('orderNumbers_example'); // string[] | 
 $createdAtBefore = 'createdAtBefore_example'; // string | 
 $createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
 $createdAtAfter = 'createdAtAfter_example'; // string | 
@@ -149,7 +364,9 @@ $expectedDeliveryDateBefore = 'expectedDeliveryDateBefore_example'; // string |
 $expectedDeliveryDateStrictlyBefore = 'expectedDeliveryDateStrictlyBefore_example'; // string | 
 $expectedDeliveryDateAfter = 'expectedDeliveryDateAfter_example'; // string | 
 $expectedDeliveryDateStrictlyAfter = 'expectedDeliveryDateStrictlyAfter_example'; // string | 
+$id2 = array(56); // int[] | 
 $trackingNumber = 'trackingNumber_example'; // string | 
+$trackingNumber2 = array('trackingNumber_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $originCarrier = 'originCarrier_example'; // string | 
@@ -163,7 +380,6 @@ $destinationCountry = 'destinationCountry_example'; // string |
 $destinationCountryIso2 = 'destinationCountryIso2_example'; // string | 
 $destinationCountryIso3 = array('destinationCountryIso2_example'); // string[] | 
 $email = 'email_example'; // string | 
-$orderId2 = 'orderId_example'; // string | 
 $id2 = array(56); // int[] | 
 $daysInTransit = 56; // int | 
 $daysInTransit2 = array(56); // int[] | 
@@ -179,10 +395,10 @@ $reviewTotalScoreLt = 'reviewTotalScoreLt_example'; // string |
 $reviewTotalScoreLte = 'reviewTotalScoreLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesTrackingNumbersGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderOrderId, $orderDaysInTransit, $orderReviewTotalScore, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $orderId2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
+    $result = $apiInstance->apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkspaceApi->apiTeamsWorkspacesTrackingNumbersGetSubresource: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkspaceApi->apiTeamsWorkspacesShipmentsGetSubresource: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -209,9 +425,10 @@ Name | Type | Description  | Notes
  **orderOriginCountryIso2** | **string**|  | [optional]
  **orderDestinationCountryIso2** | **string**|  | [optional]
  **orderEmail** | **string**|  | [optional]
- **orderOrderId** | **string**|  | [optional]
  **orderDaysInTransit** | **string**|  | [optional]
  **orderReviewTotalScore** | **string**|  | [optional]
+ **orderNumbers** | **string**|  | [optional]
+ **orderNumbers2** | [**string[]**](../Model/string.md)|  | [optional]
  **createdAtBefore** | **string**|  | [optional]
  **createdAtStrictlyBefore** | **string**|  | [optional]
  **createdAtAfter** | **string**|  | [optional]
@@ -232,7 +449,9 @@ Name | Type | Description  | Notes
  **expectedDeliveryDateStrictlyBefore** | **string**|  | [optional]
  **expectedDeliveryDateAfter** | **string**|  | [optional]
  **expectedDeliveryDateStrictlyAfter** | **string**|  | [optional]
+ **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **trackingNumber** | **string**|  | [optional]
+ **trackingNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **originCarrier** | **string**|  | [optional]
@@ -246,7 +465,6 @@ Name | Type | Description  | Notes
  **destinationCountryIso2** | **string**|  | [optional]
  **destinationCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
  **email** | **string**|  | [optional]
- **orderId2** | **string**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **daysInTransit** | **int**|  | [optional]
  **daysInTransit2** | [**int[]**](../Model/int.md)|  | [optional]
@@ -263,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingNumberGetTrackingNumberGetTrackingNumberMeta[]**](../Model/TrackingNumberGetTrackingNumberGetTrackingNumberMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[]**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
 
 ### Authorization
 
@@ -474,11 +692,217 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## apiWorkspacesTrackingNumbersGetSubresource
+## apiWorkspacesOrderStatusesGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingNumberGetTrackingNumberGetTrackingNumberMeta[] apiWorkspacesTrackingNumbersGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderOrderId, $orderDaysInTransit, $orderReviewTotalScore, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $orderId2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+> \TrackMage\Client\Swagger\Model\OrderStatusGetOrderStatus[] apiWorkspacesOrderStatusesGetSubresource($id, $name, $orderId, $orderName)
 
-Retrieves the collection of TrackingNumber resources.
+Retrieves the collection of OrderStatus resources.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new TrackMage\Client\Swagger\Api\WorkspaceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | 
+$name = 'name_example'; // string | 
+$orderId = 'orderId_example'; // string | 
+$orderName = 'orderName_example'; // string | 
+
+try {
+    $result = $apiInstance->apiWorkspacesOrderStatusesGetSubresource($id, $name, $orderId, $orderName);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WorkspaceApi->apiWorkspacesOrderStatusesGetSubresource: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **name** | **string**|  | [optional]
+ **orderId** | **string**|  | [optional]
+ **orderName** | **string**|  | [optional]
+
+### Return type
+
+[**\TrackMage\Client\Swagger\Model\OrderStatusGetOrderStatus[]**](../Model/OrderStatusGetOrderStatus.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/ld+json, application/json, text/csv, text/html
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## apiWorkspacesOrdersGetSubresource
+
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+
+Retrieves the collection of Order resources.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new TrackMage\Client\Swagger\Api\WorkspaceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | 
+$orderId = 'orderId_example'; // string | 
+$orderOrderNumber = 'orderOrderNumber_example'; // string | 
+$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
+$orderSubtotal = 'orderSubtotal_example'; // string | 
+$orderTotal = 'orderTotal_example'; // string | 
+$orderCreatedAt = 'orderCreatedAt_example'; // string | 
+$orderUpdatedAt = 'orderUpdatedAt_example'; // string | 
+$createdAtBefore = 'createdAtBefore_example'; // string | 
+$createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
+$createdAtAfter = 'createdAtAfter_example'; // string | 
+$createdAtStrictlyAfter = 'createdAtStrictlyAfter_example'; // string | 
+$updatedAtBefore = 'updatedAtBefore_example'; // string | 
+$updatedAtStrictlyBefore = 'updatedAtStrictlyBefore_example'; // string | 
+$updatedAtAfter = 'updatedAtAfter_example'; // string | 
+$updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
+$id2 = array('id_example'); // string[] | 
+$orderNumber = 'orderNumber_example'; // string | 
+$orderNumber2 = array('orderNumber_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$status = 'status_example'; // string | 
+$status2 = array('status_example'); // string[] | 
+$orderType = 'orderType_example'; // string | 
+$orderType2 = array('orderType_example'); // string[] | 
+$address = 'address_example'; // string | 
+$subtotal = 'subtotal_example'; // string | 
+$subtotal2 = array('subtotal_example'); // string[] | 
+$total = 'total_example'; // string | 
+$total2 = array('total_example'); // string[] | 
+$subtotalBetween = 'subtotalBetween_example'; // string | 
+$subtotalGt = 'subtotalGt_example'; // string | 
+$subtotalGte = 'subtotalGte_example'; // string | 
+$subtotalLt = 'subtotalLt_example'; // string | 
+$subtotalLte = 'subtotalLte_example'; // string | 
+$totalBetween = 'totalBetween_example'; // string | 
+$totalGt = 'totalGt_example'; // string | 
+$totalGte = 'totalGte_example'; // string | 
+$totalLt = 'totalLt_example'; // string | 
+$totalLte = 'totalLte_example'; // string | 
+
+try {
+    $result = $apiInstance->apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WorkspaceApi->apiWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **orderId** | **string**|  | [optional]
+ **orderOrderNumber** | **string**|  | [optional]
+ **orderExternalSyncId** | **string**|  | [optional]
+ **orderSubtotal** | **string**|  | [optional]
+ **orderTotal** | **string**|  | [optional]
+ **orderCreatedAt** | **string**|  | [optional]
+ **orderUpdatedAt** | **string**|  | [optional]
+ **createdAtBefore** | **string**|  | [optional]
+ **createdAtStrictlyBefore** | **string**|  | [optional]
+ **createdAtAfter** | **string**|  | [optional]
+ **createdAtStrictlyAfter** | **string**|  | [optional]
+ **updatedAtBefore** | **string**|  | [optional]
+ **updatedAtStrictlyBefore** | **string**|  | [optional]
+ **updatedAtAfter** | **string**|  | [optional]
+ **updatedAtStrictlyAfter** | **string**|  | [optional]
+ **id2** | [**string[]**](../Model/string.md)|  | [optional]
+ **orderNumber** | **string**|  | [optional]
+ **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **status** | **string**|  | [optional]
+ **status2** | [**string[]**](../Model/string.md)|  | [optional]
+ **orderType** | **string**|  | [optional]
+ **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
+ **address** | **string**|  | [optional]
+ **subtotal** | **string**|  | [optional]
+ **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
+ **total** | **string**|  | [optional]
+ **total2** | [**string[]**](../Model/string.md)|  | [optional]
+ **subtotalBetween** | **string**|  | [optional]
+ **subtotalGt** | **string**|  | [optional]
+ **subtotalGte** | **string**|  | [optional]
+ **subtotalLt** | **string**|  | [optional]
+ **subtotalLte** | **string**|  | [optional]
+ **totalBetween** | **string**|  | [optional]
+ **totalGt** | **string**|  | [optional]
+ **totalGte** | **string**|  | [optional]
+ **totalLt** | **string**|  | [optional]
+ **totalLte** | **string**|  | [optional]
+
+### Return type
+
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/ld+json, application/json, text/csv, text/html
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## apiWorkspacesShipmentsGetSubresource
+
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[] apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+
+Retrieves the collection of Shipment resources.
 
 ### Example
 
@@ -515,9 +939,10 @@ $orderDestinationCountry = 'orderDestinationCountry_example'; // string |
 $orderOriginCountryIso2 = 'orderOriginCountryIso2_example'; // string | 
 $orderDestinationCountryIso2 = 'orderDestinationCountryIso2_example'; // string | 
 $orderEmail = 'orderEmail_example'; // string | 
-$orderOrderId = 'orderOrderId_example'; // string | 
 $orderDaysInTransit = 'orderDaysInTransit_example'; // string | 
 $orderReviewTotalScore = 'orderReviewTotalScore_example'; // string | 
+$orderNumbers = 'orderNumbers_example'; // string | 
+$orderNumbers2 = array('orderNumbers_example'); // string[] | 
 $createdAtBefore = 'createdAtBefore_example'; // string | 
 $createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
 $createdAtAfter = 'createdAtAfter_example'; // string | 
@@ -538,7 +963,9 @@ $expectedDeliveryDateBefore = 'expectedDeliveryDateBefore_example'; // string |
 $expectedDeliveryDateStrictlyBefore = 'expectedDeliveryDateStrictlyBefore_example'; // string | 
 $expectedDeliveryDateAfter = 'expectedDeliveryDateAfter_example'; // string | 
 $expectedDeliveryDateStrictlyAfter = 'expectedDeliveryDateStrictlyAfter_example'; // string | 
+$id2 = array(56); // int[] | 
 $trackingNumber = 'trackingNumber_example'; // string | 
+$trackingNumber2 = array('trackingNumber_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $originCarrier = 'originCarrier_example'; // string | 
@@ -552,7 +979,6 @@ $destinationCountry = 'destinationCountry_example'; // string |
 $destinationCountryIso2 = 'destinationCountryIso2_example'; // string | 
 $destinationCountryIso3 = array('destinationCountryIso2_example'); // string[] | 
 $email = 'email_example'; // string | 
-$orderId2 = 'orderId_example'; // string | 
 $id2 = array(56); // int[] | 
 $daysInTransit = 56; // int | 
 $daysInTransit2 = array(56); // int[] | 
@@ -568,10 +994,10 @@ $reviewTotalScoreLt = 'reviewTotalScoreLt_example'; // string |
 $reviewTotalScoreLte = 'reviewTotalScoreLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesTrackingNumbersGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderOrderId, $orderDaysInTransit, $orderReviewTotalScore, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $orderId2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
+    $result = $apiInstance->apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkspaceApi->apiWorkspacesTrackingNumbersGetSubresource: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkspaceApi->apiWorkspacesShipmentsGetSubresource: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -597,9 +1023,10 @@ Name | Type | Description  | Notes
  **orderOriginCountryIso2** | **string**|  | [optional]
  **orderDestinationCountryIso2** | **string**|  | [optional]
  **orderEmail** | **string**|  | [optional]
- **orderOrderId** | **string**|  | [optional]
  **orderDaysInTransit** | **string**|  | [optional]
  **orderReviewTotalScore** | **string**|  | [optional]
+ **orderNumbers** | **string**|  | [optional]
+ **orderNumbers2** | [**string[]**](../Model/string.md)|  | [optional]
  **createdAtBefore** | **string**|  | [optional]
  **createdAtStrictlyBefore** | **string**|  | [optional]
  **createdAtAfter** | **string**|  | [optional]
@@ -620,7 +1047,9 @@ Name | Type | Description  | Notes
  **expectedDeliveryDateStrictlyBefore** | **string**|  | [optional]
  **expectedDeliveryDateAfter** | **string**|  | [optional]
  **expectedDeliveryDateStrictlyAfter** | **string**|  | [optional]
+ **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **trackingNumber** | **string**|  | [optional]
+ **trackingNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **originCarrier** | **string**|  | [optional]
@@ -634,7 +1063,6 @@ Name | Type | Description  | Notes
  **destinationCountryIso2** | **string**|  | [optional]
  **destinationCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
  **email** | **string**|  | [optional]
- **orderId2** | **string**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **daysInTransit** | **int**|  | [optional]
  **daysInTransit2** | [**int[]**](../Model/int.md)|  | [optional]
@@ -651,7 +1079,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingNumberGetTrackingNumberGetTrackingNumberMeta[]**](../Model/TrackingNumberGetTrackingNumberGetTrackingNumberMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[]**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
 
 ### Authorization
 
