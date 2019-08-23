@@ -100,8 +100,7 @@ class TrackMageClient
     public function getGuzzleClient()
     {
         if (!$this->guzzleClient) {
-            $stack = new HandlerStack();
-            $stack->setHandler(new CurlHandler());
+            $stack = HandlerStack::create(new CurlHandler());
             $stack->push(AddAuthHeadersMiddleware::get($this->configuration));
             $stack->push(Middleware::log($this->logger, new MessageFormatter(), LogLevel::INFO));
             $this->guzzleClient = new Client([
@@ -114,11 +113,14 @@ class TrackMageClient
         return $this->guzzleClient;
     }
 
+    /**
+     * @param ClientInterface $guzzleClient
+     */
     public function setGuzzleClient(ClientInterface $guzzleClient)
     {
         $this->guzzleClient = $guzzleClient;
     }
-    
+
     /**
      * @return Configuration
      */
