@@ -95,7 +95,7 @@ class TrackMageClient
     }
 
     /**
-     * @return ClientInterface
+     * @return ClientInterface|Client
      */
     public function getGuzzleClient()
     {
