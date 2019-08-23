@@ -107,6 +107,7 @@ class TrackMageClient
             $this->guzzleClient = new Client([
                 'handler' => $stack,
                 'base_uri' => $this->configuration->getHost(),
+                'http_errors' => true,
             ]);
         }
 
