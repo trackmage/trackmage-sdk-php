@@ -1,11 +1,11 @@
-# # ShipmentGetShipmentGetShipmentMeta
+# # ShipmentGetShipmentGetShipmentMetaGetAddress
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**trackingNumber** | **string** |  | 
+**trackingNumber** | **string** |  | [optional] 
 **status** | **string** |  | [optional] 
 **orderNumbers** | **string[]** |  | [optional] 
 **email** | **string** |  | [optional] 
@@ -25,6 +25,9 @@ Name | Type | Description | Notes
 **review** | **string** |  | [optional] 
 **reviewTotalScore** | **float** |  | [optional] 
 **orders** | **string[]** |  | [optional] 
+**externalSource** | **string** |  | [optional] 
+**externalSyncId** | **string** |  | [optional] 
+**address** | **string** |  | [optional] 
 **checkpoints** | **string[]** |  | [optional] 
 **shipmentItems** | **string[]** |  | [optional] 
 

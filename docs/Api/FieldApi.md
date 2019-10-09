@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFieldItem**](FieldApi.md#deleteFieldItem) | **DELETE** /workspaces/{workspace}/{entity}/fields/{id} | Removes the Field resource.
-[**getFieldCollection**](FieldApi.md#getFieldCollection) | **GET** /workspaces/{workspace}/{entity}/fields | Retrieves the collection of Field resources.
-[**getFieldItem**](FieldApi.md#getFieldItem) | **GET** /workspaces/{workspace}/{entity}/fields/{id} | Retrieves a Field resource.
-[**postFieldCollection**](FieldApi.md#postFieldCollection) | **POST** /workspaces/{workspace}/{entity}/fields | Creates a Field resource.
-[**putFieldItem**](FieldApi.md#putFieldItem) | **PUT** /workspaces/{workspace}/{entity}/fields/{id} | Replaces the Field resource.
+[**deleteFieldItem**](FieldApi.md#deleteFieldItem) | **DELETE** /fields/{id} | Removes the Field resource.
+[**getFieldCollection**](FieldApi.md#getFieldCollection) | **GET** /fields | Retrieves the collection of Field resources.
+[**getFieldItem**](FieldApi.md#getFieldItem) | **GET** /fields/{id} | Retrieves a Field resource.
+[**postFieldCollection**](FieldApi.md#postFieldCollection) | **POST** /fields | Creates a Field resource.
+[**putFieldItem**](FieldApi.md#putFieldItem) | **PUT** /fields/{id} | Replaces the Field resource.
 
 
 
@@ -74,7 +74,7 @@ void (empty response body)
 
 ## getFieldCollection
 
-> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses[] getFieldCollection($primary)
+> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses[] getFieldCollection($entity, $workspace, $primary)
 
 Retrieves the collection of Field resources.
 
@@ -97,10 +97,12 @@ $apiInstance = new TrackMage\Client\Swagger\Api\FieldApi(
     new GuzzleHttp\Client(),
     $config
 );
+$entity = 'entity_example'; // string | The entity you need fields for. For example, shipments or orders. The whole format is entity[.type[.subtype]], for example, workflows.webhook or workflows.integration.sfc
+$workspace = 56; // int | Specify workspace id for fields stored in EAV
 $primary = True; // bool | If true only primary fields will be returned, if false only custom ones
 
 try {
-    $result = $apiInstance->getFieldCollection($primary);
+    $result = $apiInstance->getFieldCollection($entity, $workspace, $primary);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FieldApi->getFieldCollection: ', $e->getMessage(), PHP_EOL;
@@ -113,6 +115,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **entity** | **string**| The entity you need fields for. For example, shipments or orders. The whole format is entity[.type[.subtype]], for example, workflows.webhook or workflows.integration.sfc |
+ **workspace** | **int**| Specify workspace id for fields stored in EAV | [optional]
  **primary** | **bool**| If true only primary fields will be returned, if false only custom ones | [optional]
 
 ### Return type

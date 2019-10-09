@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## apiTeamsWorkspacesWorkflowsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflow[] apiTeamsWorkspacesWorkflowsGetSubresource($id, $workspaces, $direction, $direction2, $orderCreatedAt)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta[] apiTeamsWorkspacesWorkflowsGetSubresource($id, $workspaces, $type, $type2, $period, $period2, $orderCreatedAt)
 
 Retrieves the collection of Workflow resources.
 
@@ -44,12 +44,14 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
 );
 $id = 'id_example'; // string | 
 $workspaces = 'workspaces_example'; // string | 
-$direction = 'direction_example'; // string | 
-$direction2 = array('direction_example'); // string[] | 
+$type = 'type_example'; // string | 
+$type2 = array('type_example'); // string[] | 
+$period = 'period_example'; // string | 
+$period2 = array('period_example'); // string[] | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesWorkflowsGetSubresource($id, $workspaces, $direction, $direction2, $orderCreatedAt);
+    $result = $apiInstance->apiTeamsWorkspacesWorkflowsGetSubresource($id, $workspaces, $type, $type2, $period, $period2, $orderCreatedAt);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkflowApi->apiTeamsWorkspacesWorkflowsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -64,13 +66,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
  **workspaces** | **string**|  |
- **direction** | **string**|  | [optional]
- **direction2** | [**string[]**](../Model/string.md)|  | [optional]
+ **type** | **string**|  | [optional]
+ **type2** | [**string[]**](../Model/string.md)|  | [optional]
+ **period** | **string**|  | [optional]
+ **period2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflow[]**](../Model/WorkflowGetWorkflow.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta[]**](../Model/WorkflowGetWorkflowGetWorkflowMeta.md)
 
 ### Authorization
 
@@ -226,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesWorkflowsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflow[] apiWorkspacesWorkflowsGetSubresource($id, $direction, $direction2, $orderCreatedAt)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta[] apiWorkspacesWorkflowsGetSubresource($id, $type, $type2, $period, $period2, $orderCreatedAt)
 
 Retrieves the collection of Workflow resources.
 
@@ -250,12 +254,14 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     $config
 );
 $id = 'id_example'; // string | 
-$direction = 'direction_example'; // string | 
-$direction2 = array('direction_example'); // string[] | 
+$type = 'type_example'; // string | 
+$type2 = array('type_example'); // string[] | 
+$period = 'period_example'; // string | 
+$period2 = array('period_example'); // string[] | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesWorkflowsGetSubresource($id, $direction, $direction2, $orderCreatedAt);
+    $result = $apiInstance->apiWorkspacesWorkflowsGetSubresource($id, $type, $type2, $period, $period2, $orderCreatedAt);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkflowApi->apiWorkspacesWorkflowsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -269,13 +275,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **direction** | **string**|  | [optional]
- **direction2** | [**string[]**](../Model/string.md)|  | [optional]
+ **type** | **string**|  | [optional]
+ **type2** | [**string[]**](../Model/string.md)|  | [optional]
+ **period** | **string**|  | [optional]
+ **period2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflow[]**](../Model/WorkflowGetWorkflow.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta[]**](../Model/WorkflowGetWorkflowGetWorkflowMeta.md)
 
 ### Authorization
 
@@ -422,7 +430,7 @@ void (empty response body)
 
 ## getWorkflowCollection
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflows[] getWorkflowCollection($direction, $direction2, $orderCreatedAt, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowsGetWorkflowMeta[] getWorkflowCollection($type, $type2, $period, $period2, $orderCreatedAt, $page, $itemsPerPage)
 
 Retrieves the collection of Workflow resources.
 
@@ -445,14 +453,16 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     new GuzzleHttp\Client(),
     $config
 );
-$direction = 'direction_example'; // string | 
-$direction2 = array('direction_example'); // string[] | 
+$type = 'type_example'; // string | 
+$type2 = array('type_example'); // string[] | 
+$period = 'period_example'; // string | 
+$period2 = array('period_example'); // string[] | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getWorkflowCollection($direction, $direction2, $orderCreatedAt, $page, $itemsPerPage);
+    $result = $apiInstance->getWorkflowCollection($type, $type2, $period, $period2, $orderCreatedAt, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WorkflowApi->getWorkflowCollection: ', $e->getMessage(), PHP_EOL;
@@ -465,15 +475,17 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **direction** | **string**|  | [optional]
- **direction2** | [**string[]**](../Model/string.md)|  | [optional]
+ **type** | **string**|  | [optional]
+ **type2** | [**string[]**](../Model/string.md)|  | [optional]
+ **period** | **string**|  | [optional]
+ **period2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional]
  **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflows[]**](../Model/WorkflowGetWorkflows.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowsGetWorkflowMeta[]**](../Model/WorkflowGetWorkflowsGetWorkflowMeta.md)
 
 ### Authorization
 
@@ -491,7 +503,7 @@ Name | Type | Description  | Notes
 
 ## getWorkflowItem
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflow getWorkflowItem($id)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta getWorkflowItem($id)
 
 Retrieves a Workflow resource.
 
@@ -534,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflow**](../Model/WorkflowGetWorkflow.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta**](../Model/WorkflowGetWorkflowGetWorkflowMeta.md)
 
 ### Authorization
 
@@ -552,7 +564,7 @@ Name | Type | Description  | Notes
 
 ## postWorkflowCollection
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflow postWorkflowCollection($workflow)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta postWorkflowCollection($workflow)
 
 Creates a Workflow resource.
 
@@ -575,7 +587,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration | The new Workflow resource
+$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration | The new Workflow resource
 
 try {
     $result = $apiInstance->postWorkflowCollection($workflow);
@@ -591,11 +603,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration**](../Model/WorkflowSetWorkflowSetIntegration.md)| The new Workflow resource | [optional]
+ **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration**](../Model/WorkflowSetWorkflowSetWorkflowMetaSetIntegration.md)| The new Workflow resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflow**](../Model/WorkflowGetWorkflow.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta**](../Model/WorkflowGetWorkflowGetWorkflowMeta.md)
 
 ### Authorization
 
@@ -613,7 +625,7 @@ Name | Type | Description  | Notes
 
 ## putWorkflowItem
 
-> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflow putWorkflowItem($id, $workflow)
+> \TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta putWorkflowItem($id, $workflow)
 
 Replaces the Workflow resource.
 
@@ -637,7 +649,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\WorkflowApi(
     $config
 );
 $id = 'id_example'; // string | 
-$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration | The updated Workflow resource
+$workflow = new \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration(); // \TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration | The updated Workflow resource
 
 try {
     $result = $apiInstance->putWorkflowItem($id, $workflow);
@@ -654,11 +666,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetIntegration**](../Model/WorkflowSetWorkflowSetIntegration.md)| The updated Workflow resource | [optional]
+ **workflow** | [**\TrackMage\Client\Swagger\Model\WorkflowSetWorkflowSetWorkflowMetaSetIntegration**](../Model/WorkflowSetWorkflowSetWorkflowMetaSetIntegration.md)| The updated Workflow resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflow**](../Model/WorkflowGetWorkflow.md)
+[**\TrackMage\Client\Swagger\Model\WorkflowGetWorkflowGetWorkflowMeta**](../Model/WorkflowGetWorkflowGetWorkflowMeta.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient;
-use TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta;
+use TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMetaSetAddress;
 use TrackMage\Client\Swagger\Model\UserSignupRequest;
 use TrackMage\Client\Swagger\Model\UserVerifyEmailRequest;
 
@@ -128,7 +128,7 @@ class TrackMageTest extends TestCase
         $res = self::$client->getShipmentApi()->apiWorkspacesShipmentsGetSubresource(self::$workspaceId);
         self::assertEmpty($res);
 
-        $tn = new ShipmentPostShipmentSetShipmentMeta();
+        $tn = new ShipmentPostShipmentSetShipmentMetaSetAddress();
         $tn->setTrackingNumber('TN-1');
         $tn->setWorkspace('/workspaces/'.self::$workspaceId);
         $response = self::$client->getShipmentApi()->postShipmentCollection($tn);

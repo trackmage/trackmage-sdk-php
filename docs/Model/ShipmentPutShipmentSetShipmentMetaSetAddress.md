@@ -1,15 +1,14 @@
-# # ShipmentPostShipmentSetShipmentMeta
+# # ShipmentPutShipmentSetShipmentMetaSetAddress
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**trackingNumber** | **string** |  | 
+**trackingNumber** | **string** |  | [optional] 
 **orderNumbers** | **string[]** |  | [optional] 
 **email** | **string** |  | [optional] 
-**originCarrier** | **string** |  | [optional] 
-**workspace** | **string** |  | 
 **orders** | **string[]** |  | [optional] 
+**address** | **string** |  | [optional] 
 **checkpoints** | **string[]** |  | [optional] 
 **shipmentItems** | **string[]** |  | [optional] 
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** |  | [optional] 
 **workspace** | **string** |  | [optional] 
+**entity** | **string** |  | [optional] 
 **title** | **string** |  | 
 **fieldType** | **string** |  | [optional] 
 

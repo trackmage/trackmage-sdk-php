@@ -1,6 +1,6 @@
 <?php
 /**
- * CheckoutGetCheckoutGetCheckoutProduct
+ * OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \TrackMage\Client\Swagger\ObjectSerializer;
 
 /**
- * CheckoutGetCheckoutGetCheckoutProduct Class Doc Comment
+ * OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress Class Doc Comment
  *
  * @category Class
  * @package  TrackMage\Client\Swagger
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAccess
+class OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Checkout-getCheckout_getCheckoutProduct';
+    protected static $openAPIModelName = 'Order-getOrders_getOrderMeta_getOrderStatusForOrder_getAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,23 +58,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'plan' => 'string',
-        'vat' => 'float',
+        'workspace' => 'string',
+        'orderNumber' => 'string',
+        'externalSource' => 'string',
+        'externalSyncId' => 'string',
+        'status' => '\TrackMage\Client\Swagger\Model\OrderStatusGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress',
         'subtotal' => 'string',
         'total' => 'string',
-        'currency' => 'string',
-        'status' => 'string',
-        'email' => 'string',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'address' => 'string',
-        'address2' => 'string',
-        'zip' => 'string',
-        'state' => 'string',
-        'city' => 'string',
-        'country' => 'string',
-        'products' => 'string[]',
-        'paymentStatus' => 'string'
+        'orderType' => 'string',
+        'fulfillmentSource' => 'string',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'shippingAddress' => 'string',
+        'billingAddress' => 'string',
+        'items' => 'string[]'
     ];
 
     /**
@@ -84,23 +81,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'plan' => null,
-        'vat' => null,
+        'workspace' => null,
+        'orderNumber' => null,
+        'externalSource' => null,
+        'externalSyncId' => null,
+        'status' => null,
         'subtotal' => null,
         'total' => null,
-        'currency' => null,
-        'status' => null,
-        'email' => null,
-        'firstName' => null,
-        'lastName' => null,
-        'address' => null,
-        'address2' => null,
-        'zip' => null,
-        'state' => null,
-        'city' => null,
-        'country' => null,
-        'products' => null,
-        'paymentStatus' => null
+        'orderType' => null,
+        'fulfillmentSource' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'shippingAddress' => null,
+        'billingAddress' => null,
+        'items' => null
     ];
 
     /**
@@ -131,23 +125,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'plan' => 'plan',
-        'vat' => 'vat',
+        'workspace' => 'workspace',
+        'orderNumber' => 'orderNumber',
+        'externalSource' => 'externalSource',
+        'externalSyncId' => 'externalSyncId',
+        'status' => 'status',
         'subtotal' => 'subtotal',
         'total' => 'total',
-        'currency' => 'currency',
-        'status' => 'status',
-        'email' => 'email',
-        'firstName' => 'firstName',
-        'lastName' => 'lastName',
-        'address' => 'address',
-        'address2' => 'address2',
-        'zip' => 'zip',
-        'state' => 'state',
-        'city' => 'city',
-        'country' => 'country',
-        'products' => 'products',
-        'paymentStatus' => 'paymentStatus'
+        'orderType' => 'orderType',
+        'fulfillmentSource' => 'fulfillmentSource',
+        'createdAt' => 'createdAt',
+        'updatedAt' => 'updatedAt',
+        'shippingAddress' => 'shippingAddress',
+        'billingAddress' => 'billingAddress',
+        'items' => 'items'
     ];
 
     /**
@@ -157,23 +148,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'id' => 'setId',
-        'plan' => 'setPlan',
-        'vat' => 'setVat',
+        'workspace' => 'setWorkspace',
+        'orderNumber' => 'setOrderNumber',
+        'externalSource' => 'setExternalSource',
+        'externalSyncId' => 'setExternalSyncId',
+        'status' => 'setStatus',
         'subtotal' => 'setSubtotal',
         'total' => 'setTotal',
-        'currency' => 'setCurrency',
-        'status' => 'setStatus',
-        'email' => 'setEmail',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
-        'address' => 'setAddress',
-        'address2' => 'setAddress2',
-        'zip' => 'setZip',
-        'state' => 'setState',
-        'city' => 'setCity',
-        'country' => 'setCountry',
-        'products' => 'setProducts',
-        'paymentStatus' => 'setPaymentStatus'
+        'orderType' => 'setOrderType',
+        'fulfillmentSource' => 'setFulfillmentSource',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'shippingAddress' => 'setShippingAddress',
+        'billingAddress' => 'setBillingAddress',
+        'items' => 'setItems'
     ];
 
     /**
@@ -183,23 +171,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'id' => 'getId',
-        'plan' => 'getPlan',
-        'vat' => 'getVat',
+        'workspace' => 'getWorkspace',
+        'orderNumber' => 'getOrderNumber',
+        'externalSource' => 'getExternalSource',
+        'externalSyncId' => 'getExternalSyncId',
+        'status' => 'getStatus',
         'subtotal' => 'getSubtotal',
         'total' => 'getTotal',
-        'currency' => 'getCurrency',
-        'status' => 'getStatus',
-        'email' => 'getEmail',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
-        'address' => 'getAddress',
-        'address2' => 'getAddress2',
-        'zip' => 'getZip',
-        'state' => 'getState',
-        'city' => 'getCity',
-        'country' => 'getCountry',
-        'products' => 'getProducts',
-        'paymentStatus' => 'getPaymentStatus'
+        'orderType' => 'getOrderType',
+        'fulfillmentSource' => 'getFulfillmentSource',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'shippingAddress' => 'getShippingAddress',
+        'billingAddress' => 'getBillingAddress',
+        'items' => 'getItems'
     ];
 
     /**
@@ -263,23 +248,20 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['workspace'] = isset($data['workspace']) ? $data['workspace'] : null;
+        $this->container['orderNumber'] = isset($data['orderNumber']) ? $data['orderNumber'] : null;
+        $this->container['externalSource'] = isset($data['externalSource']) ? $data['externalSource'] : null;
+        $this->container['externalSyncId'] = isset($data['externalSyncId']) ? $data['externalSyncId'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['subtotal'] = isset($data['subtotal']) ? $data['subtotal'] : null;
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
-        $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['products'] = isset($data['products']) ? $data['products'] : null;
-        $this->container['paymentStatus'] = isset($data['paymentStatus']) ? $data['paymentStatus'] : null;
+        $this->container['orderType'] = isset($data['orderType']) ? $data['orderType'] : null;
+        $this->container['fulfillmentSource'] = isset($data['fulfillmentSource']) ? $data['fulfillmentSource'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
+        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
     }
 
     /**
@@ -291,8 +273,14 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['plan'] === null) {
-            $invalidProperties[] = "'plan' can't be null";
+        if ($this->container['workspace'] === null) {
+            $invalidProperties[] = "'workspace' can't be null";
+        }
+        if ($this->container['orderNumber'] === null) {
+            $invalidProperties[] = "'orderNumber' can't be null";
+        }
+        if ($this->container['orderType'] === null) {
+            $invalidProperties[] = "'orderType' can't be null";
         }
         return $invalidProperties;
     }
@@ -334,49 +322,121 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets plan
+     * Gets workspace
      *
      * @return string
      */
-    public function getPlan()
+    public function getWorkspace()
     {
-        return $this->container['plan'];
+        return $this->container['workspace'];
     }
 
     /**
-     * Sets plan
+     * Sets workspace
      *
-     * @param string $plan plan
+     * @param string $workspace workspace
      *
      * @return $this
      */
-    public function setPlan($plan)
+    public function setWorkspace($workspace)
     {
-        $this->container['plan'] = $plan;
+        $this->container['workspace'] = $workspace;
 
         return $this;
     }
 
     /**
-     * Gets vat
+     * Gets orderNumber
      *
-     * @return float|null
+     * @return string
      */
-    public function getVat()
+    public function getOrderNumber()
     {
-        return $this->container['vat'];
+        return $this->container['orderNumber'];
     }
 
     /**
-     * Sets vat
+     * Sets orderNumber
      *
-     * @param float|null $vat vat
+     * @param string $orderNumber orderNumber
      *
      * @return $this
      */
-    public function setVat($vat)
+    public function setOrderNumber($orderNumber)
     {
-        $this->container['vat'] = $vat;
+        $this->container['orderNumber'] = $orderNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalSource
+     *
+     * @return string|null
+     */
+    public function getExternalSource()
+    {
+        return $this->container['externalSource'];
+    }
+
+    /**
+     * Sets externalSource
+     *
+     * @param string|null $externalSource externalSource
+     *
+     * @return $this
+     */
+    public function setExternalSource($externalSource)
+    {
+        $this->container['externalSource'] = $externalSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalSyncId
+     *
+     * @return string|null
+     */
+    public function getExternalSyncId()
+    {
+        return $this->container['externalSyncId'];
+    }
+
+    /**
+     * Sets externalSyncId
+     *
+     * @param string|null $externalSyncId externalSyncId
+     *
+     * @return $this
+     */
+    public function setExternalSyncId($externalSyncId)
+    {
+        $this->container['externalSyncId'] = $externalSyncId;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return \TrackMage\Client\Swagger\Model\OrderStatusGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \TrackMage\Client\Swagger\Model\OrderStatusGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress|null $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -430,313 +490,169 @@ class CheckoutGetCheckoutGetCheckoutProduct implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets currency
+     * Gets orderType
      *
-     * @return string|null
+     * @return string
      */
-    public function getCurrency()
+    public function getOrderType()
     {
-        return $this->container['currency'];
+        return $this->container['orderType'];
     }
 
     /**
-     * Sets currency
+     * Sets orderType
      *
-     * @param string|null $currency currency
+     * @param string $orderType customer|vendor
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setOrderType($orderType)
     {
-        $this->container['currency'] = $currency;
+        $this->container['orderType'] = $orderType;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets fulfillmentSource
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getFulfillmentSource()
     {
-        return $this->container['status'];
+        return $this->container['fulfillmentSource'];
     }
 
     /**
-     * Sets status
+     * Sets fulfillmentSource
      *
-     * @param string|null $status status
+     * @param string|null $fulfillmentSource e.g aliexpress
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setFulfillmentSource($fulfillmentSource)
     {
-        $this->container['status'] = $status;
+        $this->container['fulfillmentSource'] = $fulfillmentSource;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets createdAt
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getEmail()
+    public function getCreatedAt()
     {
-        return $this->container['email'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets email
+     * Sets createdAt
      *
-     * @param string|null $email email
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['email'] = $email;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets firstName
+     * Gets updatedAt
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getFirstName()
+    public function getUpdatedAt()
     {
-        return $this->container['firstName'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets firstName
+     * Sets updatedAt
      *
-     * @param string|null $firstName firstName
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets shippingAddress
      *
      * @return string|null
      */
-    public function getLastName()
+    public function getShippingAddress()
     {
-        return $this->container['lastName'];
+        return $this->container['shippingAddress'];
     }
 
     /**
-     * Sets lastName
+     * Sets shippingAddress
      *
-     * @param string|null $lastName lastName
+     * @param string|null $shippingAddress shippingAddress
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setShippingAddress($shippingAddress)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }
 
     /**
-     * Gets address
+     * Gets billingAddress
      *
      * @return string|null
      */
-    public function getAddress()
+    public function getBillingAddress()
     {
-        return $this->container['address'];
+        return $this->container['billingAddress'];
     }
 
     /**
-     * Sets address
+     * Sets billingAddress
      *
-     * @param string|null $address address
+     * @param string|null $billingAddress billingAddress
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setBillingAddress($billingAddress)
     {
-        $this->container['address'] = $address;
+        $this->container['billingAddress'] = $billingAddress;
 
         return $this;
     }
 
     /**
-     * Gets address2
-     *
-     * @return string|null
-     */
-    public function getAddress2()
-    {
-        return $this->container['address2'];
-    }
-
-    /**
-     * Sets address2
-     *
-     * @param string|null $address2 address2
-     *
-     * @return $this
-     */
-    public function setAddress2($address2)
-    {
-        $this->container['address2'] = $address2;
-
-        return $this;
-    }
-
-    /**
-     * Gets zip
-     *
-     * @return string|null
-     */
-    public function getZip()
-    {
-        return $this->container['zip'];
-    }
-
-    /**
-     * Sets zip
-     *
-     * @param string|null $zip zip
-     *
-     * @return $this
-     */
-    public function setZip($zip)
-    {
-        $this->container['zip'] = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state state
-     *
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string|null
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string|null $city city
-     *
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country country
-     *
-     * @return $this
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets products
+     * Gets items
      *
      * @return string[]|null
      */
-    public function getProducts()
+    public function getItems()
     {
-        return $this->container['products'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets products
+     * Sets items
      *
-     * @param string[]|null $products products
+     * @param string[]|null $items items
      *
      * @return $this
      */
-    public function setProducts($products)
+    public function setItems($items)
     {
-        $this->container['products'] = $products;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentStatus
-     *
-     * @return string|null
-     */
-    public function getPaymentStatus()
-    {
-        return $this->container['paymentStatus'];
-    }
-
-    /**
-     * Sets paymentStatus
-     *
-     * @param string|null $paymentStatus paymentStatus
-     *
-     * @return $this
-     */
-    public function setPaymentStatus($paymentStatus)
-    {
-        $this->container['paymentStatus'] = $paymentStatus;
+        $this->container['items'] = $items;
 
         return $this;
     }

@@ -73,7 +73,7 @@ void (empty response body)
 
 ## getOauthClientCollection
 
-> \TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient[] getOauthClientCollection($page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient[] getOauthClientCollection($name, $page, $itemsPerPage)
 
 Retrieves the collection of OauthClient resources.
 
@@ -96,11 +96,12 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OauthClientApi(
     new GuzzleHttp\Client(),
     $config
 );
+$name = 'name_example'; // string | 
 $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOauthClientCollection($page, $itemsPerPage);
+    $result = $apiInstance->getOauthClientCollection($name, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OauthClientApi->getOauthClientCollection: ', $e->getMessage(), PHP_EOL;
@@ -113,6 +114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional]
  **itemsPerPage** | **int**| The number of items per page | [optional]
 

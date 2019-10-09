@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## apiOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -48,6 +48,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -69,7 +73,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -87,6 +91,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -127,7 +135,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress[] apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
 
 Retrieves the collection of Order resources.
 
@@ -169,14 +177,14 @@ $updatedAtAfter = 'updatedAtAfter_example'; // string |
 $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -193,7 +201,7 @@ $totalLt = 'totalLt_example'; // string |
 $totalLte = 'totalLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiTeamsWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -225,14 +233,14 @@ Name | Type | Description  | Notes
  **updatedAtStrictlyAfter** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -250,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 
@@ -268,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -298,6 +306,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -319,7 +331,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiTeamsWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -339,6 +351,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -379,7 +395,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress[] apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
 
 Retrieves the collection of Order resources.
 
@@ -420,14 +436,14 @@ $updatedAtAfter = 'updatedAtAfter_example'; // string |
 $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -444,7 +460,7 @@ $totalLt = 'totalLt_example'; // string |
 $totalLte = 'totalLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    $result = $apiInstance->apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -475,14 +491,14 @@ Name | Type | Description  | Notes
  **updatedAtStrictlyAfter** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -500,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 
@@ -518,7 +534,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -547,6 +563,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -568,7 +588,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -587,6 +607,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -687,7 +711,7 @@ void (empty response body)
 
 ## getOrderCollection
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrder[] getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress[] getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
 
 Retrieves the collection of Order resources.
 
@@ -728,14 +752,14 @@ $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string |
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -754,7 +778,7 @@ $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
+    $result = $apiInstance->getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $status, $status2, $orderType, $orderType2, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -785,14 +809,14 @@ Name | Type | Description  | Notes
  **id** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -812,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrdersGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress[]**](../Model/OrderGetOrdersGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 
@@ -830,7 +854,7 @@ Name | Type | Description  | Notes
 
 ## getOrderItem
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder getOrderItem($id)
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress getOrderItem($id)
 
 Retrieves a Order resource.
 
@@ -873,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 
@@ -954,7 +978,7 @@ Name | Type | Description  | Notes
 
 ## postOrderCollection
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder postOrderCollection($order)
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress postOrderCollection($order)
 
 Creates a Order resource.
 
@@ -977,7 +1001,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order = new \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder(); // \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder | The new Order resource
+$order = new \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrderSetAddress(); // \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrderSetAddress | The new Order resource
 
 try {
     $result = $apiInstance->postOrderCollection($order);
@@ -993,11 +1017,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**\TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder**](../Model/OrderPostOrderSetOrderMetaSetOrderStatusForOrder.md)| The new Order resource | [optional]
+ **order** | [**\TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrderSetAddress**](../Model/OrderPostOrderSetOrderMetaSetOrderStatusForOrderSetAddress.md)| The new Order resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 
@@ -1015,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ## putOrderItem
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder putOrderItem($id, $order)
+> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress putOrderItem($id, $order)
 
 Replaces the Order resource.
 
@@ -1039,7 +1063,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
     $config
 );
 $id = 'id_example'; // string | 
-$order = new \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder(); // \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder | The updated Order resource
+$order = new \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrderSetAddress(); // \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrderSetAddress | The updated Order resource
 
 try {
     $result = $apiInstance->putOrderItem($id, $order);
@@ -1056,11 +1080,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **order** | [**\TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder**](../Model/OrderPutOrderSetOrderMetaSetOrderStatusForOrder.md)| The updated Order resource | [optional]
+ **order** | [**\TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrderSetAddress**](../Model/OrderPutOrderSetOrderMetaSetOrderStatusForOrderSetAddress.md)| The updated Order resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrderGetAddress.md)
 
 ### Authorization
 

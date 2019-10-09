@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## apiOrderItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -51,6 +51,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -62,7 +68,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrderItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -82,6 +88,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -112,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## apiOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -140,6 +152,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -161,7 +177,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -179,6 +195,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -219,7 +239,7 @@ Name | Type | Description  | Notes
 
 ## apiOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -250,6 +270,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -261,7 +287,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -282,6 +308,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -312,7 +344,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -342,6 +374,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -363,7 +399,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiTeamsWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -383,6 +419,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -423,7 +463,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -456,6 +496,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -467,7 +513,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -490,6 +536,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -520,7 +572,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
 
 Retrieves the collection of OrderItem resources.
 
@@ -549,6 +601,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -570,7 +626,7 @@ $priceLt = 'priceLt_example'; // string |
 $priceLte = 'priceLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -589,6 +645,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]
@@ -629,7 +689,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -661,6 +721,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -672,7 +738,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiWorkspacesOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -694,6 +760,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -784,7 +856,7 @@ void (empty response body)
 
 ## getOrderItemCollection
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -812,6 +884,10 @@ $id2 = array('id_example'); // string[] |
 $productName = 'productName_example'; // string | 
 $externalSyncId = 'externalSyncId_example'; // string | 
 $externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
 $orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
@@ -835,7 +911,7 @@ $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
+    $result = $apiInstance->getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->getOrderItemCollection: ', $e->getMessage(), PHP_EOL;
@@ -853,6 +929,10 @@ Name | Type | Description  | Notes
  **productName** | **string**|  | [optional]
  **externalSyncId** | **string**|  | [optional]
  **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
  **orderExternalSyncId** | **string**|  | [optional]

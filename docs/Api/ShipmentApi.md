@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## apiShipmentsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiShipmentsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiShipmentsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -115,6 +115,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -126,7 +132,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiShipmentsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiShipmentsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->apiShipmentsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -146,6 +152,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -243,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesShipmentsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[] apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress[] apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
 
 Retrieves the collection of Shipment resources.
 
@@ -309,7 +321,6 @@ $expectedDeliveryDateAfter = 'expectedDeliveryDateAfter_example'; // string |
 $expectedDeliveryDateStrictlyAfter = 'expectedDeliveryDateStrictlyAfter_example'; // string | 
 $id2 = array(56); // int[] | 
 $trackingNumber = 'trackingNumber_example'; // string | 
-$trackingNumber2 = array('trackingNumber_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $originCarrier = 'originCarrier_example'; // string | 
@@ -323,6 +334,10 @@ $destinationCountry = 'destinationCountry_example'; // string |
 $destinationCountryIso2 = 'destinationCountryIso2_example'; // string | 
 $destinationCountryIso3 = array('destinationCountryIso2_example'); // string[] | 
 $email = 'email_example'; // string | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $id2 = array(56); // int[] | 
 $daysInTransit = 56; // int | 
 $daysInTransit2 = array(56); // int[] | 
@@ -338,7 +353,7 @@ $reviewTotalScoreLt = 'reviewTotalScoreLt_example'; // string |
 $reviewTotalScoreLte = 'reviewTotalScoreLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
+    $result = $apiInstance->apiTeamsWorkspacesShipmentsGetSubresource($id, $workspaces, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->apiTeamsWorkspacesShipmentsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -394,7 +409,6 @@ Name | Type | Description  | Notes
  **expectedDeliveryDateStrictlyAfter** | **string**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **trackingNumber** | **string**|  | [optional]
- **trackingNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **originCarrier** | **string**|  | [optional]
@@ -408,6 +422,10 @@ Name | Type | Description  | Notes
  **destinationCountryIso2** | **string**|  | [optional]
  **destinationCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
  **email** | **string**|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **daysInTransit** | **int**|  | [optional]
  **daysInTransit2** | [**int[]**](../Model/int.md)|  | [optional]
@@ -424,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[]**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress[]**](../Model/ShipmentGetShipmentGetShipmentMetaGetAddress.md)
 
 ### Authorization
 
@@ -442,7 +460,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource($id, $workspaces, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource($id, $workspaces, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -474,6 +492,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -485,7 +509,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource($id, $workspaces, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource($id, $workspaces, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->apiTeamsWorkspacesShipmentsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -507,6 +531,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -602,7 +632,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesShipmentsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[] apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress[] apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte)
 
 Retrieves the collection of Shipment resources.
 
@@ -667,7 +697,6 @@ $expectedDeliveryDateAfter = 'expectedDeliveryDateAfter_example'; // string |
 $expectedDeliveryDateStrictlyAfter = 'expectedDeliveryDateStrictlyAfter_example'; // string | 
 $id2 = array(56); // int[] | 
 $trackingNumber = 'trackingNumber_example'; // string | 
-$trackingNumber2 = array('trackingNumber_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $originCarrier = 'originCarrier_example'; // string | 
@@ -681,6 +710,10 @@ $destinationCountry = 'destinationCountry_example'; // string |
 $destinationCountryIso2 = 'destinationCountryIso2_example'; // string | 
 $destinationCountryIso3 = array('destinationCountryIso2_example'); // string[] | 
 $email = 'email_example'; // string | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $id2 = array(56); // int[] | 
 $daysInTransit = 56; // int | 
 $daysInTransit2 = array(56); // int[] | 
@@ -696,7 +729,7 @@ $reviewTotalScoreLt = 'reviewTotalScoreLt_example'; // string |
 $reviewTotalScoreLte = 'reviewTotalScoreLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
+    $result = $apiInstance->apiWorkspacesShipmentsGetSubresource($id, $orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->apiWorkspacesShipmentsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -751,7 +784,6 @@ Name | Type | Description  | Notes
  **expectedDeliveryDateStrictlyAfter** | **string**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **trackingNumber** | **string**|  | [optional]
- **trackingNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **originCarrier** | **string**|  | [optional]
@@ -765,6 +797,10 @@ Name | Type | Description  | Notes
  **destinationCountryIso2** | **string**|  | [optional]
  **destinationCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
  **email** | **string**|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **daysInTransit** | **int**|  | [optional]
  **daysInTransit2** | [**int[]**](../Model/int.md)|  | [optional]
@@ -781,7 +817,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta[]**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress[]**](../Model/ShipmentGetShipmentGetShipmentMetaGetAddress.md)
 
 ### Authorization
 
@@ -799,7 +835,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesShipmentsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiWorkspacesShipmentsShipmentItemsGetSubresource($id, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiWorkspacesShipmentsShipmentItemsGetSubresource($id, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -830,6 +866,12 @@ $shipmentId2 = array(56); // int[] |
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
+$workspaceId = 56; // int | 
+$workspaceId2 = array(56); // int[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -841,7 +883,7 @@ $qtyLt = 'qtyLt_example'; // string |
 $qtyLte = 'qtyLte_example'; // string | 
 
 try {
-    $result = $apiInstance->apiWorkspacesShipmentsShipmentItemsGetSubresource($id, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiWorkspacesShipmentsShipmentItemsGetSubresource($id, $shipments, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->apiWorkspacesShipmentsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -862,6 +904,12 @@ Name | Type | Description  | Notes
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **int**|  | [optional]
+ **workspaceId2** | [**int[]**](../Model/int.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -952,7 +1000,7 @@ void (empty response body)
 
 ## getShipmentCollection
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipments[] getShipmentCollection($orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentsGetAddress[] getShipmentCollection($orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte, $page, $itemsPerPage)
 
 Retrieves the collection of Shipment resources.
 
@@ -1017,7 +1065,6 @@ $expectedDeliveryDateStrictlyAfter = 'expectedDeliveryDateStrictlyAfter_example'
 $id = 56; // int | 
 $id2 = array(56); // int[] | 
 $trackingNumber = 'trackingNumber_example'; // string | 
-$trackingNumber2 = array('trackingNumber_example'); // string[] | 
 $status = 'status_example'; // string | 
 $status2 = array('status_example'); // string[] | 
 $originCarrier = 'originCarrier_example'; // string | 
@@ -1031,6 +1078,10 @@ $destinationCountry = 'destinationCountry_example'; // string |
 $destinationCountryIso2 = 'destinationCountryIso2_example'; // string | 
 $destinationCountryIso3 = array('destinationCountryIso2_example'); // string[] | 
 $email = 'email_example'; // string | 
+$externalSyncId = 'externalSyncId_example'; // string | 
+$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$externalSource = 'externalSource_example'; // string | 
+$externalSource2 = array('externalSource_example'); // string[] | 
 $id2 = 56; // int | 
 $id2 = array(56); // int[] | 
 $daysInTransit = 56; // int | 
@@ -1049,7 +1100,7 @@ $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getShipmentCollection($orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id, $id2, $trackingNumber, $trackingNumber2, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $id2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte, $page, $itemsPerPage);
+    $result = $apiInstance->getShipmentCollection($orderId, $orderTrackingNumber, $orderStatus, $orderOriginCarrier, $orderDestinationCarrier, $orderCreatedAt, $orderUpdatedAt, $orderShippedAt, $orderLastStatusUpdate, $orderExpectedDeliveryDate, $orderOriginCountry, $orderDestinationCountry, $orderOriginCountryIso2, $orderDestinationCountryIso2, $orderEmail, $orderDaysInTransit, $orderReviewTotalScore, $orderNumbers, $orderNumbers2, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $shippedAtBefore, $shippedAtStrictlyBefore, $shippedAtAfter, $shippedAtStrictlyAfter, $lastStatusUpdateBefore, $lastStatusUpdateStrictlyBefore, $lastStatusUpdateAfter, $lastStatusUpdateStrictlyAfter, $expectedDeliveryDateBefore, $expectedDeliveryDateStrictlyBefore, $expectedDeliveryDateAfter, $expectedDeliveryDateStrictlyAfter, $id, $id2, $trackingNumber, $status, $status2, $originCarrier, $originCarrier2, $destinationCarrier, $destinationCarrier2, $originCountry, $originCountryIso2, $originCountryIso3, $destinationCountry, $destinationCountryIso2, $destinationCountryIso3, $email, $externalSyncId, $externalSyncId2, $externalSource, $externalSource2, $id2, $id2, $daysInTransit, $daysInTransit2, $daysInTransitBetween, $daysInTransitGt, $daysInTransitGte, $daysInTransitLt, $daysInTransitLte, $reviewTotalScoreBetween, $reviewTotalScoreGt, $reviewTotalScoreGte, $reviewTotalScoreLt, $reviewTotalScoreLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->getShipmentCollection: ', $e->getMessage(), PHP_EOL;
@@ -1104,7 +1155,6 @@ Name | Type | Description  | Notes
  **id** | **int**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **trackingNumber** | **string**|  | [optional]
- **trackingNumber2** | [**string[]**](../Model/string.md)|  | [optional]
  **status** | **string**|  | [optional]
  **status2** | [**string[]**](../Model/string.md)|  | [optional]
  **originCarrier** | **string**|  | [optional]
@@ -1118,6 +1168,10 @@ Name | Type | Description  | Notes
  **destinationCountryIso2** | **string**|  | [optional]
  **destinationCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
  **email** | **string**|  | [optional]
+ **externalSyncId** | **string**|  | [optional]
+ **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **externalSource** | **string**|  | [optional]
+ **externalSource2** | [**string[]**](../Model/string.md)|  | [optional]
  **id2** | **int**|  | [optional]
  **id2** | [**int[]**](../Model/int.md)|  | [optional]
  **daysInTransit** | **int**|  | [optional]
@@ -1137,7 +1191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipments[]**](../Model/ShipmentGetShipments.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentsGetAddress[]**](../Model/ShipmentGetShipmentsGetAddress.md)
 
 ### Authorization
 
@@ -1155,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ## getShipmentItem
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta getShipmentItem($id)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress getShipmentItem($id)
 
 Retrieves a Shipment resource.
 
@@ -1198,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress**](../Model/ShipmentGetShipmentGetShipmentMetaGetAddress.md)
 
 ### Authorization
 
@@ -1216,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ## postShipmentCollection
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta postShipmentCollection($shipment)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress postShipmentCollection($shipment)
 
 Creates a Shipment resource.
 
@@ -1239,7 +1293,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\ShipmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$shipment = new \TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta(); // \TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta | The new Shipment resource
+$shipment = new \TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMetaSetAddress(); // \TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMetaSetAddress | The new Shipment resource
 
 try {
     $result = $apiInstance->postShipmentCollection($shipment);
@@ -1255,11 +1309,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment** | [**\TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta**](../Model/ShipmentPostShipmentSetShipmentMeta.md)| The new Shipment resource | [optional]
+ **shipment** | [**\TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMetaSetAddress**](../Model/ShipmentPostShipmentSetShipmentMetaSetAddress.md)| The new Shipment resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress**](../Model/ShipmentGetShipmentGetShipmentMetaGetAddress.md)
 
 ### Authorization
 
@@ -1277,7 +1331,7 @@ Name | Type | Description  | Notes
 
 ## putShipmentItem
 
-> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta putShipmentItem($id, $shipment)
+> \TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress putShipmentItem($id, $shipment)
 
 Replaces the Shipment resource.
 
@@ -1301,7 +1355,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\ShipmentApi(
     $config
 );
 $id = 'id_example'; // string | 
-$shipment = new \TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMeta(); // \TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMeta | The updated Shipment resource
+$shipment = new \TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMetaSetAddress(); // \TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMetaSetAddress | The updated Shipment resource
 
 try {
     $result = $apiInstance->putShipmentItem($id, $shipment);
@@ -1318,11 +1372,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **shipment** | [**\TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMeta**](../Model/ShipmentPutShipmentSetShipmentMeta.md)| The updated Shipment resource | [optional]
+ **shipment** | [**\TrackMage\Client\Swagger\Model\ShipmentPutShipmentSetShipmentMetaSetAddress**](../Model/ShipmentPutShipmentSetShipmentMetaSetAddress.md)| The updated Shipment resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMeta**](../Model/ShipmentGetShipmentGetShipmentMeta.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentGetShipmentGetShipmentMetaGetAddress**](../Model/ShipmentGetShipmentGetShipmentMetaGetAddress.md)
 
 ### Authorization
 

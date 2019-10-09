@@ -1,6 +1,6 @@
 <?php
 /**
- * FieldGetFieldGetSelectOptionsGetDeliveryStatuses
+ * ShipmentPostShipmentSetShipmentMetaSetAddress
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \TrackMage\Client\Swagger\ObjectSerializer;
 
 /**
- * FieldGetFieldGetSelectOptionsGetDeliveryStatuses Class Doc Comment
+ * ShipmentPostShipmentSetShipmentMetaSetAddress Class Doc Comment
  *
  * @category Class
  * @package  TrackMage\Client\Swagger
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface, ArrayAccess
+class ShipmentPostShipmentSetShipmentMetaSetAddress implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Field-getField_getSelectOptions_getDeliveryStatuses';
+    protected static $openAPIModelName = 'Shipment-postShipment_setShipmentMeta_setAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
+        'trackingNumber' => 'string',
+        'orderNumbers' => 'string[]',
+        'email' => 'string',
+        'originCarrier' => 'string',
         'workspace' => 'string',
-        'entity' => 'string',
-        'title' => 'string',
-        'fieldType' => 'string',
-        'readonly' => 'bool',
-        'sorting' => 'bool',
-        'selectOptions' => 'string',
-        'visibleExpr' => 'string',
-        'primary' => 'bool'
+        'orders' => 'string[]',
+        'externalSource' => 'string',
+        'externalSyncId' => 'string',
+        'address' => 'string',
+        'checkpoints' => 'string[]',
+        'shipmentItems' => 'string[]'
     ];
 
     /**
@@ -75,16 +76,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'code' => null,
+        'trackingNumber' => null,
+        'orderNumbers' => null,
+        'email' => null,
+        'originCarrier' => null,
         'workspace' => null,
-        'entity' => null,
-        'title' => null,
-        'fieldType' => null,
-        'readonly' => null,
-        'sorting' => null,
-        'selectOptions' => null,
-        'visibleExpr' => null,
-        'primary' => null
+        'orders' => null,
+        'externalSource' => null,
+        'externalSyncId' => null,
+        'address' => null,
+        'checkpoints' => null,
+        'shipmentItems' => null
     ];
 
     /**
@@ -114,16 +116,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
+        'trackingNumber' => 'trackingNumber',
+        'orderNumbers' => 'orderNumbers',
+        'email' => 'email',
+        'originCarrier' => 'originCarrier',
         'workspace' => 'workspace',
-        'entity' => 'entity',
-        'title' => 'title',
-        'fieldType' => 'fieldType',
-        'readonly' => 'readonly',
-        'sorting' => 'sorting',
-        'selectOptions' => 'selectOptions',
-        'visibleExpr' => 'visibleExpr',
-        'primary' => 'primary'
+        'orders' => 'orders',
+        'externalSource' => 'externalSource',
+        'externalSyncId' => 'externalSyncId',
+        'address' => 'address',
+        'checkpoints' => 'checkpoints',
+        'shipmentItems' => 'shipmentItems'
     ];
 
     /**
@@ -132,16 +135,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
+        'trackingNumber' => 'setTrackingNumber',
+        'orderNumbers' => 'setOrderNumbers',
+        'email' => 'setEmail',
+        'originCarrier' => 'setOriginCarrier',
         'workspace' => 'setWorkspace',
-        'entity' => 'setEntity',
-        'title' => 'setTitle',
-        'fieldType' => 'setFieldType',
-        'readonly' => 'setReadonly',
-        'sorting' => 'setSorting',
-        'selectOptions' => 'setSelectOptions',
-        'visibleExpr' => 'setVisibleExpr',
-        'primary' => 'setPrimary'
+        'orders' => 'setOrders',
+        'externalSource' => 'setExternalSource',
+        'externalSyncId' => 'setExternalSyncId',
+        'address' => 'setAddress',
+        'checkpoints' => 'setCheckpoints',
+        'shipmentItems' => 'setShipmentItems'
     ];
 
     /**
@@ -150,16 +154,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
+        'trackingNumber' => 'getTrackingNumber',
+        'orderNumbers' => 'getOrderNumbers',
+        'email' => 'getEmail',
+        'originCarrier' => 'getOriginCarrier',
         'workspace' => 'getWorkspace',
-        'entity' => 'getEntity',
-        'title' => 'getTitle',
-        'fieldType' => 'getFieldType',
-        'readonly' => 'getReadonly',
-        'sorting' => 'getSorting',
-        'selectOptions' => 'getSelectOptions',
-        'visibleExpr' => 'getVisibleExpr',
-        'primary' => 'getPrimary'
+        'orders' => 'getOrders',
+        'externalSource' => 'getExternalSource',
+        'externalSyncId' => 'getExternalSyncId',
+        'address' => 'getAddress',
+        'checkpoints' => 'getCheckpoints',
+        'shipmentItems' => 'getShipmentItems'
     ];
 
     /**
@@ -222,16 +227,17 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['trackingNumber'] = isset($data['trackingNumber']) ? $data['trackingNumber'] : null;
+        $this->container['orderNumbers'] = isset($data['orderNumbers']) ? $data['orderNumbers'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['originCarrier'] = isset($data['originCarrier']) ? $data['originCarrier'] : null;
         $this->container['workspace'] = isset($data['workspace']) ? $data['workspace'] : null;
-        $this->container['entity'] = isset($data['entity']) ? $data['entity'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['fieldType'] = isset($data['fieldType']) ? $data['fieldType'] : null;
-        $this->container['readonly'] = isset($data['readonly']) ? $data['readonly'] : null;
-        $this->container['sorting'] = isset($data['sorting']) ? $data['sorting'] : null;
-        $this->container['selectOptions'] = isset($data['selectOptions']) ? $data['selectOptions'] : null;
-        $this->container['visibleExpr'] = isset($data['visibleExpr']) ? $data['visibleExpr'] : null;
-        $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
+        $this->container['orders'] = isset($data['orders']) ? $data['orders'] : null;
+        $this->container['externalSource'] = isset($data['externalSource']) ? $data['externalSource'] : null;
+        $this->container['externalSyncId'] = isset($data['externalSyncId']) ? $data['externalSyncId'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['checkpoints'] = isset($data['checkpoints']) ? $data['checkpoints'] : null;
+        $this->container['shipmentItems'] = isset($data['shipmentItems']) ? $data['shipmentItems'] : null;
     }
 
     /**
@@ -243,8 +249,8 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if ($this->container['workspace'] === null) {
+            $invalidProperties[] = "'workspace' can't be null";
         }
         return $invalidProperties;
     }
@@ -262,25 +268,97 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
 
 
     /**
-     * Gets code
+     * Gets trackingNumber
      *
      * @return string|null
      */
-    public function getCode()
+    public function getTrackingNumber()
     {
-        return $this->container['code'];
+        return $this->container['trackingNumber'];
     }
 
     /**
-     * Sets code
+     * Sets trackingNumber
      *
-     * @param string|null $code code
+     * @param string|null $trackingNumber trackingNumber
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setTrackingNumber($trackingNumber)
     {
-        $this->container['code'] = $code;
+        $this->container['trackingNumber'] = $trackingNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderNumbers
+     *
+     * @return string[]|null
+     */
+    public function getOrderNumbers()
+    {
+        return $this->container['orderNumbers'];
+    }
+
+    /**
+     * Sets orderNumbers
+     *
+     * @param string[]|null $orderNumbers orderNumbers
+     *
+     * @return $this
+     */
+    public function setOrderNumbers($orderNumbers)
+    {
+        $this->container['orderNumbers'] = $orderNumbers;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets originCarrier
+     *
+     * @return string|null
+     */
+    public function getOriginCarrier()
+    {
+        return $this->container['originCarrier'];
+    }
+
+    /**
+     * Sets originCarrier
+     *
+     * @param string|null $originCarrier originCarrier
+     *
+     * @return $this
+     */
+    public function setOriginCarrier($originCarrier)
+    {
+        $this->container['originCarrier'] = $originCarrier;
 
         return $this;
     }
@@ -288,7 +366,7 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
     /**
      * Gets workspace
      *
-     * @return string|null
+     * @return string
      */
     public function getWorkspace()
     {
@@ -298,7 +376,7 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
     /**
      * Sets workspace
      *
-     * @param string|null $workspace workspace
+     * @param string $workspace workspace
      *
      * @return $this
      */
@@ -310,193 +388,145 @@ class FieldGetFieldGetSelectOptionsGetDeliveryStatuses implements ModelInterface
     }
 
     /**
-     * Gets entity
+     * Gets orders
+     *
+     * @return string[]|null
+     */
+    public function getOrders()
+    {
+        return $this->container['orders'];
+    }
+
+    /**
+     * Sets orders
+     *
+     * @param string[]|null $orders orders
+     *
+     * @return $this
+     */
+    public function setOrders($orders)
+    {
+        $this->container['orders'] = $orders;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalSource
      *
      * @return string|null
      */
-    public function getEntity()
+    public function getExternalSource()
     {
-        return $this->container['entity'];
+        return $this->container['externalSource'];
     }
 
     /**
-     * Sets entity
+     * Sets externalSource
      *
-     * @param string|null $entity entity
+     * @param string|null $externalSource externalSource
      *
      * @return $this
      */
-    public function setEntity($entity)
+    public function setExternalSource($externalSource)
     {
-        $this->container['entity'] = $entity;
+        $this->container['externalSource'] = $externalSource;
 
         return $this;
     }
 
     /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets fieldType
+     * Gets externalSyncId
      *
      * @return string|null
      */
-    public function getFieldType()
+    public function getExternalSyncId()
     {
-        return $this->container['fieldType'];
+        return $this->container['externalSyncId'];
     }
 
     /**
-     * Sets fieldType
+     * Sets externalSyncId
      *
-     * @param string|null $fieldType fieldType
+     * @param string|null $externalSyncId externalSyncId
      *
      * @return $this
      */
-    public function setFieldType($fieldType)
+    public function setExternalSyncId($externalSyncId)
     {
-        $this->container['fieldType'] = $fieldType;
+        $this->container['externalSyncId'] = $externalSyncId;
 
         return $this;
     }
 
     /**
-     * Gets readonly
-     *
-     * @return bool|null
-     */
-    public function getReadonly()
-    {
-        return $this->container['readonly'];
-    }
-
-    /**
-     * Sets readonly
-     *
-     * @param bool|null $readonly readonly
-     *
-     * @return $this
-     */
-    public function setReadonly($readonly)
-    {
-        $this->container['readonly'] = $readonly;
-
-        return $this;
-    }
-
-    /**
-     * Gets sorting
-     *
-     * @return bool|null
-     */
-    public function getSorting()
-    {
-        return $this->container['sorting'];
-    }
-
-    /**
-     * Sets sorting
-     *
-     * @param bool|null $sorting sorting
-     *
-     * @return $this
-     */
-    public function setSorting($sorting)
-    {
-        $this->container['sorting'] = $sorting;
-
-        return $this;
-    }
-
-    /**
-     * Gets selectOptions
+     * Gets address
      *
      * @return string|null
      */
-    public function getSelectOptions()
+    public function getAddress()
     {
-        return $this->container['selectOptions'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets selectOptions
+     * Sets address
      *
-     * @param string|null $selectOptions selectOptions
+     * @param string|null $address address
      *
      * @return $this
      */
-    public function setSelectOptions($selectOptions)
+    public function setAddress($address)
     {
-        $this->container['selectOptions'] = $selectOptions;
+        $this->container['address'] = $address;
 
         return $this;
     }
 
     /**
-     * Gets visibleExpr
+     * Gets checkpoints
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getVisibleExpr()
+    public function getCheckpoints()
     {
-        return $this->container['visibleExpr'];
+        return $this->container['checkpoints'];
     }
 
     /**
-     * Sets visibleExpr
+     * Sets checkpoints
      *
-     * @param string|null $visibleExpr visibleExpr
+     * @param string[]|null $checkpoints checkpoints
      *
      * @return $this
      */
-    public function setVisibleExpr($visibleExpr)
+    public function setCheckpoints($checkpoints)
     {
-        $this->container['visibleExpr'] = $visibleExpr;
+        $this->container['checkpoints'] = $checkpoints;
 
         return $this;
     }
 
     /**
-     * Gets primary
+     * Gets shipmentItems
      *
-     * @return bool|null
+     * @return string[]|null
      */
-    public function getPrimary()
+    public function getShipmentItems()
     {
-        return $this->container['primary'];
+        return $this->container['shipmentItems'];
     }
 
     /**
-     * Sets primary
+     * Sets shipmentItems
      *
-     * @param bool|null $primary Primary field means defined statically. Custom field is from EAV
+     * @param string[]|null $shipmentItems shipmentItems
      *
      * @return $this
      */
-    public function setPrimary($primary)
+    public function setShipmentItems($shipmentItems)
     {
-        $this->container['primary'] = $primary;
+        $this->container['shipmentItems'] = $shipmentItems;
 
         return $this;
     }
