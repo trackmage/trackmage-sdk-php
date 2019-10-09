@@ -145,23 +145,17 @@ class TrackMageTest extends TestCase
     public function testCreateWebhook()
     {
         // create workspace
-        $integration = [
-            'type' => 'webhook',
-            'credentials' => [
-                'url' => 'http://acme.example',
-                'authType' => 'basic',
-                'username' => 'webhook_user',
-                'password' => 'password',
-            ],
-        ];
         $workflow = [
-            'direction' => 'out',
+            'type' => 'webhook',
             'period' => 'immediately',
             'title' => 'Webhook for testing',
             'workspace' => '/workspaces/'.self::$workspaceId,
-            'settings' => [],
             'enabled' => true,
-            'concurrency' => 1,
+            'concurrency' => '1',
+            'url' => 'http://acme.example',
+            'authType' => 'basic',
+            'username' => 'webhook_user',
+            'password' => 'password',
             'notificationEmails' => [
                 'test@email.com', 'test-2@email.com',
             ],
@@ -169,7 +163,7 @@ class TrackMageTest extends TestCase
         $response = self::$client->getGuzzleClient()->post(
             '/workflows',
             [
-                'json' => array_merge($workflow, ['integration' => $integration]),
+                'json' => $workflow,
             ]
         );
         //THEN
@@ -177,11 +171,6 @@ class TrackMageTest extends TestCase
         self::assertEquals(201, $response->getStatusCode(), $contents);
         $data = json_decode($contents, true);
         self::assertArraySubset($workflow, $data);
-
-        $integrationId = explode('/', $data['integration']);
-        $integrationId = end($integrationId);
-        $actualIntegration = self::$client->getIntegrationApi()->getIntegrationItem($integrationId);
-        self::assertSame('webhook', $actualIntegration->getType());
     }
 
     /**

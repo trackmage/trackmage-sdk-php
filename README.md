@@ -73,22 +73,20 @@ Here is [the webhook handler example](examples/webhook-handler.php) that you nee
 
 ```php
 <?php
-$integration = [
-    'type' => 'webhook',
-    'credentials' => [
-        'url' => 'http://acme.example', //webhook handler url
-        'authType' => 'basic',
-        'username' => 'webhook_user',
-        'password' => 'password',
-    ],
-];
 $workflow = [
-    'direction' => 'out',
+    'type' => 'webhook',
     'period' => 'immediately',
     'title' => 'Webhook for testing',
-    'workspace' => '/workspaces/' . $workspaceId,
-    'integration' => $integration,
+    'workspace' => '/workspaces/<id>',
     'enabled' => true,
+    'concurrency' => '1',
+    'url' => 'http://acme.example',
+    'authType' => 'basic',
+    'username' => 'webhook_user',
+    'password' => 'password',
+    'notificationEmails' => [
+        'test@email.com', 'test-2@email.com',
+    ],
 ];
 $response = $client->getGuzzleClient()->post(
     '/workflows', ['json' => $workflow]
