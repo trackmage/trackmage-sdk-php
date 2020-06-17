@@ -1,12 +1,13 @@
-<h1 align="center">
-    <a href="https://trackmage.com" target="_blank">
-        <img src="https://trackmage.com/landing/img/email_logo_46h.png" />
-    </a>
-</h1>
+<a href="#">
+  <div align="center">
+    <img src="https://user-images.githubusercontent.com/1675033/84406764-a7091300-ac12-11ea-8250-774a8f0697fe.jpg" width='128'/>
+  </div>
+</a>
+<h1 align="center">Trackmage - A tracking page for your store. Beautiful, branded, customizable.</h1>
+
 
 # TrackMage SDK for php
 
-[![Build Status](https://travis-ci.org/trackmage/trackmage-sdk-php.svg?branch=master)](https://travis-ci.org/trackmage/trackmage-sdk-php)
 [![Total Downloads](https://poser.pugx.org/trackmage/trackmage-sdk-php/downloads)](https://packagist.org/packages/trackmage/trackmage-sdk-php)
 
 TrackMage is your most automated shipment tracking tool ever.
