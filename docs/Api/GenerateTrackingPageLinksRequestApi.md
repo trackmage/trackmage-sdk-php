@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\GenerateTrackingPageLinksRequestApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

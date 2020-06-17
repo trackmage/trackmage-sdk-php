@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\OauthClientApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ void (empty response body)
 
 ## getOauthClientCollection
 
-> \TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient[] getOauthClientCollection($page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OauthClientGet[] getOauthClientCollection($name, $page, $itemsPerPage)
 
 Retrieves the collection of OauthClient resources.
 
@@ -96,11 +96,12 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OauthClientApi(
     new GuzzleHttp\Client(),
     $config
 );
+$name = 'name_example'; // string | 
 $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOauthClientCollection($page, $itemsPerPage);
+    $result = $apiInstance->getOauthClientCollection($name, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OauthClientApi->getOauthClientCollection: ', $e->getMessage(), PHP_EOL;
@@ -113,12 +114,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional]
  **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient[]**](../Model/OauthClientGetOAuthClient.md)
+[**\TrackMage\Client\Swagger\Model\OauthClientGet[]**](../Model/OauthClientGet.md)
 
 ### Authorization
 
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## getOauthClientItem
 
-> \TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient getOauthClientItem($id)
+> \TrackMage\Client\Swagger\Model\OauthClientGet getOauthClientItem($id)
 
 Retrieves a OauthClient resource.
 
@@ -179,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient**](../Model/OauthClientGetOAuthClient.md)
+[**\TrackMage\Client\Swagger\Model\OauthClientGet**](../Model/OauthClientGet.md)
 
 ### Authorization
 
@@ -197,7 +199,7 @@ Name | Type | Description  | Notes
 
 ## postOauthClientCollection
 
-> \TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient postOauthClientCollection($oauthClient)
+> \TrackMage\Client\Swagger\Model\OauthClientGet postOauthClientCollection($oauthClient)
 
 Creates a OauthClient resource.
 
@@ -220,7 +222,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OauthClientApi(
     new GuzzleHttp\Client(),
     $config
 );
-$oauthClient = new \TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient(); // \TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient | The new OauthClient resource
+$oauthClient = new \TrackMage\Client\Swagger\Model\OauthClientPost(); // \TrackMage\Client\Swagger\Model\OauthClientPost | The new OauthClient resource
 
 try {
     $result = $apiInstance->postOauthClientCollection($oauthClient);
@@ -236,11 +238,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oauthClient** | [**\TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient**](../Model/OauthClientSetOAuthClient.md)| The new OauthClient resource | [optional]
+ **oauthClient** | [**\TrackMage\Client\Swagger\Model\OauthClientPost**](../Model/OauthClientPost.md)| The new OauthClient resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OauthClientGetOAuthClient**](../Model/OauthClientGetOAuthClient.md)
+[**\TrackMage\Client\Swagger\Model\OauthClientGet**](../Model/OauthClientGet.md)
 
 ### Authorization
 

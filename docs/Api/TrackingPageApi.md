@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\TrackingPageApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## apiTeamsWorkspacesTrackingPagesGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder[] apiTeamsWorkspacesTrackingPagesGetSubresource($id, $workspaces)
+> \TrackMage\Client\Swagger\Model\TrackingPageGet[] apiTeamsWorkspacesTrackingPagesGetSubresource($id, $workspaces, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingPage resources.
 
@@ -41,9 +41,11 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingPageApi(
 );
 $id = 'id_example'; // string | 
 $workspaces = 'workspaces_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesTrackingPagesGetSubresource($id, $workspaces);
+    $result = $apiInstance->apiTeamsWorkspacesTrackingPagesGetSubresource($id, $workspaces, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrackingPageApi->apiTeamsWorkspacesTrackingPagesGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -58,10 +60,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
  **workspaces** | **string**|  |
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder[]**](../Model/TrackingPageGetTrackingPageGetBuilder.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGet[]**](../Model/TrackingPageGet.md)
 
 ### Authorization
 
@@ -79,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesTrackingPagesGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder[] apiWorkspacesTrackingPagesGetSubresource($id)
+> \TrackMage\Client\Swagger\Model\TrackingPageGet[] apiWorkspacesTrackingPagesGetSubresource($id, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingPage resources.
 
@@ -103,9 +107,11 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingPageApi(
     $config
 );
 $id = 'id_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesTrackingPagesGetSubresource($id);
+    $result = $apiInstance->apiWorkspacesTrackingPagesGetSubresource($id, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrackingPageApi->apiWorkspacesTrackingPagesGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -119,10 +125,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder[]**](../Model/TrackingPageGetTrackingPageGetBuilder.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGet[]**](../Model/TrackingPageGet.md)
 
 ### Authorization
 
@@ -200,7 +208,7 @@ void (empty response body)
 
 ## getTrackingPageCollection
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPages[] getTrackingPageCollection($page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\TrackingPageGetc[] getTrackingPageCollection($page, $itemsPerPage)
 
 Retrieves the collection of TrackingPage resources.
 
@@ -245,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPages[]**](../Model/TrackingPageGetTrackingPages.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGetc[]**](../Model/TrackingPageGetc.md)
 
 ### Authorization
 
@@ -263,7 +271,7 @@ Name | Type | Description  | Notes
 
 ## getTrackingPageItem
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder getTrackingPageItem($id)
+> \TrackMage\Client\Swagger\Model\TrackingPageGet getTrackingPageItem($id)
 
 Retrieves a TrackingPage resource.
 
@@ -306,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder**](../Model/TrackingPageGetTrackingPageGetBuilder.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGet**](../Model/TrackingPageGet.md)
 
 ### Authorization
 
@@ -324,7 +332,7 @@ Name | Type | Description  | Notes
 
 ## postTrackingPageCollection
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder postTrackingPageCollection($trackingPage)
+> \TrackMage\Client\Swagger\Model\TrackingPageGet postTrackingPageCollection($trackingPage)
 
 Creates a TrackingPage resource.
 
@@ -347,7 +355,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingPageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder(); // \TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder | The new TrackingPage resource
+$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPagePost(); // \TrackMage\Client\Swagger\Model\TrackingPagePost | The new TrackingPage resource
 
 try {
     $result = $apiInstance->postTrackingPageCollection($trackingPage);
@@ -363,11 +371,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPagePostTrackingPageSetTrackingPageSetBuilder**](../Model/TrackingPagePostTrackingPageSetTrackingPageSetBuilder.md)| The new TrackingPage resource | [optional]
+ **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPagePost**](../Model/TrackingPagePost.md)| The new TrackingPage resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder**](../Model/TrackingPageGetTrackingPageGetBuilder.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGet**](../Model/TrackingPageGet.md)
 
 ### Authorization
 
@@ -385,7 +393,7 @@ Name | Type | Description  | Notes
 
 ## putTrackingPageItem
 
-> \TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder putTrackingPageItem($id, $trackingPage)
+> \TrackMage\Client\Swagger\Model\TrackingPageGet putTrackingPageItem($id, $trackingPage)
 
 Replaces the TrackingPage resource.
 
@@ -409,7 +417,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingPageApi(
     $config
 );
 $id = 'id_example'; // string | 
-$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder(); // \TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder | The updated TrackingPage resource
+$trackingPage = new \TrackMage\Client\Swagger\Model\TrackingPagePut(); // \TrackMage\Client\Swagger\Model\TrackingPagePut | The updated TrackingPage resource
 
 try {
     $result = $apiInstance->putTrackingPageItem($id, $trackingPage);
@@ -426,11 +434,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPageSetTrackingPageSetBuilder**](../Model/TrackingPageSetTrackingPageSetBuilder.md)| The updated TrackingPage resource | [optional]
+ **trackingPage** | [**\TrackMage\Client\Swagger\Model\TrackingPagePut**](../Model/TrackingPagePut.md)| The updated TrackingPage resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingPageGetTrackingPageGetBuilder**](../Model/TrackingPageGetTrackingPageGetBuilder.md)
+[**\TrackMage\Client\Swagger\Model\TrackingPageGet**](../Model/TrackingPageGet.md)
 
 ### Authorization
 

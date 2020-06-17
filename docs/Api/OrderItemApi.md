@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\OrderItemApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## apiOrderItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGet[] apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -46,11 +46,13 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
 );
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
-$shipmentId = 56; // int | 
-$shipmentId2 = array(56); // int[] | 
+$shipmentId = 'shipmentId_example'; // string | 
+$shipmentId2 = array('shipmentId_example'); // string[] | 
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -60,9 +62,11 @@ $qtyGt = 'qtyGt_example'; // string |
 $qtyGte = 'qtyGte_example'; // string | 
 $qtyLt = 'qtyLt_example'; // string | 
 $qtyLte = 'qtyLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiOrderItemsShipmentItemsGetSubresource($id, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrderItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -77,11 +81,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
- **shipmentId** | **int**|  | [optional]
- **shipmentId2** | [**int[]**](../Model/int.md)|  | [optional]
+ **shipmentId** | **string**|  | [optional]
+ **shipmentId2** | [**string[]**](../Model/string.md)|  | [optional]
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -91,10 +97,12 @@ Name | Type | Description  | Notes
  **qtyGte** | **string**|  | [optional]
  **qtyLt** | **string**|  | [optional]
  **qtyLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[]**](../Model/ShipmentItemGetShipmentItem.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentItemGet[]**](../Model/ShipmentItemGet.md)
 
 ### Authorization
 
@@ -112,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## apiOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiOrdersItemsGetSubresource($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -138,11 +146,10 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -159,9 +166,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -177,11 +186,10 @@ Name | Type | Description  | Notes
  **id** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -198,10 +206,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -219,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## apiOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGet[] apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -245,11 +255,13 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
 $id = 'id_example'; // string | 
 $items = 'items_example'; // string | 
 $id2 = array('id_example'); // string[] | 
-$shipmentId = 56; // int | 
-$shipmentId2 = array(56); // int[] | 
+$shipmentId = 'shipmentId_example'; // string | 
+$shipmentId2 = array('shipmentId_example'); // string[] | 
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -259,9 +271,11 @@ $qtyGt = 'qtyGt_example'; // string |
 $qtyGte = 'qtyGte_example'; // string | 
 $qtyLt = 'qtyLt_example'; // string | 
 $qtyLte = 'qtyLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiOrdersItemsShipmentItemsGetSubresource($id, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -277,11 +291,13 @@ Name | Type | Description  | Notes
  **id** | **string**|  |
  **items** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
- **shipmentId** | **int**|  | [optional]
- **shipmentId2** | [**int[]**](../Model/int.md)|  | [optional]
+ **shipmentId** | **string**|  | [optional]
+ **shipmentId2** | [**string[]**](../Model/string.md)|  | [optional]
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -291,10 +307,12 @@ Name | Type | Description  | Notes
  **qtyGte** | **string**|  | [optional]
  **qtyLt** | **string**|  | [optional]
  **qtyLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[]**](../Model/ShipmentItemGetShipmentItem.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentItemGet[]**](../Model/ShipmentItemGet.md)
 
 ### Authorization
 
@@ -312,7 +330,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -340,11 +358,10 @@ $workspaces = 'workspaces_example'; // string |
 $orders = 'orders_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -361,9 +378,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiTeamsWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -381,11 +400,10 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -402,10 +420,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -423,7 +443,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGet[] apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -451,11 +471,13 @@ $workspaces = 'workspaces_example'; // string |
 $orders = 'orders_example'; // string | 
 $items = 'items_example'; // string | 
 $id2 = array('id_example'); // string[] | 
-$shipmentId = 56; // int | 
-$shipmentId2 = array(56); // int[] | 
+$shipmentId = 'shipmentId_example'; // string | 
+$shipmentId2 = array('shipmentId_example'); // string[] | 
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -465,9 +487,11 @@ $qtyGt = 'qtyGt_example'; // string |
 $qtyGte = 'qtyGte_example'; // string | 
 $qtyLt = 'qtyLt_example'; // string | 
 $qtyLte = 'qtyLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $workspaces, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiTeamsWorkspacesOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -485,11 +509,13 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **items** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
- **shipmentId** | **int**|  | [optional]
- **shipmentId2** | [**int[]**](../Model/int.md)|  | [optional]
+ **shipmentId** | **string**|  | [optional]
+ **shipmentId2** | [**string[]**](../Model/string.md)|  | [optional]
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -499,10 +525,12 @@ Name | Type | Description  | Notes
  **qtyGte** | **string**|  | [optional]
  **qtyLt** | **string**|  | [optional]
  **qtyLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[]**](../Model/ShipmentItemGetShipmentItem.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentItemGet[]**](../Model/ShipmentItemGet.md)
 
 ### Authorization
 
@@ -520,7 +548,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -547,11 +575,10 @@ $id = 'id_example'; // string |
 $orders = 'orders_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -568,9 +595,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -587,11 +616,10 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -608,10 +636,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -629,7 +659,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsShipmentItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[] apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte)
+> \TrackMage\Client\Swagger\Model\ShipmentItemGet[] apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage)
 
 Retrieves the collection of ShipmentItem resources.
 
@@ -656,11 +686,13 @@ $id = 'id_example'; // string |
 $orders = 'orders_example'; // string | 
 $items = 'items_example'; // string | 
 $id2 = array('id_example'); // string[] | 
-$shipmentId = 56; // int | 
-$shipmentId2 = array(56); // int[] | 
+$shipmentId = 'shipmentId_example'; // string | 
+$shipmentId2 = array('shipmentId_example'); // string[] | 
 $shipmentTrackingNumber = 'shipmentTrackingNumber_example'; // string | 
 $orderItemId = 'orderItemId_example'; // string | 
 $orderItemId2 = array('orderItemId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $qty = 56; // int | 
@@ -670,9 +702,11 @@ $qtyGt = 'qtyGt_example'; // string |
 $qtyGte = 'qtyGte_example'; // string | 
 $qtyLt = 'qtyLt_example'; // string | 
 $qtyLte = 'qtyLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsShipmentItemsGetSubresource($id, $orders, $items, $id2, $shipmentId, $shipmentId2, $shipmentTrackingNumber, $orderItemId, $orderItemId2, $workspaceId, $workspaceId2, $orderId, $orderQty, $qty, $qty2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->apiWorkspacesOrdersItemsShipmentItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -689,11 +723,13 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **items** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
- **shipmentId** | **int**|  | [optional]
- **shipmentId2** | [**int[]**](../Model/int.md)|  | [optional]
+ **shipmentId** | **string**|  | [optional]
+ **shipmentId2** | [**string[]**](../Model/string.md)|  | [optional]
  **shipmentTrackingNumber** | **string**|  | [optional]
  **orderItemId** | **string**|  | [optional]
  **orderItemId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -703,10 +739,12 @@ Name | Type | Description  | Notes
  **qtyGte** | **string**|  | [optional]
  **qtyLt** | **string**|  | [optional]
  **qtyLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ShipmentItemGetShipmentItem[]**](../Model/ShipmentItemGetShipmentItem.md)
+[**\TrackMage\Client\Swagger\Model\ShipmentItemGet[]**](../Model/ShipmentItemGet.md)
 
 ### Authorization
 
@@ -784,7 +822,7 @@ void (empty response body)
 
 ## getOrderItemCollection
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] getOrderItemCollection($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -810,11 +848,10 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -835,7 +872,7 @@ $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOrderItemCollection($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
+    $result = $apiInstance->getOrderItemCollection($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderItemApi->getOrderItemCollection: ', $e->getMessage(), PHP_EOL;
@@ -851,11 +888,10 @@ Name | Type | Description  | Notes
  **id** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -877,7 +913,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -895,7 +931,7 @@ Name | Type | Description  | Notes
 
 ## getOrderItemItem
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem getOrderItemItem($id)
+> \TrackMage\Client\Swagger\Model\OrderItemGet getOrderItemItem($id)
 
 Retrieves a OrderItem resource.
 
@@ -938,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -956,7 +992,7 @@ Name | Type | Description  | Notes
 
 ## postOrderItemCollection
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem postOrderItemCollection($orderItem)
+> \TrackMage\Client\Swagger\Model\OrderItemGet postOrderItemCollection($orderItem)
 
 Creates a OrderItem resource.
 
@@ -979,7 +1015,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
     new GuzzleHttp\Client(),
     $config
 );
-$orderItem = new \TrackMage\Client\Swagger\Model\OrderItemPostOrderItem(); // \TrackMage\Client\Swagger\Model\OrderItemPostOrderItem | The new OrderItem resource
+$orderItem = new \TrackMage\Client\Swagger\Model\OrderItemPost(); // \TrackMage\Client\Swagger\Model\OrderItemPost | The new OrderItem resource
 
 try {
     $result = $apiInstance->postOrderItemCollection($orderItem);
@@ -995,11 +1031,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderItem** | [**\TrackMage\Client\Swagger\Model\OrderItemPostOrderItem**](../Model/OrderItemPostOrderItem.md)| The new OrderItem resource | [optional]
+ **orderItem** | [**\TrackMage\Client\Swagger\Model\OrderItemPost**](../Model/OrderItemPost.md)| The new OrderItem resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -1017,7 +1053,7 @@ Name | Type | Description  | Notes
 
 ## putOrderItemItem
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem putOrderItemItem($id, $orderItem)
+> \TrackMage\Client\Swagger\Model\OrderItemGet putOrderItemItem($id, $orderItem)
 
 Replaces the OrderItem resource.
 
@@ -1041,7 +1077,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderItemApi(
     $config
 );
 $id = 'id_example'; // string | 
-$orderItem = new \TrackMage\Client\Swagger\Model\OrderItemPutOrderItem(); // \TrackMage\Client\Swagger\Model\OrderItemPutOrderItem | The updated OrderItem resource
+$orderItem = new \TrackMage\Client\Swagger\Model\OrderItemPut(); // \TrackMage\Client\Swagger\Model\OrderItemPut | The updated OrderItem resource
 
 try {
     $result = $apiInstance->putOrderItemItem($id, $orderItem);
@@ -1058,11 +1094,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **orderItem** | [**\TrackMage\Client\Swagger\Model\OrderItemPutOrderItem**](../Model/OrderItemPutOrderItem.md)| The updated OrderItem resource | [optional]
+ **orderItem** | [**\TrackMage\Client\Swagger\Model\OrderItemPut**](../Model/OrderItemPut.md)| The updated OrderItem resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet**](../Model/OrderItemGet.md)
 
 ### Authorization
 

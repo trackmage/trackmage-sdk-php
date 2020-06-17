@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\ReviewApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## getReviewItem
 
-> \TrackMage\Client\Swagger\Model\ReviewGetReview getReviewItem($id)
+> \TrackMage\Client\Swagger\Model\ReviewGet getReviewItem($id)
 
 Retrieves a Review resource.
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\ReviewGetReview**](../Model/ReviewGetReview.md)
+[**\TrackMage\Client\Swagger\Model\ReviewGet**](../Model/ReviewGet.md)
 
 ### Authorization
 

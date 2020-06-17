@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\OrderApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**deleteOrderItem**](OrderApi.md#deleteOrderItem) | **DELETE** /orders/{id} | Removes the Order resource.
 [**getOrderCollection**](OrderApi.md#getOrderCollection) | **GET** /orders | Retrieves the collection of Order resources.
 [**getOrderItem**](OrderApi.md#getOrderItem) | **GET** /orders/{id} | Retrieves a Order resource.
-[**migrateOrderCollection**](OrderApi.md#migrateOrderCollection) | **POST** /orders-migrate | Migrate orders from old status to a new one
 [**postOrderCollection**](OrderApi.md#postOrderCollection) | **POST** /orders | Creates a Order resource.
 [**putOrderItem**](OrderApi.md#putOrderItem) | **PUT** /orders/{id} | Replaces the Order resource.
 
@@ -20,7 +19,7 @@ Method | HTTP request | Description
 
 ## apiOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiOrdersItemsGetSubresource($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -46,11 +45,10 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -67,9 +65,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiOrdersItemsGetSubresource($id, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -85,11 +85,10 @@ Name | Type | Description  | Notes
  **id** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -106,10 +105,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+> \TrackMage\Client\Swagger\Model\OrderGet[] apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
 
 Retrieves the collection of Order resources.
 
@@ -154,11 +155,31 @@ $id = 'id_example'; // string |
 $workspaces = 'workspaces_example'; // string | 
 $orderId = 'orderId_example'; // string | 
 $orderOrderNumber = 'orderOrderNumber_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
+$orderEmail = 'orderEmail_example'; // string | 
+$orderPhoneNumber = 'orderPhoneNumber_example'; // string | 
+$orderOrderStatusCode = 'orderOrderStatusCode_example'; // string | 
 $orderSubtotal = 'orderSubtotal_example'; // string | 
 $orderTotal = 'orderTotal_example'; // string | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 $orderUpdatedAt = 'orderUpdatedAt_example'; // string | 
+$orderShippingAddressAddressLine1 = 'orderShippingAddressAddressLine1_example'; // string | 
+$orderShippingAddressAddressLine2 = 'orderShippingAddressAddressLine2_example'; // string | 
+$orderShippingAddressCity = 'orderShippingAddressCity_example'; // string | 
+$orderShippingAddressCompany = 'orderShippingAddressCompany_example'; // string | 
+$orderShippingAddressCountryIso2 = 'orderShippingAddressCountryIso2_example'; // string | 
+$orderShippingAddressFirstName = 'orderShippingAddressFirstName_example'; // string | 
+$orderShippingAddressLastName = 'orderShippingAddressLastName_example'; // string | 
+$orderShippingAddressPostcode = 'orderShippingAddressPostcode_example'; // string | 
+$orderShippingAddressState = 'orderShippingAddressState_example'; // string | 
+$orderBillingAddressAddressLine1 = 'orderBillingAddressAddressLine1_example'; // string | 
+$orderBillingAddressAddressLine2 = 'orderBillingAddressAddressLine2_example'; // string | 
+$orderBillingAddressCity = 'orderBillingAddressCity_example'; // string | 
+$orderBillingAddressCompany = 'orderBillingAddressCompany_example'; // string | 
+$orderBillingAddressCountryIso2 = 'orderBillingAddressCountryIso2_example'; // string | 
+$orderBillingAddressFirstName = 'orderBillingAddressFirstName_example'; // string | 
+$orderBillingAddressLastName = 'orderBillingAddressLastName_example'; // string | 
+$orderBillingAddressPostcode = 'orderBillingAddressPostcode_example'; // string | 
+$orderBillingAddressState = 'orderBillingAddressState_example'; // string | 
 $createdAtBefore = 'createdAtBefore_example'; // string | 
 $createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
 $createdAtAfter = 'createdAtAfter_example'; // string | 
@@ -169,14 +190,32 @@ $updatedAtAfter = 'updatedAtAfter_example'; // string |
 $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
-$status = 'status_example'; // string | 
-$status2 = array('status_example'); // string[] | 
+$email = 'email_example'; // string | 
+$phoneNumber = 'phoneNumber_example'; // string | 
+$orderStatusCode = 'orderStatusCode_example'; // string | 
+$orderStatusCode2 = array('orderStatusCode_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
+$shippingAddressAddressLine1 = 'shippingAddressAddressLine1_example'; // string | 
+$shippingAddressAddressLine2 = 'shippingAddressAddressLine2_example'; // string | 
+$shippingAddressCity = 'shippingAddressCity_example'; // string | 
+$shippingAddressCompany = 'shippingAddressCompany_example'; // string | 
+$shippingAddressCountryIso2 = 'shippingAddressCountryIso2_example'; // string | 
+$shippingAddressCountryIso3 = array('shippingAddressCountryIso2_example'); // string[] | 
+$shippingAddressFirstName = 'shippingAddressFirstName_example'; // string | 
+$shippingAddressLastName = 'shippingAddressLastName_example'; // string | 
+$shippingAddressPostcode = 'shippingAddressPostcode_example'; // string | 
+$shippingAddressState = 'shippingAddressState_example'; // string | 
+$billingAddressAddressLine1 = 'billingAddressAddressLine1_example'; // string | 
+$billingAddressAddressLine2 = 'billingAddressAddressLine2_example'; // string | 
+$billingAddressCity = 'billingAddressCity_example'; // string | 
+$billingAddressCompany = 'billingAddressCompany_example'; // string | 
+$billingAddressCountryIso2 = 'billingAddressCountryIso2_example'; // string | 
+$billingAddressCountryIso3 = array('billingAddressCountryIso2_example'); // string[] | 
+$billingAddressFirstName = 'billingAddressFirstName_example'; // string | 
+$billingAddressLastName = 'billingAddressLastName_example'; // string | 
+$billingAddressPostcode = 'billingAddressPostcode_example'; // string | 
+$billingAddressState = 'billingAddressState_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -191,9 +230,11 @@ $totalGt = 'totalGt_example'; // string |
 $totalGte = 'totalGte_example'; // string | 
 $totalLt = 'totalLt_example'; // string | 
 $totalLte = 'totalLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersGetSubresource($id, $workspaces, $orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiTeamsWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -210,11 +251,31 @@ Name | Type | Description  | Notes
  **workspaces** | **string**|  |
  **orderId** | **string**|  | [optional]
  **orderOrderNumber** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
+ **orderEmail** | **string**|  | [optional]
+ **orderPhoneNumber** | **string**|  | [optional]
+ **orderOrderStatusCode** | **string**|  | [optional]
  **orderSubtotal** | **string**|  | [optional]
  **orderTotal** | **string**|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
  **orderUpdatedAt** | **string**|  | [optional]
+ **orderShippingAddressAddressLine1** | **string**|  | [optional]
+ **orderShippingAddressAddressLine2** | **string**|  | [optional]
+ **orderShippingAddressCity** | **string**|  | [optional]
+ **orderShippingAddressCompany** | **string**|  | [optional]
+ **orderShippingAddressCountryIso2** | **string**|  | [optional]
+ **orderShippingAddressFirstName** | **string**|  | [optional]
+ **orderShippingAddressLastName** | **string**|  | [optional]
+ **orderShippingAddressPostcode** | **string**|  | [optional]
+ **orderShippingAddressState** | **string**|  | [optional]
+ **orderBillingAddressAddressLine1** | **string**|  | [optional]
+ **orderBillingAddressAddressLine2** | **string**|  | [optional]
+ **orderBillingAddressCity** | **string**|  | [optional]
+ **orderBillingAddressCompany** | **string**|  | [optional]
+ **orderBillingAddressCountryIso2** | **string**|  | [optional]
+ **orderBillingAddressFirstName** | **string**|  | [optional]
+ **orderBillingAddressLastName** | **string**|  | [optional]
+ **orderBillingAddressPostcode** | **string**|  | [optional]
+ **orderBillingAddressState** | **string**|  | [optional]
  **createdAtBefore** | **string**|  | [optional]
  **createdAtStrictlyBefore** | **string**|  | [optional]
  **createdAtAfter** | **string**|  | [optional]
@@ -225,14 +286,32 @@ Name | Type | Description  | Notes
  **updatedAtStrictlyAfter** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
- **status** | **string**|  | [optional]
- **status2** | [**string[]**](../Model/string.md)|  | [optional]
+ **email** | **string**|  | [optional]
+ **phoneNumber** | **string**|  | [optional]
+ **orderStatusCode** | **string**|  | [optional]
+ **orderStatusCode2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
+ **shippingAddressAddressLine1** | **string**|  | [optional]
+ **shippingAddressAddressLine2** | **string**|  | [optional]
+ **shippingAddressCity** | **string**|  | [optional]
+ **shippingAddressCompany** | **string**|  | [optional]
+ **shippingAddressCountryIso2** | **string**|  | [optional]
+ **shippingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **shippingAddressFirstName** | **string**|  | [optional]
+ **shippingAddressLastName** | **string**|  | [optional]
+ **shippingAddressPostcode** | **string**|  | [optional]
+ **shippingAddressState** | **string**|  | [optional]
+ **billingAddressAddressLine1** | **string**|  | [optional]
+ **billingAddressAddressLine2** | **string**|  | [optional]
+ **billingAddressCity** | **string**|  | [optional]
+ **billingAddressCompany** | **string**|  | [optional]
+ **billingAddressCountryIso2** | **string**|  | [optional]
+ **billingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **billingAddressFirstName** | **string**|  | [optional]
+ **billingAddressLastName** | **string**|  | [optional]
+ **billingAddressPostcode** | **string**|  | [optional]
+ **billingAddressState** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -247,10 +326,12 @@ Name | Type | Description  | Notes
  **totalGte** | **string**|  | [optional]
  **totalLt** | **string**|  | [optional]
  **totalLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGet[]**](../Model/OrderGet.md)
 
 ### Authorization
 
@@ -268,7 +349,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -296,11 +377,10 @@ $workspaces = 'workspaces_example'; // string |
 $orders = 'orders_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -317,9 +397,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiTeamsWorkspacesOrdersItemsGetSubresource($id, $workspaces, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiTeamsWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -337,11 +419,10 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -358,10 +439,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -379,7 +462,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[] apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte)
+> \TrackMage\Client\Swagger\Model\OrderGet[] apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
 
 Retrieves the collection of Order resources.
 
@@ -405,11 +488,31 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
 $id = 'id_example'; // string | 
 $orderId = 'orderId_example'; // string | 
 $orderOrderNumber = 'orderOrderNumber_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
+$orderEmail = 'orderEmail_example'; // string | 
+$orderPhoneNumber = 'orderPhoneNumber_example'; // string | 
+$orderOrderStatusCode = 'orderOrderStatusCode_example'; // string | 
 $orderSubtotal = 'orderSubtotal_example'; // string | 
 $orderTotal = 'orderTotal_example'; // string | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 $orderUpdatedAt = 'orderUpdatedAt_example'; // string | 
+$orderShippingAddressAddressLine1 = 'orderShippingAddressAddressLine1_example'; // string | 
+$orderShippingAddressAddressLine2 = 'orderShippingAddressAddressLine2_example'; // string | 
+$orderShippingAddressCity = 'orderShippingAddressCity_example'; // string | 
+$orderShippingAddressCompany = 'orderShippingAddressCompany_example'; // string | 
+$orderShippingAddressCountryIso2 = 'orderShippingAddressCountryIso2_example'; // string | 
+$orderShippingAddressFirstName = 'orderShippingAddressFirstName_example'; // string | 
+$orderShippingAddressLastName = 'orderShippingAddressLastName_example'; // string | 
+$orderShippingAddressPostcode = 'orderShippingAddressPostcode_example'; // string | 
+$orderShippingAddressState = 'orderShippingAddressState_example'; // string | 
+$orderBillingAddressAddressLine1 = 'orderBillingAddressAddressLine1_example'; // string | 
+$orderBillingAddressAddressLine2 = 'orderBillingAddressAddressLine2_example'; // string | 
+$orderBillingAddressCity = 'orderBillingAddressCity_example'; // string | 
+$orderBillingAddressCompany = 'orderBillingAddressCompany_example'; // string | 
+$orderBillingAddressCountryIso2 = 'orderBillingAddressCountryIso2_example'; // string | 
+$orderBillingAddressFirstName = 'orderBillingAddressFirstName_example'; // string | 
+$orderBillingAddressLastName = 'orderBillingAddressLastName_example'; // string | 
+$orderBillingAddressPostcode = 'orderBillingAddressPostcode_example'; // string | 
+$orderBillingAddressState = 'orderBillingAddressState_example'; // string | 
 $createdAtBefore = 'createdAtBefore_example'; // string | 
 $createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
 $createdAtAfter = 'createdAtAfter_example'; // string | 
@@ -420,14 +523,32 @@ $updatedAtAfter = 'updatedAtAfter_example'; // string |
 $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
-$status = 'status_example'; // string | 
-$status2 = array('status_example'); // string[] | 
+$email = 'email_example'; // string | 
+$phoneNumber = 'phoneNumber_example'; // string | 
+$orderStatusCode = 'orderStatusCode_example'; // string | 
+$orderStatusCode2 = array('orderStatusCode_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
+$shippingAddressAddressLine1 = 'shippingAddressAddressLine1_example'; // string | 
+$shippingAddressAddressLine2 = 'shippingAddressAddressLine2_example'; // string | 
+$shippingAddressCity = 'shippingAddressCity_example'; // string | 
+$shippingAddressCompany = 'shippingAddressCompany_example'; // string | 
+$shippingAddressCountryIso2 = 'shippingAddressCountryIso2_example'; // string | 
+$shippingAddressCountryIso3 = array('shippingAddressCountryIso2_example'); // string[] | 
+$shippingAddressFirstName = 'shippingAddressFirstName_example'; // string | 
+$shippingAddressLastName = 'shippingAddressLastName_example'; // string | 
+$shippingAddressPostcode = 'shippingAddressPostcode_example'; // string | 
+$shippingAddressState = 'shippingAddressState_example'; // string | 
+$billingAddressAddressLine1 = 'billingAddressAddressLine1_example'; // string | 
+$billingAddressAddressLine2 = 'billingAddressAddressLine2_example'; // string | 
+$billingAddressCity = 'billingAddressCity_example'; // string | 
+$billingAddressCompany = 'billingAddressCompany_example'; // string | 
+$billingAddressCountryIso2 = 'billingAddressCountryIso2_example'; // string | 
+$billingAddressCountryIso3 = array('billingAddressCountryIso2_example'); // string[] | 
+$billingAddressFirstName = 'billingAddressFirstName_example'; // string | 
+$billingAddressLastName = 'billingAddressLastName_example'; // string | 
+$billingAddressPostcode = 'billingAddressPostcode_example'; // string | 
+$billingAddressState = 'billingAddressState_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -442,9 +563,11 @@ $totalGt = 'totalGt_example'; // string |
 $totalGte = 'totalGte_example'; // string | 
 $totalLt = 'totalLt_example'; // string | 
 $totalLte = 'totalLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte);
+    $result = $apiInstance->apiWorkspacesOrdersGetSubresource($id, $orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiWorkspacesOrdersGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -460,11 +583,31 @@ Name | Type | Description  | Notes
  **id** | **string**|  |
  **orderId** | **string**|  | [optional]
  **orderOrderNumber** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
+ **orderEmail** | **string**|  | [optional]
+ **orderPhoneNumber** | **string**|  | [optional]
+ **orderOrderStatusCode** | **string**|  | [optional]
  **orderSubtotal** | **string**|  | [optional]
  **orderTotal** | **string**|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
  **orderUpdatedAt** | **string**|  | [optional]
+ **orderShippingAddressAddressLine1** | **string**|  | [optional]
+ **orderShippingAddressAddressLine2** | **string**|  | [optional]
+ **orderShippingAddressCity** | **string**|  | [optional]
+ **orderShippingAddressCompany** | **string**|  | [optional]
+ **orderShippingAddressCountryIso2** | **string**|  | [optional]
+ **orderShippingAddressFirstName** | **string**|  | [optional]
+ **orderShippingAddressLastName** | **string**|  | [optional]
+ **orderShippingAddressPostcode** | **string**|  | [optional]
+ **orderShippingAddressState** | **string**|  | [optional]
+ **orderBillingAddressAddressLine1** | **string**|  | [optional]
+ **orderBillingAddressAddressLine2** | **string**|  | [optional]
+ **orderBillingAddressCity** | **string**|  | [optional]
+ **orderBillingAddressCompany** | **string**|  | [optional]
+ **orderBillingAddressCountryIso2** | **string**|  | [optional]
+ **orderBillingAddressFirstName** | **string**|  | [optional]
+ **orderBillingAddressLastName** | **string**|  | [optional]
+ **orderBillingAddressPostcode** | **string**|  | [optional]
+ **orderBillingAddressState** | **string**|  | [optional]
  **createdAtBefore** | **string**|  | [optional]
  **createdAtStrictlyBefore** | **string**|  | [optional]
  **createdAtAfter** | **string**|  | [optional]
@@ -475,14 +618,32 @@ Name | Type | Description  | Notes
  **updatedAtStrictlyAfter** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
- **status** | **string**|  | [optional]
- **status2** | [**string[]**](../Model/string.md)|  | [optional]
+ **email** | **string**|  | [optional]
+ **phoneNumber** | **string**|  | [optional]
+ **orderStatusCode** | **string**|  | [optional]
+ **orderStatusCode2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
+ **shippingAddressAddressLine1** | **string**|  | [optional]
+ **shippingAddressAddressLine2** | **string**|  | [optional]
+ **shippingAddressCity** | **string**|  | [optional]
+ **shippingAddressCompany** | **string**|  | [optional]
+ **shippingAddressCountryIso2** | **string**|  | [optional]
+ **shippingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **shippingAddressFirstName** | **string**|  | [optional]
+ **shippingAddressLastName** | **string**|  | [optional]
+ **shippingAddressPostcode** | **string**|  | [optional]
+ **shippingAddressState** | **string**|  | [optional]
+ **billingAddressAddressLine1** | **string**|  | [optional]
+ **billingAddressAddressLine2** | **string**|  | [optional]
+ **billingAddressCity** | **string**|  | [optional]
+ **billingAddressCompany** | **string**|  | [optional]
+ **billingAddressCountryIso2** | **string**|  | [optional]
+ **billingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **billingAddressFirstName** | **string**|  | [optional]
+ **billingAddressLastName** | **string**|  | [optional]
+ **billingAddressPostcode** | **string**|  | [optional]
+ **billingAddressState** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -497,10 +658,12 @@ Name | Type | Description  | Notes
  **totalGte** | **string**|  | [optional]
  **totalLt** | **string**|  | [optional]
  **totalLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGet[]**](../Model/OrderGet.md)
 
 ### Authorization
 
@@ -518,7 +681,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesOrdersItemsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte)
+> \TrackMage\Client\Swagger\Model\OrderItemGet[] apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage)
 
 Retrieves the collection of OrderItem resources.
 
@@ -545,11 +708,10 @@ $id = 'id_example'; // string |
 $orders = 'orders_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $productName = 'productName_example'; // string | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
+$workspaceId = 'workspaceId_example'; // string | 
+$workspaceId2 = array('workspaceId_example'); // string[] | 
 $orderId = 'orderId_example'; // string | 
 $orderProductName = 'orderProductName_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
 $orderQty = 'orderQty_example'; // string | 
 $orderPrice = 'orderPrice_example'; // string | 
 $qty = 56; // int | 
@@ -566,9 +728,11 @@ $priceGt = 'priceGt_example'; // string |
 $priceGte = 'priceGte_example'; // string | 
 $priceLt = 'priceLt_example'; // string | 
 $priceLte = 'priceLte_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $externalSyncId, $externalSyncId2, $orderId, $orderProductName, $orderExternalSyncId, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte);
+    $result = $apiInstance->apiWorkspacesOrdersItemsGetSubresource($id, $orders, $id2, $productName, $workspaceId, $workspaceId2, $orderId, $orderProductName, $orderQty, $orderPrice, $qty, $qty2, $price, $price2, $qtyBetween, $qtyGt, $qtyGte, $qtyLt, $qtyLte, $priceBetween, $priceGt, $priceGte, $priceLt, $priceLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiWorkspacesOrdersItemsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -585,11 +749,10 @@ Name | Type | Description  | Notes
  **orders** | **string**|  |
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **productName** | **string**|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
+ **workspaceId** | **string**|  | [optional]
+ **workspaceId2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderId** | **string**|  | [optional]
  **orderProductName** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
  **orderQty** | **string**|  | [optional]
  **orderPrice** | **string**|  | [optional]
  **qty** | **int**|  | [optional]
@@ -606,10 +769,12 @@ Name | Type | Description  | Notes
  **priceGte** | **string**|  | [optional]
  **priceLt** | **string**|  | [optional]
  **priceLte** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderItemGetOrderItem[]**](../Model/OrderItemGetOrderItem.md)
+[**\TrackMage\Client\Swagger\Model\OrderItemGet[]**](../Model/OrderItemGet.md)
 
 ### Authorization
 
@@ -687,7 +852,7 @@ void (empty response body)
 
 ## getOrderCollection
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrder[] getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\OrderGetc[] getOrderCollection($orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage)
 
 Retrieves the collection of Order resources.
 
@@ -712,11 +877,31 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
 );
 $orderId = 'orderId_example'; // string | 
 $orderOrderNumber = 'orderOrderNumber_example'; // string | 
-$orderExternalSyncId = 'orderExternalSyncId_example'; // string | 
+$orderEmail = 'orderEmail_example'; // string | 
+$orderPhoneNumber = 'orderPhoneNumber_example'; // string | 
+$orderOrderStatusCode = 'orderOrderStatusCode_example'; // string | 
 $orderSubtotal = 'orderSubtotal_example'; // string | 
 $orderTotal = 'orderTotal_example'; // string | 
 $orderCreatedAt = 'orderCreatedAt_example'; // string | 
 $orderUpdatedAt = 'orderUpdatedAt_example'; // string | 
+$orderShippingAddressAddressLine1 = 'orderShippingAddressAddressLine1_example'; // string | 
+$orderShippingAddressAddressLine2 = 'orderShippingAddressAddressLine2_example'; // string | 
+$orderShippingAddressCity = 'orderShippingAddressCity_example'; // string | 
+$orderShippingAddressCompany = 'orderShippingAddressCompany_example'; // string | 
+$orderShippingAddressCountryIso2 = 'orderShippingAddressCountryIso2_example'; // string | 
+$orderShippingAddressFirstName = 'orderShippingAddressFirstName_example'; // string | 
+$orderShippingAddressLastName = 'orderShippingAddressLastName_example'; // string | 
+$orderShippingAddressPostcode = 'orderShippingAddressPostcode_example'; // string | 
+$orderShippingAddressState = 'orderShippingAddressState_example'; // string | 
+$orderBillingAddressAddressLine1 = 'orderBillingAddressAddressLine1_example'; // string | 
+$orderBillingAddressAddressLine2 = 'orderBillingAddressAddressLine2_example'; // string | 
+$orderBillingAddressCity = 'orderBillingAddressCity_example'; // string | 
+$orderBillingAddressCompany = 'orderBillingAddressCompany_example'; // string | 
+$orderBillingAddressCountryIso2 = 'orderBillingAddressCountryIso2_example'; // string | 
+$orderBillingAddressFirstName = 'orderBillingAddressFirstName_example'; // string | 
+$orderBillingAddressLastName = 'orderBillingAddressLastName_example'; // string | 
+$orderBillingAddressPostcode = 'orderBillingAddressPostcode_example'; // string | 
+$orderBillingAddressState = 'orderBillingAddressState_example'; // string | 
 $createdAtBefore = 'createdAtBefore_example'; // string | 
 $createdAtStrictlyBefore = 'createdAtStrictlyBefore_example'; // string | 
 $createdAtAfter = 'createdAtAfter_example'; // string | 
@@ -728,14 +913,32 @@ $updatedAtStrictlyAfter = 'updatedAtStrictlyAfter_example'; // string |
 $id = 'id_example'; // string | 
 $id2 = array('id_example'); // string[] | 
 $orderNumber = 'orderNumber_example'; // string | 
-$orderNumber2 = array('orderNumber_example'); // string[] | 
-$externalSyncId = 'externalSyncId_example'; // string | 
-$externalSyncId2 = array('externalSyncId_example'); // string[] | 
-$status = 'status_example'; // string | 
-$status2 = array('status_example'); // string[] | 
+$email = 'email_example'; // string | 
+$phoneNumber = 'phoneNumber_example'; // string | 
+$orderStatusCode = 'orderStatusCode_example'; // string | 
+$orderStatusCode2 = array('orderStatusCode_example'); // string[] | 
 $orderType = 'orderType_example'; // string | 
 $orderType2 = array('orderType_example'); // string[] | 
-$address = 'address_example'; // string | 
+$shippingAddressAddressLine1 = 'shippingAddressAddressLine1_example'; // string | 
+$shippingAddressAddressLine2 = 'shippingAddressAddressLine2_example'; // string | 
+$shippingAddressCity = 'shippingAddressCity_example'; // string | 
+$shippingAddressCompany = 'shippingAddressCompany_example'; // string | 
+$shippingAddressCountryIso2 = 'shippingAddressCountryIso2_example'; // string | 
+$shippingAddressCountryIso3 = array('shippingAddressCountryIso2_example'); // string[] | 
+$shippingAddressFirstName = 'shippingAddressFirstName_example'; // string | 
+$shippingAddressLastName = 'shippingAddressLastName_example'; // string | 
+$shippingAddressPostcode = 'shippingAddressPostcode_example'; // string | 
+$shippingAddressState = 'shippingAddressState_example'; // string | 
+$billingAddressAddressLine1 = 'billingAddressAddressLine1_example'; // string | 
+$billingAddressAddressLine2 = 'billingAddressAddressLine2_example'; // string | 
+$billingAddressCity = 'billingAddressCity_example'; // string | 
+$billingAddressCompany = 'billingAddressCompany_example'; // string | 
+$billingAddressCountryIso2 = 'billingAddressCountryIso2_example'; // string | 
+$billingAddressCountryIso3 = array('billingAddressCountryIso2_example'); // string[] | 
+$billingAddressFirstName = 'billingAddressFirstName_example'; // string | 
+$billingAddressLastName = 'billingAddressLastName_example'; // string | 
+$billingAddressPostcode = 'billingAddressPostcode_example'; // string | 
+$billingAddressState = 'billingAddressState_example'; // string | 
 $subtotal = 'subtotal_example'; // string | 
 $subtotal2 = array('subtotal_example'); // string[] | 
 $total = 'total_example'; // string | 
@@ -754,7 +957,7 @@ $page = 56; // int | The collection page number
 $itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->getOrderCollection($orderId, $orderOrderNumber, $orderExternalSyncId, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $orderNumber2, $externalSyncId, $externalSyncId2, $status, $status2, $orderType, $orderType2, $address, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
+    $result = $apiInstance->getOrderCollection($orderId, $orderOrderNumber, $orderEmail, $orderPhoneNumber, $orderOrderStatusCode, $orderSubtotal, $orderTotal, $orderCreatedAt, $orderUpdatedAt, $orderShippingAddressAddressLine1, $orderShippingAddressAddressLine2, $orderShippingAddressCity, $orderShippingAddressCompany, $orderShippingAddressCountryIso2, $orderShippingAddressFirstName, $orderShippingAddressLastName, $orderShippingAddressPostcode, $orderShippingAddressState, $orderBillingAddressAddressLine1, $orderBillingAddressAddressLine2, $orderBillingAddressCity, $orderBillingAddressCompany, $orderBillingAddressCountryIso2, $orderBillingAddressFirstName, $orderBillingAddressLastName, $orderBillingAddressPostcode, $orderBillingAddressState, $createdAtBefore, $createdAtStrictlyBefore, $createdAtAfter, $createdAtStrictlyAfter, $updatedAtBefore, $updatedAtStrictlyBefore, $updatedAtAfter, $updatedAtStrictlyAfter, $id, $id2, $orderNumber, $email, $phoneNumber, $orderStatusCode, $orderStatusCode2, $orderType, $orderType2, $shippingAddressAddressLine1, $shippingAddressAddressLine2, $shippingAddressCity, $shippingAddressCompany, $shippingAddressCountryIso2, $shippingAddressCountryIso3, $shippingAddressFirstName, $shippingAddressLastName, $shippingAddressPostcode, $shippingAddressState, $billingAddressAddressLine1, $billingAddressAddressLine2, $billingAddressCity, $billingAddressCompany, $billingAddressCountryIso2, $billingAddressCountryIso3, $billingAddressFirstName, $billingAddressLastName, $billingAddressPostcode, $billingAddressState, $subtotal, $subtotal2, $total, $total2, $subtotalBetween, $subtotalGt, $subtotalGte, $subtotalLt, $subtotalLte, $totalBetween, $totalGt, $totalGte, $totalLt, $totalLte, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -769,11 +972,31 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**|  | [optional]
  **orderOrderNumber** | **string**|  | [optional]
- **orderExternalSyncId** | **string**|  | [optional]
+ **orderEmail** | **string**|  | [optional]
+ **orderPhoneNumber** | **string**|  | [optional]
+ **orderOrderStatusCode** | **string**|  | [optional]
  **orderSubtotal** | **string**|  | [optional]
  **orderTotal** | **string**|  | [optional]
  **orderCreatedAt** | **string**|  | [optional]
  **orderUpdatedAt** | **string**|  | [optional]
+ **orderShippingAddressAddressLine1** | **string**|  | [optional]
+ **orderShippingAddressAddressLine2** | **string**|  | [optional]
+ **orderShippingAddressCity** | **string**|  | [optional]
+ **orderShippingAddressCompany** | **string**|  | [optional]
+ **orderShippingAddressCountryIso2** | **string**|  | [optional]
+ **orderShippingAddressFirstName** | **string**|  | [optional]
+ **orderShippingAddressLastName** | **string**|  | [optional]
+ **orderShippingAddressPostcode** | **string**|  | [optional]
+ **orderShippingAddressState** | **string**|  | [optional]
+ **orderBillingAddressAddressLine1** | **string**|  | [optional]
+ **orderBillingAddressAddressLine2** | **string**|  | [optional]
+ **orderBillingAddressCity** | **string**|  | [optional]
+ **orderBillingAddressCompany** | **string**|  | [optional]
+ **orderBillingAddressCountryIso2** | **string**|  | [optional]
+ **orderBillingAddressFirstName** | **string**|  | [optional]
+ **orderBillingAddressLastName** | **string**|  | [optional]
+ **orderBillingAddressPostcode** | **string**|  | [optional]
+ **orderBillingAddressState** | **string**|  | [optional]
  **createdAtBefore** | **string**|  | [optional]
  **createdAtStrictlyBefore** | **string**|  | [optional]
  **createdAtAfter** | **string**|  | [optional]
@@ -785,14 +1008,32 @@ Name | Type | Description  | Notes
  **id** | **string**|  | [optional]
  **id2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderNumber** | **string**|  | [optional]
- **orderNumber2** | [**string[]**](../Model/string.md)|  | [optional]
- **externalSyncId** | **string**|  | [optional]
- **externalSyncId2** | [**string[]**](../Model/string.md)|  | [optional]
- **status** | **string**|  | [optional]
- **status2** | [**string[]**](../Model/string.md)|  | [optional]
+ **email** | **string**|  | [optional]
+ **phoneNumber** | **string**|  | [optional]
+ **orderStatusCode** | **string**|  | [optional]
+ **orderStatusCode2** | [**string[]**](../Model/string.md)|  | [optional]
  **orderType** | **string**|  | [optional]
  **orderType2** | [**string[]**](../Model/string.md)|  | [optional]
- **address** | **string**|  | [optional]
+ **shippingAddressAddressLine1** | **string**|  | [optional]
+ **shippingAddressAddressLine2** | **string**|  | [optional]
+ **shippingAddressCity** | **string**|  | [optional]
+ **shippingAddressCompany** | **string**|  | [optional]
+ **shippingAddressCountryIso2** | **string**|  | [optional]
+ **shippingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **shippingAddressFirstName** | **string**|  | [optional]
+ **shippingAddressLastName** | **string**|  | [optional]
+ **shippingAddressPostcode** | **string**|  | [optional]
+ **shippingAddressState** | **string**|  | [optional]
+ **billingAddressAddressLine1** | **string**|  | [optional]
+ **billingAddressAddressLine2** | **string**|  | [optional]
+ **billingAddressCity** | **string**|  | [optional]
+ **billingAddressCompany** | **string**|  | [optional]
+ **billingAddressCountryIso2** | **string**|  | [optional]
+ **billingAddressCountryIso3** | [**string[]**](../Model/string.md)|  | [optional]
+ **billingAddressFirstName** | **string**|  | [optional]
+ **billingAddressLastName** | **string**|  | [optional]
+ **billingAddressPostcode** | **string**|  | [optional]
+ **billingAddressState** | **string**|  | [optional]
  **subtotal** | **string**|  | [optional]
  **subtotal2** | [**string[]**](../Model/string.md)|  | [optional]
  **total** | **string**|  | [optional]
@@ -812,7 +1053,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrdersGetOrderMetaGetOrderStatusForOrder[]**](../Model/OrderGetOrdersGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGetc[]**](../Model/OrderGetc.md)
 
 ### Authorization
 
@@ -830,7 +1071,7 @@ Name | Type | Description  | Notes
 
 ## getOrderItem
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder getOrderItem($id)
+> \TrackMage\Client\Swagger\Model\OrderGet getOrderItem($id)
 
 Retrieves a Order resource.
 
@@ -873,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGet**](../Model/OrderGet.md)
 
 ### Authorization
 
@@ -889,72 +1130,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## migrateOrderCollection
-
-> \TrackMage\Client\Swagger\Model\Order159339841dc29518f4db0fcf51e5430dGetMigrateOrdersResponse migrateOrderCollection($order)
-
-Migrate orders from old status to a new one
-
-- Migrate orders from old status to a new one within given workspace.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: apiKey
-$config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = TrackMage\Client\Swagger\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$order = new \TrackMage\Client\Swagger\Model\Order9f235eff7e914c651ace3fcc3d169fd6SetMigrateOrdersRequest(); // \TrackMage\Client\Swagger\Model\Order9f235eff7e914c651ace3fcc3d169fd6SetMigrateOrdersRequest | The new Order resource
-
-try {
-    $result = $apiInstance->migrateOrderCollection($order);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrderApi->migrateOrderCollection: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order** | [**\TrackMage\Client\Swagger\Model\Order9f235eff7e914c651ace3fcc3d169fd6SetMigrateOrdersRequest**](../Model/Order9f235eff7e914c651ace3fcc3d169fd6SetMigrateOrdersRequest.md)| The new Order resource | [optional]
-
-### Return type
-
-[**\TrackMage\Client\Swagger\Model\Order159339841dc29518f4db0fcf51e5430dGetMigrateOrdersResponse**](../Model/Order159339841dc29518f4db0fcf51e5430dGetMigrateOrdersResponse.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
-- **Content-Type**: application/ld+json, application/json, text/csv, text/html
-- **Accept**: application/ld+json, application/json, text/csv, text/html
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
 ## postOrderCollection
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder postOrderCollection($order)
+> \TrackMage\Client\Swagger\Model\OrderGet postOrderCollection($order)
 
 Creates a Order resource.
 
@@ -977,7 +1155,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order = new \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder(); // \TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder | The new Order resource
+$order = new \TrackMage\Client\Swagger\Model\OrderPost(); // \TrackMage\Client\Swagger\Model\OrderPost | The new Order resource
 
 try {
     $result = $apiInstance->postOrderCollection($order);
@@ -993,11 +1171,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**\TrackMage\Client\Swagger\Model\OrderPostOrderSetOrderMetaSetOrderStatusForOrder**](../Model/OrderPostOrderSetOrderMetaSetOrderStatusForOrder.md)| The new Order resource | [optional]
+ **order** | [**\TrackMage\Client\Swagger\Model\OrderPost**](../Model/OrderPost.md)| The new Order resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGet**](../Model/OrderGet.md)
 
 ### Authorization
 
@@ -1015,7 +1193,7 @@ Name | Type | Description  | Notes
 
 ## putOrderItem
 
-> \TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder putOrderItem($id, $order)
+> \TrackMage\Client\Swagger\Model\OrderGet putOrderItem($id, $order)
 
 Replaces the Order resource.
 
@@ -1039,7 +1217,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\OrderApi(
     $config
 );
 $id = 'id_example'; // string | 
-$order = new \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder(); // \TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder | The updated Order resource
+$order = new \TrackMage\Client\Swagger\Model\OrderPut(); // \TrackMage\Client\Swagger\Model\OrderPut | The updated Order resource
 
 try {
     $result = $apiInstance->putOrderItem($id, $order);
@@ -1056,11 +1234,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **order** | [**\TrackMage\Client\Swagger\Model\OrderPutOrderSetOrderMetaSetOrderStatusForOrder**](../Model/OrderPutOrderSetOrderMetaSetOrderStatusForOrder.md)| The updated Order resource | [optional]
+ **order** | [**\TrackMage\Client\Swagger\Model\OrderPut**](../Model/OrderPut.md)| The updated Order resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\OrderGetOrderGetOrderMetaGetOrderStatusForOrder**](../Model/OrderGetOrderGetOrderMetaGetOrderStatusForOrder.md)
+[**\TrackMage\Client\Swagger\Model\OrderGet**](../Model/OrderGet.md)
 
 ### Authorization
 

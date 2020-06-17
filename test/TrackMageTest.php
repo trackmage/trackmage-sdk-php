@@ -4,8 +4,8 @@ namespace TrackMage\Client;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
-use TrackMage\Client\Swagger\Model\OauthClientSetOAuthClient;
-use TrackMage\Client\Swagger\Model\ShipmentPostShipmentSetShipmentMeta;
+use TrackMage\Client\Swagger\Model\OauthClientPost;
+use TrackMage\Client\Swagger\Model\ShipmentPost;
 use TrackMage\Client\Swagger\Model\UserSignupRequest;
 use TrackMage\Client\Swagger\Model\UserVerifyEmailRequest;
 
@@ -107,7 +107,7 @@ class TrackMageTest extends TestCase
      */
     public function testClientAuth()
     {
-        $request = new OauthClientSetOAuthClient();
+        $request = new OauthClientPost();
         $request->setName('test');
         $request->setRedirectUris(['https://localhost']);
         $response = self::$client->getOauthClientApi()->postOauthClientCollection($request);
@@ -128,10 +128,10 @@ class TrackMageTest extends TestCase
         $res = self::$client->getShipmentApi()->apiWorkspacesShipmentsGetSubresource(self::$workspaceId);
         self::assertEmpty($res);
 
-        $tn = new ShipmentPostShipmentSetShipmentMeta();
-        $tn->setTrackingNumber('TN-1');
-        $tn->setWorkspace('/workspaces/'.self::$workspaceId);
-        $response = self::$client->getShipmentApi()->postShipmentCollection($tn);
+        $shipment = new ShipmentPost();
+        $shipment->setTrackingNumber('TN-1');
+        $shipment->setWorkspace('/workspaces/'.self::$workspaceId);
+        $response = self::$client->getShipmentApi()->postShipmentCollection($shipment);
         self::assertNotNull($response);
         self::assertEquals('TN-1', $response->getTrackingNumber());
 
