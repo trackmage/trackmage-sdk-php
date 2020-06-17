@@ -48,6 +48,7 @@ class AddAuthHeadersMiddleware
      */
     public function __invoke(RequestInterface $request, array $options)
     {
+        $request = $this->addGeneralHeaders($request);
         $token = $this->configuration->getAccessToken();
         if (empty($token)) {
             $clientId = $this->configuration->getUsername();
@@ -63,6 +64,20 @@ class AddAuthHeadersMiddleware
         $fn = $this->nextHandler;
 
         return $fn($request, $options);
+    }
+
+    /**
+     * @param RequestInterface $request
+     * @return RequestInterface
+     */
+    private function addGeneralHeaders(RequestInterface $request)
+    {
+        $headers = [
+            'Accept' => 'application/json',
+        ];
+        $modify['set_headers'] = $headers;
+
+        return Psr7\modify_request($request, $modify);
     }
 
     /**

@@ -1,0 +1,25 @@
+# # OrderItemGet
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**order** | **string** |  | 
+**productName** | **string** |  | [optional] 
+**productSku** | **string** |  | [optional] 
+**productOptions** | **string[]** |  | [optional] 
+**qty** | **int** |  | [optional] 
+**price** | **string** |  | [optional] 
+**rowTotal** | **string** |  | [optional] 
+**externalProductId** | **string** |  | [optional] 
+**externalSourceSyncId** | **string** |  | [optional] 
+**externalSourceIntegration** | **string** |  | [optional] 
+**product** | **string** |  | [optional] 
+**productVariant** | **string** |  | [optional] 
+**imageUrl** | **string** |  | [optional] 
+**fulfilledQty** | **int** |  | [optional] 
+**id** | **string** |  | [optional] [readonly] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
+

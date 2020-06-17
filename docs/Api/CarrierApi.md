@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\CarrierApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## getCarrierCollection
 
-> \TrackMage\Client\Swagger\Model\CarrierGetCarrier[] getCarrierCollection()
+> \TrackMage\Client\Swagger\Model\CarrierGetc[] getCarrierCollection($groups)
 
 Retrieves the collection of Carrier resources.
 
@@ -34,9 +34,10 @@ $apiInstance = new TrackMage\Client\Swagger\Api\CarrierApi(
     new GuzzleHttp\Client(),
     $config
 );
+$groups = array('groups_example'); // string[] | 
 
 try {
-    $result = $apiInstance->getCarrierCollection();
+    $result = $apiInstance->getCarrierCollection($groups);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CarrierApi->getCarrierCollection: ', $e->getMessage(), PHP_EOL;
@@ -46,11 +47,14 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groups** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\CarrierGetCarrier[]**](../Model/CarrierGetCarrier.md)
+[**\TrackMage\Client\Swagger\Model\CarrierGetc[]**](../Model/CarrierGetc.md)
 
 ### Authorization
 
@@ -68,7 +72,7 @@ This endpoint does not need any parameter.
 
 ## getCarrierItem
 
-> \TrackMage\Client\Swagger\Model\CarrierGetCarrier getCarrierItem($id)
+> \TrackMage\Client\Swagger\Model\CarrierGet getCarrierItem($id)
 
 Retrieves a Carrier resource.
 
@@ -111,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\CarrierGetCarrier**](../Model/CarrierGetCarrier.md)
+[**\TrackMage\Client\Swagger\Model\CarrierGet**](../Model/CarrierGet.md)
 
 ### Authorization
 

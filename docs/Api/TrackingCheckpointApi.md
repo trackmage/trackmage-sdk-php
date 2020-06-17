@@ -1,6 +1,6 @@
 # TrackMage\Client\Swagger\TrackingCheckpointApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## apiShipmentsCheckpointsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[] apiShipmentsCheckpointsGetSubresource($id, $orderCheckpointDate)
+> \TrackMage\Client\Swagger\Model\TrackingCheckpointGet[] apiShipmentsCheckpointsGetSubresource($id, $orderCheckpointDate, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingCheckpoint resources.
 
@@ -39,9 +39,11 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingCheckpointApi(
 );
 $id = 'id_example'; // string | 
 $orderCheckpointDate = 'orderCheckpointDate_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiShipmentsCheckpointsGetSubresource($id, $orderCheckpointDate);
+    $result = $apiInstance->apiShipmentsCheckpointsGetSubresource($id, $orderCheckpointDate, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrackingCheckpointApi->apiShipmentsCheckpointsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -56,10 +58,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
  **orderCheckpointDate** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[]**](../Model/TrackingCheckpointGetTrackingCheckpoint.md)
+[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGet[]**](../Model/TrackingCheckpointGet.md)
 
 ### Authorization
 
@@ -77,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## apiTeamsWorkspacesShipmentsCheckpointsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[] apiTeamsWorkspacesShipmentsCheckpointsGetSubresource($id, $workspaces, $shipments, $orderCheckpointDate)
+> \TrackMage\Client\Swagger\Model\TrackingCheckpointGet[] apiTeamsWorkspacesShipmentsCheckpointsGetSubresource($id, $workspaces, $shipments, $orderCheckpointDate, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingCheckpoint resources.
 
@@ -104,9 +108,11 @@ $id = 'id_example'; // string |
 $workspaces = 'workspaces_example'; // string | 
 $shipments = 'shipments_example'; // string | 
 $orderCheckpointDate = 'orderCheckpointDate_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiTeamsWorkspacesShipmentsCheckpointsGetSubresource($id, $workspaces, $shipments, $orderCheckpointDate);
+    $result = $apiInstance->apiTeamsWorkspacesShipmentsCheckpointsGetSubresource($id, $workspaces, $shipments, $orderCheckpointDate, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrackingCheckpointApi->apiTeamsWorkspacesShipmentsCheckpointsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -123,10 +129,12 @@ Name | Type | Description  | Notes
  **workspaces** | **string**|  |
  **shipments** | **string**|  |
  **orderCheckpointDate** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[]**](../Model/TrackingCheckpointGetTrackingCheckpoint.md)
+[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGet[]**](../Model/TrackingCheckpointGet.md)
 
 ### Authorization
 
@@ -144,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## apiWorkspacesShipmentsCheckpointsGetSubresource
 
-> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[] apiWorkspacesShipmentsCheckpointsGetSubresource($id, $shipments, $orderCheckpointDate)
+> \TrackMage\Client\Swagger\Model\TrackingCheckpointGet[] apiWorkspacesShipmentsCheckpointsGetSubresource($id, $shipments, $orderCheckpointDate, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingCheckpoint resources.
 
@@ -170,9 +178,11 @@ $apiInstance = new TrackMage\Client\Swagger\Api\TrackingCheckpointApi(
 $id = 'id_example'; // string | 
 $shipments = 'shipments_example'; // string | 
 $orderCheckpointDate = 'orderCheckpointDate_example'; // string | 
+$page = 56; // int | The collection page number
+$itemsPerPage = 56; // int | The number of items per page
 
 try {
-    $result = $apiInstance->apiWorkspacesShipmentsCheckpointsGetSubresource($id, $shipments, $orderCheckpointDate);
+    $result = $apiInstance->apiWorkspacesShipmentsCheckpointsGetSubresource($id, $shipments, $orderCheckpointDate, $page, $itemsPerPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrackingCheckpointApi->apiWorkspacesShipmentsCheckpointsGetSubresource: ', $e->getMessage(), PHP_EOL;
@@ -188,10 +198,12 @@ Name | Type | Description  | Notes
  **id** | **string**|  |
  **shipments** | **string**|  |
  **orderCheckpointDate** | **string**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
+ **itemsPerPage** | **int**| The number of items per page | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint[]**](../Model/TrackingCheckpointGetTrackingCheckpoint.md)
+[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGet[]**](../Model/TrackingCheckpointGet.md)
 
 ### Authorization
 
@@ -209,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## getTrackingCheckpointCollection
 
-> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoints[] getTrackingCheckpointCollection($orderCheckpointDate, $page, $itemsPerPage)
+> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetc[] getTrackingCheckpointCollection($orderCheckpointDate, $page, $itemsPerPage)
 
 Retrieves the collection of TrackingCheckpoint resources.
 
@@ -256,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoints[]**](../Model/TrackingCheckpointGetTrackingCheckpoints.md)
+[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetc[]**](../Model/TrackingCheckpointGetc.md)
 
 ### Authorization
 
@@ -274,7 +286,7 @@ Name | Type | Description  | Notes
 
 ## getTrackingCheckpointItem
 
-> \TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint getTrackingCheckpointItem($id)
+> \TrackMage\Client\Swagger\Model\TrackingCheckpointGet getTrackingCheckpointItem($id)
 
 Retrieves a TrackingCheckpoint resource.
 
@@ -317,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGetTrackingCheckpoint**](../Model/TrackingCheckpointGetTrackingCheckpoint.md)
+[**\TrackMage\Client\Swagger\Model\TrackingCheckpointGet**](../Model/TrackingCheckpointGet.md)
 
 ### Authorization
 

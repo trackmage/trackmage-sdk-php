@@ -1,14 +1,14 @@
 # TrackMage\Client\Swagger\FieldApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.l.trackmage.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFieldItem**](FieldApi.md#deleteFieldItem) | **DELETE** /workspaces/{workspace}/{entity}/fields/{id} | Removes the Field resource.
-[**getFieldCollection**](FieldApi.md#getFieldCollection) | **GET** /workspaces/{workspace}/{entity}/fields | Retrieves the collection of Field resources.
-[**getFieldItem**](FieldApi.md#getFieldItem) | **GET** /workspaces/{workspace}/{entity}/fields/{id} | Retrieves a Field resource.
-[**postFieldCollection**](FieldApi.md#postFieldCollection) | **POST** /workspaces/{workspace}/{entity}/fields | Creates a Field resource.
-[**putFieldItem**](FieldApi.md#putFieldItem) | **PUT** /workspaces/{workspace}/{entity}/fields/{id} | Replaces the Field resource.
+[**deleteFieldItem**](FieldApi.md#deleteFieldItem) | **DELETE** /fields/{id} | Removes the Field resource.
+[**getFieldCollection**](FieldApi.md#getFieldCollection) | **GET** /fields | Retrieves the collection of Field resources.
+[**getFieldItem**](FieldApi.md#getFieldItem) | **GET** /fields/{id} | Retrieves a Field resource.
+[**postFieldCollection**](FieldApi.md#postFieldCollection) | **POST** /fields | Creates a Field resource.
+[**putFieldItem**](FieldApi.md#putFieldItem) | **PUT** /fields/{id} | Replaces the Field resource.
 
 
 
@@ -74,7 +74,7 @@ void (empty response body)
 
 ## getFieldCollection
 
-> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses[] getFieldCollection($primary)
+> \TrackMage\Client\Swagger\Model\FieldGet[] getFieldCollection($entity, $workspace, $primary)
 
 Retrieves the collection of Field resources.
 
@@ -97,10 +97,12 @@ $apiInstance = new TrackMage\Client\Swagger\Api\FieldApi(
     new GuzzleHttp\Client(),
     $config
 );
+$entity = 'entity_example'; // string | The entity you need fields for. For example, shipments or orders. The whole format is entity[.type], for example, workflows.webhook or credentials.smtp
+$workspace = 56; // int | Specify workspace id for fields stored in EAV
 $primary = True; // bool | If true only primary fields will be returned, if false only custom ones
 
 try {
-    $result = $apiInstance->getFieldCollection($primary);
+    $result = $apiInstance->getFieldCollection($entity, $workspace, $primary);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FieldApi->getFieldCollection: ', $e->getMessage(), PHP_EOL;
@@ -113,11 +115,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **entity** | **string**| The entity you need fields for. For example, shipments or orders. The whole format is entity[.type], for example, workflows.webhook or credentials.smtp |
+ **workspace** | **int**| Specify workspace id for fields stored in EAV | [optional]
  **primary** | **bool**| If true only primary fields will be returned, if false only custom ones | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses[]**](../Model/FieldGetFieldGetSelectOptionsGetDeliveryStatuses.md)
+[**\TrackMage\Client\Swagger\Model\FieldGet[]**](../Model/FieldGet.md)
 
 ### Authorization
 
@@ -135,7 +139,7 @@ Name | Type | Description  | Notes
 
 ## getFieldItem
 
-> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses getFieldItem($id)
+> \TrackMage\Client\Swagger\Model\FieldGet getFieldItem($id)
 
 Retrieves a Field resource.
 
@@ -178,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses**](../Model/FieldGetFieldGetSelectOptionsGetDeliveryStatuses.md)
+[**\TrackMage\Client\Swagger\Model\FieldGet**](../Model/FieldGet.md)
 
 ### Authorization
 
@@ -196,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## postFieldCollection
 
-> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses postFieldCollection($field)
+> \TrackMage\Client\Swagger\Model\FieldGet postFieldCollection($field)
 
 Creates a Field resource.
 
@@ -219,7 +223,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\FieldApi(
     new GuzzleHttp\Client(),
     $config
 );
-$field = new \TrackMage\Client\Swagger\Model\FieldPostField(); // \TrackMage\Client\Swagger\Model\FieldPostField | The new Field resource
+$field = new \TrackMage\Client\Swagger\Model\FieldPost(); // \TrackMage\Client\Swagger\Model\FieldPost | The new Field resource
 
 try {
     $result = $apiInstance->postFieldCollection($field);
@@ -235,11 +239,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **field** | [**\TrackMage\Client\Swagger\Model\FieldPostField**](../Model/FieldPostField.md)| The new Field resource | [optional]
+ **field** | [**\TrackMage\Client\Swagger\Model\FieldPost**](../Model/FieldPost.md)| The new Field resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses**](../Model/FieldGetFieldGetSelectOptionsGetDeliveryStatuses.md)
+[**\TrackMage\Client\Swagger\Model\FieldGet**](../Model/FieldGet.md)
 
 ### Authorization
 
@@ -257,7 +261,7 @@ Name | Type | Description  | Notes
 
 ## putFieldItem
 
-> \TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses putFieldItem($id, $field)
+> \TrackMage\Client\Swagger\Model\FieldGet putFieldItem($id, $field)
 
 Replaces the Field resource.
 
@@ -281,7 +285,7 @@ $apiInstance = new TrackMage\Client\Swagger\Api\FieldApi(
     $config
 );
 $id = 'id_example'; // string | 
-$field = new \TrackMage\Client\Swagger\Model\FieldPutField(); // \TrackMage\Client\Swagger\Model\FieldPutField | The updated Field resource
+$field = new \TrackMage\Client\Swagger\Model\FieldPut(); // \TrackMage\Client\Swagger\Model\FieldPut | The updated Field resource
 
 try {
     $result = $apiInstance->putFieldItem($id, $field);
@@ -298,11 +302,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **field** | [**\TrackMage\Client\Swagger\Model\FieldPutField**](../Model/FieldPutField.md)| The updated Field resource | [optional]
+ **field** | [**\TrackMage\Client\Swagger\Model\FieldPut**](../Model/FieldPut.md)| The updated Field resource | [optional]
 
 ### Return type
 
-[**\TrackMage\Client\Swagger\Model\FieldGetFieldGetSelectOptionsGetDeliveryStatuses**](../Model/FieldGetFieldGetSelectOptionsGetDeliveryStatuses.md)
+[**\TrackMage\Client\Swagger\Model\FieldGet**](../Model/FieldGet.md)
 
 ### Authorization
 
