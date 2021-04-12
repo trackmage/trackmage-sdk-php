@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class TrackMageTest extends TestCase
+final class TrackMageTest extends TestCase
 {
     /** @var TrackMageClient */
     private static $client;
