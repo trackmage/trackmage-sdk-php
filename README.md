@@ -39,8 +39,6 @@ use TrackMage\Client\TrackMageClient;
 $clientId = '<client-it>';
 $clientSecret = '<client-secret>';
 $client = new TrackMageClient($clientId, $clientSecret);
-$client->setHost('https://api.stage.trackmage.com'); //optionally
-$client->setLogger(new NullLogger()); //optionally
 ```
 
 ### Posting a tracking number

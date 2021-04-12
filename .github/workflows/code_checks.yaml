@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['5.6', '7.2', '7.4']
+        php: ['7.2', '7.4']
 
     name: PHP ${{ matrix.php }} tests
     steps:
@@ -26,5 +26,6 @@ jobs:
 
       # if we 2 steps like this, we can better see if composer failed or tests
       - run: composer install --no-progress
-      - run: composer phpcs
+      - run: vendor/bin/phpstan analyse -c phpstan.neon
+      - run: vendor/bin/phpstan analyse -c phpstan-tests.neon
       - run: composer test
