@@ -50,31 +50,31 @@ $response = $client->request('POST', '/shipments', ['json' => [
     'workspace' => '/workspaces/'.$workspaceId,
     'trackingNumber' => 'TN-1',
 ]]);
+$shipment = TrackMageClient::item($response);
 
 $response = $client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
-$data = json_decode($response->getBody()->getContents(), true);
+$shipments = TrackMageClient::collection($response);
 ```
 
 ### Get workspaces list
 
 ```
 $response = $client->request('GET', '/workspaces/'.$workspaceId.'/shipments');
-$data = json_decode($response->getBody()->getContents(), true);
+$workspaces = TrackMageClient::collection($response);
 ```
 
 ### Get carriers list
 
 ```
 $response = $client->request('GET', '/public/carriers');
-$data = json_decode($response->getBody()->getContents(), true);
+$carriers = TrackMageClient::collection($response);
 ```
 
 ### Create webhook
 
 Here is [the webhook handler example](examples/webhook-handler.php) that you need to make accessible on your side.
 
-```php
-<?php
+```
 $workflow = [
     'type' => 'webhook',
     'period' => 'immediately',
@@ -91,8 +91,8 @@ $workflow = [
     ],
 ];
 $response = $client->request('POST', '/workflows', ['json' => $workflow]);
-$data = json_decode($response->getBody()->getContents(), true);
-$workflowId = $data['id'];
+$workflow = TrackMageClient::item($response);
+$workflowId = $workflow['id'];
 ```
 
 ## Tests

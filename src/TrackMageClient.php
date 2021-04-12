@@ -9,6 +9,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
@@ -97,6 +98,23 @@ final class TrackMageClient implements ClientInterface
     public function getConfig($option = null)
     {
         return $this->guzzleClient->getConfig($option);
+    }
+
+    /**
+     * @return array
+     */
+    public static function collection(ResponseInterface $response)
+    {
+        $data = json_decode($response->getBody()->getContents(), true);
+        return $data['hydra:member'];
+    }
+
+    /**
+     * @return array
+     */
+    public static function item(ResponseInterface $response)
+    {
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     private function initGuzzleClient()

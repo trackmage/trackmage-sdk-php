@@ -3,8 +3,6 @@
 namespace TrackMage\Client;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use TrackMage\Client\Swagger\ApiException;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Psr7;
 
@@ -53,7 +51,6 @@ final class AddAuthHeadersMiddleware
      * @param RequestInterface $request
      * @param array $options
      * @return mixed
-     * @throws ApiException
      */
     public function __invoke(RequestInterface $request, array $options)
     {
@@ -76,7 +73,7 @@ final class AddAuthHeadersMiddleware
     private function addGeneralHeaders(RequestInterface $request)
     {
         $headers = [
-            'Accept' => 'application/json',
+            'Accept' => 'application/ld+json',
         ];
         $modify['set_headers'] = $headers;
 
@@ -102,27 +99,17 @@ final class AddAuthHeadersMiddleware
      * @param string $clientId
      * @param string $clientSecret
      * @return string
-     * @throws ApiException
      */
     private function getAccessToken($clientId, $clientSecret)
     {
         $client = new Client();
-        try {
-            $response = $client->get($this->host.'/oauth/v2/token', [
-                'query' => [
-                    'client_id' => $clientId,
-                    'client_secret' => $clientSecret,
-                    'grant_type' => 'client_credentials',
-                ],
-            ]);
-        } catch (ClientException $e) {
-            throw new ApiException(
-                'Authorization error',
-                $e->getRequest(),
-                $e->getResponse(),
-                $e
-            );
-        }
+        $response = $client->get($this->host.'/oauth/v2/token', [
+            'query' => [
+                'client_id' => $clientId,
+                'client_secret' => $clientSecret,
+                'grant_type' => 'client_credentials',
+            ],
+        ]);
         $data = json_decode($response->getBody()->getContents(), true);
 
         return $data['access_token'];

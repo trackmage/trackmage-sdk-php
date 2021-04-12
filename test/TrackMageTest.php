@@ -2,6 +2,7 @@
 
 namespace TrackMage\Client;
 
+use GuzzleHttp\Exception\ClientException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -15,9 +16,6 @@ final class TrackMageTest extends TestCase
     /** @var int */
     private static $workspaceId;
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public static function setUpBeforeClass()
     {
         $host = getenv('API_HOST');
@@ -31,13 +29,13 @@ final class TrackMageTest extends TestCase
 
         // confirm email address
         $response = $client->request('GET', '/public/user-confirmation-link/'.$email);
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
         $parts = explode('/', $data['link']);
         $code = end($parts);
 
         $response = $client->request('POST', '/security/verify-email', ['json' => ['code' => $code]]);
         self::assertSame(200, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
         $token = $data['token']['access_token'];
         self::assertNotNull($token);
         $userId = $data['user']['id'];
@@ -64,12 +62,12 @@ final class TrackMageTest extends TestCase
             ]
         );
         self::assertEquals(201, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
         $workspaceId = $data['id'];
 
         $response = $client->request('GET', '/users/'.$userId);
         self::assertSame(200, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
 
         self::assertSame($email, $data['email']);
         self::assertTrue($data['emailVerified']);
@@ -79,33 +77,24 @@ final class TrackMageTest extends TestCase
         self::$workspaceId = $workspaceId;
     }
 
-    /**
-     * @expectedException \TrackMage\Client\Swagger\ApiException
-     * @expectedExceptionMessage Authorization error
-     */
     public function testInvalidCredentials()
     {
+        $this->expectException(ClientException::class);
+        $this->expectExceptionMessageRegExp('/The client credentials are invalid/');
         $client = new TrackMageClient('fake', 'fake');
         $client->request('GET', '/workspaces');
     }
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public function testWorkspaces()
     {
         $response = self::$client->request('GET', '/workspaces');
         self::assertEquals(200, $response->getStatusCode());
-        $workspaces = json_decode($response->getBody()->getContents(), true);
-
+        $workspaces = TrackMageClient::collection($response);
         self::assertCount(1, $workspaces);
         $ws = current($workspaces);
         self::assertSame('my company', $ws['title']);
     }
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public function testClientAuth()
     {
         $response = self::$client->request('POST', '/oauth_clients', ['json' => [
@@ -113,7 +102,7 @@ final class TrackMageTest extends TestCase
             'redirectUris' => ['https://localhost'],
         ]]);
         self::assertSame(201, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
         $clientId = $data['publicId'];
         $clientSecret = $data['secret'];
 
@@ -124,33 +113,27 @@ final class TrackMageTest extends TestCase
         self::assertSame(200, $response->getStatusCode());
     }
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public function testShipments()
     {
         $response = self::$client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
         self::assertSame(200, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
-        self::assertEmpty($data);
+        $shipments = TrackMageClient::collection($response);
+        self::assertEmpty($shipments);
 
         $response = self::$client->request('POST', '/shipments', ['json' => [
             'workspace' => '/workspaces/'.self::$workspaceId,
             'trackingNumber' => 'TN-1',
         ]]);
         self::assertSame(201, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = TrackMageClient::item($response);
         self::assertEquals('TN-1', $data['trackingNumber']);
 
         $response = self::$client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
         self::assertSame(200, $response->getStatusCode());
-        $data = json_decode($response->getBody()->getContents(), true);
-        self::assertCount(1, $data);
+        $shipments = TrackMageClient::collection($response);
+        self::assertCount(1, $shipments);
     }
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public function testCreateWebhook()
     {
         // create workspace
@@ -171,21 +154,16 @@ final class TrackMageTest extends TestCase
         ];
         $response = self::$client->request('POST', '/workflows', ['json' => $workflow]);
         //THEN
-        $contents = $response->getBody()->getContents();
-        self::assertEquals(201, $response->getStatusCode(), $contents);
-        $data = json_decode($contents, true);
+        self::assertEquals(201, $response->getStatusCode());
+        $data = TrackMageClient::item($response);
         self::assertArraySubset($workflow, $data);
     }
 
-    /**
-     * @throws Swagger\ApiException
-     */
     public function testCarriers()
     {
         $response = self::$client->request('GET', '/public/carriers');
-        $contents = $response->getBody()->getContents();
-        self::assertEquals(200, $response->getStatusCode(), $contents);
-        $data = json_decode($contents, true);
+        self::assertEquals(200, $response->getStatusCode());
+        $data = TrackMageClient::collection($response);
         self::assertTrue(is_array($data));
         self::assertNotEmpty($data);
     }
