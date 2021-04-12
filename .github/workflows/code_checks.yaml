@@ -7,24 +7,40 @@ on:
       - master
 
 jobs:
-  tests:
+  php5-test:
+    runs-on: ubuntu-latest
+    name: PHP 5.6 tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 5.6
+          coverage: none # disable xdebug, pcov
+
+      - run: composer remove --dev -n phpstan/phpstan phpstan/phpstan-phpunit
+      - run: composer install --no-progress
+      - run: composer test
+
+  php7-tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         php: ['7.2', '7.4']
 
     name: PHP ${{ matrix.php }} tests
     steps:
-      # basically git clone
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      # use PHP of specific version
-      - uses: shivammathur/setup-php@v1
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           coverage: none # disable xdebug, pcov
 
-      # if we 2 steps like this, we can better see if composer failed or tests
       - run: composer install --no-progress
       - run: vendor/bin/phpstan analyse -c phpstan.neon
       - run: vendor/bin/phpstan analyse -c phpstan-tests.neon

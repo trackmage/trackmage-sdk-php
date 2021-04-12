@@ -19,7 +19,7 @@
         "psr/log": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7",
+        "phpunit/phpunit": "^5|^7",
         "phpstan/phpstan": "^0.12.83",
         "symfony/console": "*",
         "phpstan/phpstan-phpunit": "^0.12.18"

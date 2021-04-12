@@ -11,7 +11,7 @@ use GuzzleHttp\Psr7;
 /**
  * Adds Bearer token
  */
-class AddAuthHeadersMiddleware
+final class AddAuthHeadersMiddleware
 {
     /** @var callable  */
     private $nextHandler;
