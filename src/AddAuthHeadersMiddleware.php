@@ -5,7 +5,6 @@ namespace TrackMage\Client;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use TrackMage\Client\Swagger\ApiException;
-use TrackMage\Client\Swagger\Configuration;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Psr7;
 
@@ -17,49 +16,53 @@ class AddAuthHeadersMiddleware
     /** @var callable  */
     private $nextHandler;
 
-    private $configuration;
+    private $clientId;
+    private $clientSecret;
+    private $host;
+    private $accessToken;
 
     /**
-     * @param callable      $nextHandler
-     * @param Configuration $configuration
+     * @param string|null $clientId
+     * @param string|null $clientSecret
+     * @param string|null $accessToken
+     * @param string $host
      */
-    public function __construct(callable $nextHandler, Configuration $configuration)
+    public function __construct(callable $nextHandler, $clientId, $clientSecret, $accessToken, $host)
     {
         $this->nextHandler = $nextHandler;
-        $this->configuration = $configuration;
+        $this->clientId = $clientId;
+        $this->clientSecret = $clientSecret;
+        $this->accessToken = $accessToken;
+        $this->host = $host;
     }
 
     /**
-     * @param Configuration $configuration
+     * @param string|null $clientId
+     * @param string|null $clientSecret
+     * @param string $host
      * @return \Closure
      */
-    public static function get(Configuration $configuration)
+    public static function get($clientId, $clientSecret, $accessToken, $host)
     {
-        return function (callable $handler) use ($configuration) {
-            return new AddAuthHeadersMiddleware($handler, $configuration);
+        return static function (callable $handler) use ($clientId, $clientSecret, $accessToken, $host) {
+            return new AddAuthHeadersMiddleware($handler, $clientId, $clientSecret, $accessToken, $host);
         };
     }
 
     /**
      * @param RequestInterface $request
-     * @param array            $options
+     * @param array $options
      * @return mixed
      * @throws ApiException
      */
     public function __invoke(RequestInterface $request, array $options)
     {
         $request = $this->addGeneralHeaders($request);
-        $token = $this->configuration->getAccessToken();
-        if (empty($token)) {
-            $clientId = $this->configuration->getUsername();
-            $clientSecret = $this->configuration->getPassword();
-            if (!empty($clientId) && !empty($clientSecret)) {
-                $token = $this->getAccessToken($clientId, $clientSecret);
-                $this->configuration->setAccessToken($token);
-            }
+        if (empty($this->accessToken) && !empty($this->clientId) && !empty($this->clientSecret)) {
+            $this->accessToken = $this->getAccessToken($this->clientId, $this->clientSecret);
         }
-        if (!empty($token)) {
-            $request = $this->addAuthHeaders($request, $token);
+        if (!empty($this->accessToken)) {
+            $request = $this->addAuthHeaders($request, $this->accessToken);
         }
         $fn = $this->nextHandler;
 
@@ -105,7 +108,7 @@ class AddAuthHeadersMiddleware
     {
         $client = new Client();
         try {
-            $response = $client->get($this->configuration->getHost().'/oauth/v2/token', [
+            $response = $client->get($this->host.'/oauth/v2/token', [
                 'query' => [
                     'client_id' => $clientId,
                     'client_secret' => $clientSecret,
@@ -113,12 +116,11 @@ class AddAuthHeadersMiddleware
                 ],
             ]);
         } catch (ClientException $e) {
-            $response = $e->getResponse();
             throw new ApiException(
                 'Authorization error',
-                $e->getCode(),
-                $response->getHeaders(),
-                $response->getBody()->getContents()
+                $e->getRequest(),
+                $e->getResponse(),
+                $e
             );
         }
         $data = json_decode($response->getBody()->getContents(), true);

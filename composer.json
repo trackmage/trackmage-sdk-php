@@ -1,13 +1,13 @@
 {
     "name": "trackmage/trackmage-sdk-php",
-    "description": "TrackMage API",
+    "description": "TrackMage PHP SDK",
     "keywords": ["trackmage", "tracking number", "parcel tracking"],
     "homepage": "https://trackmage.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Dmitrii Poddubnyi",
-            "homepage": "https://github.com/karser"
+            "name": "TrackMage",
+            "homepage": "https://trackmage.com"
         }
     ],
     "require": {
@@ -19,23 +19,22 @@
         "psr/log": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7",
-        "squizlabs/php_codesniffer": "^2.9",
-        "friendsofphp/php-cs-fixer": "^2.12",
-        "escapestudios/symfony2-coding-standard": "^2.0"
+        "phpunit/phpunit": "^7",
+        "phpstan/phpstan": "^0.12.83",
+        "symfony/console": "*",
+        "phpstan/phpstan-phpunit": "^0.12.18"
     },
     "scripts": {
-        "test": "phpunit",
-        "phpcs": "phpcs --standard=vendor/escapestudios/symfony2-coding-standard/Symfony2 ./src/ ./test/ --extensions=php -d memory_limit=1024M",
-        "phpcbf": "phpcbf --standard=vendor/escapestudios/symfony2-coding-standard/Symfony2 ./src/ ./test/ --extensions=php -d memory_limit=1024M"
+        "test": "phpunit"
     },
     "autoload": {
         "psr-4": {
-            "TrackMage\\Client\\Swagger\\" : "lib/",
             "TrackMage\\Client\\" : "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": { "TrackMage\\Client\\" : "test/" }
+        "psr-4": {
+            "TrackMage\\Client\\" : "test/"
+        }
     }
 }

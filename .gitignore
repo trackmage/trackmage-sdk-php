@@ -1,10 +1,7 @@
 # System, IDE, ...
-.DS_Store
 .idea
 
 # Composer
 composer.phar
 composer.lock
 vendor
-swagger-codegen-cli.jar
-openapi-generator-cli.jar

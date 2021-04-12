@@ -1,0 +1,14 @@
+#includes:
+
+parameters:
+    level: 8
+    reportUnmatchedIgnoredErrors: false
+    checkMissingIterableValueType: false
+    inferPrivatePropertyTypeFromConstructor: true
+    tmpDir: /tmp
+    paths:
+        - %currentWorkingDirectory%/src
+    ignoreErrors:
+        - '#has no typehint specified#'
+        - '#has no return typehint specified#'
+        - '#with no typehint specified#'

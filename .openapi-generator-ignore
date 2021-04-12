@@ -1,7 +1,0 @@
-README.md
-composer.json
-test/
-.travis.yml
-.php_cs
-git_push.sh
-phpunit.xml.dist

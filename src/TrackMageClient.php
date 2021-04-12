@@ -1,4 +1,5 @@
 <?php
+
 namespace TrackMage\Client;
 
 use GuzzleHttp\Client;
@@ -7,59 +8,36 @@ use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
+use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
-use RuntimeException;
-use TrackMage\Client\Swagger\Configuration;
-use TrackMage\Client\Swagger\Api;
 
-/**
- * TrackMage client wrapper
- * @method Api\CarrierApi getCarrierApi
- * @method Api\OauthClientApi getOauthClientApi
- * @method Api\ShipmentApi getShipmentApi
- * @method Api\WorkflowApi getWorkflowApi
- * @method Api\IntegrationApi getIntegrationApi
- * @method Api\UserSignupRequestApi getUserSignupRequestApi
- * @method Api\UserVerifyEmailRequestApi getUserVerifyEmailRequestApi
- * @method Api\UserApi getUserApi
- * @method Api\WorkspaceApi getWorkspaceApi
- */
-class TrackMageClient
+final class TrackMageClient implements ClientInterface
 {
-    /** @var LoggerInterface */
+    private $clientId;
+    private $clientSecret;
+    private $accessToken;
+    private $host;
     private $logger;
 
     /** @var ClientInterface */
     private $guzzleClient;
 
-    /** @var Configuration */
-    private $configuration;
-
     /**
      * @param string|null $clientId
      * @param string|null $clientSecret
+     * @param string|null $accessToken
+     * @param string $host
      */
-    public function __construct($clientId = null, $clientSecret = null)
+    public function __construct($clientId = null, $clientSecret = null, $accessToken = null, $host = 'https://api.trackmage.com', LoggerInterface $logger = null)
     {
-        $this->logger = new NullLogger();
-        $this->configuration = new Configuration();
-        $this->configuration->setHost('https://api.trackmage.com');
-        if (null !== $clientId) {
-            $this->configuration->setUsername($clientId);
-        }
-        if (null !== $clientSecret) {
-            $this->configuration->setPassword($clientSecret);
-        }
-    }
-
-    /**
-     * @param LoggerInterface $logger
-     */
-    public function setLogger($logger)
-    {
-        $this->logger = $logger;
+        $this->clientId = $clientId;
+        $this->clientSecret = $clientSecret;
+        $this->accessToken = $accessToken;
+        $this->host = $host;
+        $this->logger = $logger ?: new NullLogger();
+        $this->initGuzzleClient();
     }
 
     /**
@@ -67,31 +45,22 @@ class TrackMageClient
      */
     public function setHost($host)
     {
-        $this->configuration->setHost($host);
+        $this->host = $host;
+        $this->initGuzzleClient();
     }
 
     /**
-     * @param string $token
+     * @param string $accessToken
      */
-    public function setAccessToken($token)
+    public function setAccessToken($accessToken)
     {
-        $this->configuration->setAccessToken($token);
+        $this->accessToken = $accessToken;
+        $this->initGuzzleClient();
     }
 
-    /**
-     * @param string $name
-     * @param array  $args
-     * @return mixed
-     */
-    public function __call($name, array $args)
+    public function setLogger(LoggerInterface $logger)
     {
-        if (strpos($name, 'get') !== 0) {
-            throw new RuntimeException(sprintf('Method "%s" not found', $name));
-        }
-        list(, $class) = explode('get', $name, 2);
-        $fqcn = 'TrackMage\\Client\\Swagger\\Api\\'.$class;
-
-        return new $fqcn($this->getGuzzleClient(), $this->configuration);
+        $this->logger = $logger;
     }
 
     /**
@@ -99,33 +68,46 @@ class TrackMageClient
      */
     public function getGuzzleClient()
     {
-        if (!$this->guzzleClient) {
-            $stack = HandlerStack::create(new CurlHandler());
-            $stack->push(AddAuthHeadersMiddleware::get($this->configuration));
-            $stack->push(Middleware::log($this->logger, new MessageFormatter(), LogLevel::INFO));
-            $this->guzzleClient = new Client([
-                'handler' => $stack,
-                'base_uri' => $this->configuration->getHost(),
-                'http_errors' => true,
-            ]);
+        if (null === $this->guzzleClient) {
+            $this->initGuzzleClient();
         }
-
         return $this->guzzleClient;
     }
 
-    /**
-     * @param ClientInterface $guzzleClient
-     */
-    public function setGuzzleClient(ClientInterface $guzzleClient)
+    public function send(RequestInterface $request, array $options = [])
     {
-        $this->guzzleClient = $guzzleClient;
+        return $this->guzzleClient->send($request, $options);
     }
 
-    /**
-     * @return Configuration
-     */
-    public function getConfiguration()
+    public function sendAsync(RequestInterface $request, array $options = [])
     {
-        return $this->configuration;
+        return $this->guzzleClient->sendAsync($request, $options);
+    }
+
+    public function request($method, $uri, array $options = [])
+    {
+        return $this->guzzleClient->request($method, $uri, $options);
+    }
+
+    public function requestAsync($method, $uri, array $options = [])
+    {
+        return $this->guzzleClient->requestAsync($method, $uri, $options);
+    }
+
+    public function getConfig($option = null)
+    {
+        return $this->guzzleClient->getConfig($option);
+    }
+
+    private function initGuzzleClient()
+    {
+        $stack = HandlerStack::create(new CurlHandler());
+        $stack->push(AddAuthHeadersMiddleware::get($this->clientId, $this->clientSecret, $this->accessToken, $this->host));
+        $stack->push(Middleware::log($this->logger, new MessageFormatter(), LogLevel::INFO));
+        $this->guzzleClient = new Client([
+            'handler' => $stack,
+            'base_uri' => $this->host,
+            'http_errors' => true,
+        ]);
     }
 }
