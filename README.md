@@ -46,27 +46,27 @@ $client = new TrackMageClient($clientId, $clientSecret);
 ```
 $workspaceId = 100;
 
-$response = $client->request('POST', '/shipments', ['json' => [
+$response = $client->post('/shipments', ['json' => [
     'workspace' => '/workspaces/'.$workspaceId,
     'trackingNumber' => 'TN-1',
 ]]);
 $shipment = TrackMageClient::item($response);
 
-$response = $client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
+$response = $client->get('/workspaces/'.self::$workspaceId.'/shipments');
 $shipments = TrackMageClient::collection($response);
 ```
 
 ### Get workspaces list
 
 ```
-$response = $client->request('GET', '/workspaces/'.$workspaceId.'/shipments');
+$response = $client->get('/workspaces/'.$workspaceId.'/shipments');
 $workspaces = TrackMageClient::collection($response);
 ```
 
 ### Get carriers list
 
 ```
-$response = $client->request('GET', '/public/carriers');
+$response = $client->get('/public/carriers');
 $carriers = TrackMageClient::collection($response);
 ```
 
@@ -90,7 +90,7 @@ $workflow = [
         'test@email.com', 'test-2@email.com',
     ],
 ];
-$response = $client->request('POST', '/workflows', ['json' => $workflow]);
+$response = $client->post('/workflows', ['json' => $workflow]);
 $workflow = TrackMageClient::item($response);
 $workflowId = $workflow['id'];
 ```

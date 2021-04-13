@@ -77,17 +77,46 @@ final class TrackMageTest extends TestCase
         self::$workspaceId = $workspaceId;
     }
 
+    public function testOAuthServerError()
+    {
+        try {
+            $client = new TrackMageClient('fake', 'fake');
+            $client->get('/workspaces');
+        } catch (ClientException $e) {
+            self::assertSame('The client credentials are invalid (invalid_client)', TrackMageClient::error($e));
+        }
+    }
+
+    public function testHydraError()
+    {
+        try {
+            self::$client->get('/workspaces/1720693b-6792-4c7a-848a-43b24ddba591');
+        } catch (ClientException $e) {
+            self::assertSame('Not Found', TrackMageClient::error($e));
+        }
+    }
+
+    public function testHydraValidationError()
+    {
+        try {
+            self::$client->post('/shipments', ['json' => [ ]]);
+        } catch (ClientException $e) {
+            self::assertSame('workspace: This value should not be blank.', TrackMageClient::error($e));
+        }
+    }
+
     public function testInvalidCredentials()
     {
         $this->expectException(ClientException::class);
+        $this->expectExceptionCode(400);
         $this->expectExceptionMessageRegExp('/The client credentials are invalid/');
         $client = new TrackMageClient('fake', 'fake');
-        $client->request('GET', '/workspaces');
+        $client->get('/workspaces');
     }
 
     public function testWorkspaces()
     {
-        $response = self::$client->request('GET', '/workspaces');
+        $response = self::$client->get('/workspaces');
         self::assertEquals(200, $response->getStatusCode());
         $workspaces = TrackMageClient::collection($response);
         self::assertCount(1, $workspaces);
@@ -97,7 +126,7 @@ final class TrackMageTest extends TestCase
 
     public function testClientAuth()
     {
-        $response = self::$client->request('POST', '/oauth_clients', ['json' => [
+        $response = self::$client->post('/oauth_clients', ['json' => [
             'name' => 'test',
             'redirectUris' => ['https://localhost'],
         ]]);
@@ -109,18 +138,18 @@ final class TrackMageTest extends TestCase
         $host = getenv('API_HOST');
         self::assertNotFalse($host);
         $client = new TrackMageClient($clientId, $clientSecret, null, $host);
-        $response = $client->request('GET', '/users/'.self::$userId);
+        $response = $client->get('/users/'.self::$userId);
         self::assertSame(200, $response->getStatusCode());
     }
 
     public function testShipments()
     {
-        $response = self::$client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
+        $response = self::$client->get('/workspaces/'.self::$workspaceId.'/shipments');
         self::assertSame(200, $response->getStatusCode());
         $shipments = TrackMageClient::collection($response);
         self::assertEmpty($shipments);
 
-        $response = self::$client->request('POST', '/shipments', ['json' => [
+        $response = self::$client->post('/shipments', ['json' => [
             'workspace' => '/workspaces/'.self::$workspaceId,
             'trackingNumber' => 'TN-1',
         ]]);
@@ -128,7 +157,7 @@ final class TrackMageTest extends TestCase
         $data = TrackMageClient::item($response);
         self::assertEquals('TN-1', $data['trackingNumber']);
 
-        $response = self::$client->request('GET', '/workspaces/'.self::$workspaceId.'/shipments');
+        $response = self::$client->get('/workspaces/'.self::$workspaceId.'/shipments');
         self::assertSame(200, $response->getStatusCode());
         $shipments = TrackMageClient::collection($response);
         self::assertCount(1, $shipments);
@@ -152,7 +181,7 @@ final class TrackMageTest extends TestCase
                 'test@email.com', 'test-2@email.com',
             ],
         ];
-        $response = self::$client->request('POST', '/workflows', ['json' => $workflow]);
+        $response = self::$client->post('/workflows', ['json' => $workflow]);
         //THEN
         self::assertEquals(201, $response->getStatusCode());
         $data = TrackMageClient::item($response);
@@ -161,7 +190,7 @@ final class TrackMageTest extends TestCase
 
     public function testCarriers()
     {
-        $response = self::$client->request('GET', '/public/carriers');
+        $response = self::$client->get('/public/carriers');
         self::assertEquals(200, $response->getStatusCode());
         $data = TrackMageClient::collection($response);
         self::assertTrue(is_array($data));
