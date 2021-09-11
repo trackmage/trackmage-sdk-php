@@ -4,6 +4,7 @@ namespace TrackMage\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
@@ -48,14 +49,14 @@ final class TrackMageClient implements ClientInterface
      * @param string|null $accessToken
      * @param string $host
      */
-    public function __construct($clientId = null, $clientSecret = null, $accessToken = null, $host = 'https://api.trackmage.com', LoggerInterface $logger = null)
+    public function __construct($clientId = null, $clientSecret = null, $accessToken = null, $host = 'https://api.trackmage.com', LoggerInterface $logger = null, callable $middleware = null)
     {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
         $this->accessToken = $accessToken;
         $this->host = $host;
         $this->logger = $logger ?: new NullLogger();
-        $this->initGuzzleClient();
+        $this->initGuzzleClient($middleware);
     }
 
     /**
@@ -95,6 +96,14 @@ final class TrackMageClient implements ClientInterface
     public function setGuzzleClient(ClientInterface $guzzleClient)
     {
         $this->guzzleClient = $guzzleClient;
+    }
+
+    /**
+     * @throws ClientException
+     */
+    public function validateCredentials()
+    {
+        Helper::getAccessToken($this->host, $this->clientId, $this->clientSecret);
     }
 
     public function send(RequestInterface $request, array $options = [])
@@ -182,9 +191,12 @@ final class TrackMageClient implements ClientInterface
         return $e->getMessage();
     }
 
-    private function initGuzzleClient()
+    private function initGuzzleClient(callable $middleware = null)
     {
         $stack = HandlerStack::create(new CurlHandler());
+        if (null !== $middleware) {
+            $stack->push($middleware);
+        }
         $stack->push(AddAuthHeadersMiddleware::get($this->clientId, $this->clientSecret, $this->accessToken, $this->host));
         $stack->push(Middleware::log($this->logger, new MessageFormatter(), LogLevel::INFO));
         $this->guzzleClient = new Client([

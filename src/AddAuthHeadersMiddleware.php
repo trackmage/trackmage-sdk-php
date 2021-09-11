@@ -2,7 +2,6 @@
 
 namespace TrackMage\Client;
 
-use GuzzleHttp\Client;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Psr7;
 
@@ -56,7 +55,7 @@ final class AddAuthHeadersMiddleware
     {
         $request = $this->addGeneralHeaders($request);
         if (empty($this->accessToken) && !empty($this->clientId) && !empty($this->clientSecret)) {
-            $this->accessToken = $this->getAccessToken($this->clientId, $this->clientSecret);
+            $this->accessToken = Helper::getAccessToken($this->host, $this->clientId, $this->clientSecret);
         }
         if (!empty($this->accessToken)) {
             $request = $this->addAuthHeaders($request, $this->accessToken);
@@ -93,25 +92,5 @@ final class AddAuthHeadersMiddleware
         $modify['set_headers'] = $headers;
 
         return Psr7\modify_request($request, $modify);
-    }
-
-    /**
-     * @param string $clientId
-     * @param string $clientSecret
-     * @return string
-     */
-    private function getAccessToken($clientId, $clientSecret)
-    {
-        $client = new Client();
-        $response = $client->get($this->host.'/oauth/v2/token', [
-            'query' => [
-                'client_id' => $clientId,
-                'client_secret' => $clientSecret,
-                'grant_type' => 'client_credentials',
-            ],
-        ]);
-        $data = json_decode($response->getBody()->getContents(), true);
-
-        return $data['access_token'];
     }
 }

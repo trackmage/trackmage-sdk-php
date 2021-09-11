@@ -151,11 +151,11 @@ final class TrackMageTest extends TestCase
 
         $response = self::$client->post('/shipments', ['json' => [
             'workspace' => '/workspaces/'.self::$workspaceId,
-            'trackingNumber' => 'TN-1',
+            'trackingNumber' => 'TN1',
         ]]);
         self::assertSame(201, $response->getStatusCode());
         $data = TrackMageClient::item($response);
-        self::assertEquals('TN-1', $data['trackingNumber']);
+        self::assertEquals('TN1', $data['trackingNumber']);
 
         $response = self::$client->get('/workspaces/'.self::$workspaceId.'/shipments');
         self::assertSame(200, $response->getStatusCode());
